@@ -1,0 +1,9 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.restoreViewState": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.suggestSelection": "first",
+}
