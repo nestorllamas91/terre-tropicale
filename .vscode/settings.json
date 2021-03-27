@@ -6,4 +6,5 @@
   "editor.formatOnSave": true,
   "editor.scrollBeyondLastLine": false,
   "editor.suggestSelection": "first",
+  "files.eol": "\n"
 }

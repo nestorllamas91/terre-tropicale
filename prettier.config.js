@@ -1,10 +1,10 @@
 module.exports = {
-  proseWrap: 'never',
+  printWidth: 150,
   tabWidth: 2,
   singleQuote: true,
   jsxSingleQuote: false,
   arrowParens: 'avoid',
-  semi: true,
   trailingComma: 'none',
+  semi: true,
   endOfLine: 'lf'
 };

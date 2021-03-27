@@ -1,9 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    return initialProps;
   }
 
   render() {
@@ -11,10 +11,7 @@ class MyDocument extends Document {
       <Html lang="en-US">
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            content="A platform to buy smoothies and cocktails of any kind."
-            name="description"
-          />
+          <meta content="A platform to buy smoothies and cocktails of any kind." name="description" />
           <link href="/favicon.png" rel="shortcut icon" type="image/x-icon" />
         </Head>
         <body>
@@ -25,5 +22,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;
