@@ -5,7 +5,7 @@ import { getTitle } from '../_shared/functions';
 import '../styles-reset.css';
 import '../styles-global.css';
 
-export default function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
+export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
   const arraySubstringsPathname: string[] = router.pathname.split('/');
   const page: string = arraySubstringsPathname.length === 2 ? arraySubstringsPathname[1] : '';
   return (
