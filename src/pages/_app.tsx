@@ -1,11 +1,13 @@
+import '../styles.css';
+
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Layout from '../layout/component';
-import { getTitle } from '../_shared/functions';
-import '../styles-reset.css';
-import '../styles-global.css';
+import React from 'react';
 
-export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
+import Layout from '../layout/component';
+import { getTitle } from '../shared/functions';
+
+const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const arraySubstringsPathname: string[] = router.pathname.split('/');
   const page: string = arraySubstringsPathname.length === 2 ? arraySubstringsPathname[1] : '';
   return (
@@ -19,4 +21,6 @@ export default function App({ Component, pageProps, router }: AppProps): JSX.Ele
       </Layout>
     </>
   );
-}
+};
+
+export default App;
