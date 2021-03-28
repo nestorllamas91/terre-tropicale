@@ -1,18 +1,20 @@
-import NavigationBar from '../_shared/navigation-bar/component';
-import Footer from '../_shared/footer/component';
+import React from 'react';
 
-export default function Error404Page(): JSX.Element {
-  return (
+import Footer from '../shared/footer/component';
+import NavigationBar from '../shared/navigation-bar/component';
+
+const Error404Page = (): JSX.Element => (
+  <div>
+    <NavigationBar />
     <div>
-      <NavigationBar />
-      <div>
-        <span>Error in the client!</span>
-        <span>404 Not Found</span>
-      </div>
-      <div>
-        <span>The resource you requested could not be found on the server.</span>
-      </div>
-      <Footer />
+      <span>Error in the client!</span>
+      <span>404 Not Found</span>
     </div>
-  );
-}
+    <div>
+      <span>The resource you requested could not be found on the server.</span>
+    </div>
+    <Footer />
+  </div>
+);
+
+export default Error404Page;

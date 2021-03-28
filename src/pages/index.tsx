@@ -1,5 +1,7 @@
+import React from 'react';
+
 import Home from '../home/component';
 
-export default function HomePage(): JSX.Element {
-  return <Home />;
-}
+const HomePage = (): JSX.Element => <Home />;
+
+export default HomePage;
