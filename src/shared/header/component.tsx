@@ -4,7 +4,7 @@ export type HeaderProps = {
   activePage: string;
 };
 
-const Header = (): JSX.Element => (
+const Header = ({ activePage }: HeaderProps): JSX.Element => (
   <div>
     <span>Header.</span>
   </div>
