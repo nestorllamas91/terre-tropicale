@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "eslint src --ext .ts,.tsx",
+    "prepare": "husky install",
+    "start": "next start",
     "test": "jest"
   },
   "dependencies": {
