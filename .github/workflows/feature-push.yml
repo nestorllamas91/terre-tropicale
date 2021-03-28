@@ -3,7 +3,9 @@
 name: Feature - On Push
 
 on:
-  push
+  push:
+    branches:
+      develop
 
 env:
   NODE_VERSION: 14
