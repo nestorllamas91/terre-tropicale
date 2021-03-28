@@ -1,6 +1,6 @@
 # Code is deployed to prelive environment.
 
-name: Feature - On Merge
+name: Feature - On Push
 
 on:
   push
