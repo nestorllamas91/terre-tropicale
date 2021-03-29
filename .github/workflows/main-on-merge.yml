@@ -33,6 +33,7 @@ jobs:
           github-token: ${{ github.token }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: --prod
 
       - name: Update deployment status (success)
         if: always() && !failure() && !cancelled()
