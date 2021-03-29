@@ -1,9 +1,9 @@
-name: Feature - Pull Request
+name: Pull Request
 
 on:
   pull_request:
     branches:
-      - develop
+      - main
 
 env:
   NODE_VERSION: 14
@@ -27,15 +27,15 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      # - name: Install dependencies
-      #   run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      # - name: Lint
-      #   run: npm run lint
+      - name: Lint
+        run: npm run lint
 
-      # - name: Build
-      #   run: npm run build
+      - name: Build
+        run: npm run build
 
-      # - name: Test
-      #   run: npm test
+      - name: Test
+        run: npm test
 
