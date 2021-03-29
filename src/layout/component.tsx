@@ -1,6 +1,6 @@
-import NavigationBar from '../_shared/navigation-bar/component';
-import Header from '../_shared/header/component';
-import Footer from '../_shared/footer/component';
+import NavigationBar from '../shared/navigation-bar/component';
+import Header from '../shared/header/component';
+import Footer from '../shared/footer/component';
 
 type LayoutProps = {
   page: string;
@@ -9,11 +9,11 @@ type LayoutProps = {
 
 export default function Layout({ page, children }: LayoutProps): JSX.Element {
   return (
-    <>
+    <div className="flex flex-col">
       <NavigationBar activePage={page} />
       <Header activePage={page} />
-      {children}
+      <div className="flex flex-col flex-grow mb-4 p-4">{children}</div>
       <Footer />
-    </>
+    </div>
   );
 }

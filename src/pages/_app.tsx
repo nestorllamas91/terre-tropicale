@@ -1,13 +1,23 @@
+import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '../layout/component';
-import { getTitle } from '../_shared/functions';
+import { getTitle } from '../shared/functions';
 import '../styles-reset.css';
 import '../styles-global.css';
+import 'tailwindcss/tailwind.css';
 
-export default function App({ Component, pageProps, router }: AppProps): JSX.Element {
+export default function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
   const arraySubstringsPathname: string[] = router.pathname.split('/');
   const page: string = arraySubstringsPathname.length === 2 ? arraySubstringsPathname[1] : '';
+
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
+
   return (
     <>
       <Head>

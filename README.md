@@ -1,4 +1,4 @@
-![Terre Tropicale Logo](/public/assets/images/logo.svg)
+![Logo of Terre Tropicale](/public/assets/images/logo/logo.svg)
 
 - [1. System](#1-system)
   - [1.1. Technologies](#11-technologies)

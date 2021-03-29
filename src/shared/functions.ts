@@ -2,10 +2,10 @@ export function getTitle(page: string): string {
   switch (page) {
     case '':
       return 'Terre Tropicale';
-    case 'smoothies':
-      return 'Smoothies | Terre Tropicale';
-    case 'cocktails':
-      return 'Cocktails | Terre Tropicale';
+    case 'nos-smoothies':
+      return 'Nos smoothies | Terre Tropicale';
+    case 'nos-cocktails':
+      return 'Nos cocktails | Terre Tropicale';
     case 'a-propos':
       return 'À propos | Terre Tropicale';
     case 'contact':

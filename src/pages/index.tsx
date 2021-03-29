@@ -1,5 +1,5 @@
-import Home from '../home/component';
+import Accueil from '../accueil/component';
 
-export default function HomePage(): JSX.Element {
-  return <Home />;
+export default function AccueilPage(): JSX.Element {
+  return <Accueil />;
 }
