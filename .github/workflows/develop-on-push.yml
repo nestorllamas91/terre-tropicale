@@ -1,10 +1,15 @@
-name: Deploy prod
+name: On Push
 
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - develop
+
+env:
+  NODE_VERSION: 14
 
 jobs:
-  deploy-prod:
+  deploy-preview:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,17 +20,16 @@ jobs:
         id: deployment
         with:
           token: ${{ github.token }}
-          environment: production
-          ref: main
+          environment: preview
+          ref: develop
 
-      - name: Deploy to production environment
+      - name: Deploy to preview environment
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ github.token }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: --prod
 
       - name: Update deployment status (success)
         if: always() && !failure() && !cancelled()
