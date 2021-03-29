@@ -3,7 +3,7 @@ name: On Merge
 on:
   pull_request:
     branches:
-      - main
+      - develop
     types:
       - closed
 
@@ -23,8 +23,8 @@ jobs:
         id: deployment
         with:
           token: ${{ github.token }}
-          environment: production
-          ref: main
+          environment: preview
+          ref: develop
 
       - name: Deploy to preview environment
         uses: amondnet/vercel-action@v20.0.0
@@ -33,7 +33,6 @@ jobs:
           github-token: ${{ github.token }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: --prod
 
       - name: Update deployment status (success)
         if: always() && !failure() && !cancelled()
