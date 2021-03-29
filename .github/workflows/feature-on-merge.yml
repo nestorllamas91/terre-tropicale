@@ -1,11 +1,11 @@
-# Code is deployed to prelive environment.
-
-name: Feature - On Push
+name: Feature - On Merge
 
 on:
-  push:
+  pull_request:
     branches:
-      develop
+      - develop
+    types:
+      - closed
 
 env:
   NODE_VERSION: 14
@@ -13,6 +13,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
 
     steps:
       - uses: actions/checkout@v2
@@ -46,11 +47,16 @@ jobs:
         id: deployment
         with:
           token: ${{ secrets.RECALL2_BOT_PAT }}
-          environment: prelive
+          environment: preview
           ref: develop
 
-      - name: Deploy to Vercel
-        run: echo ok
+      - name: Deploy to preview environment
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ github.token }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Update deployment status (success)
         if: always() && !failure() && !cancelled()
