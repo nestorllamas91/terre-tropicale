@@ -4,7 +4,7 @@ export type NavigationBarProps = {
   activePage?: string;
 };
 
-const NavigationBar = ({ activePage }: NavigationBarProps): JSX.Element => (
+const NavigationBar = ({}: NavigationBarProps): JSX.Element => (
   <div>
     <span>Navigation bar.</span>
   </div>
