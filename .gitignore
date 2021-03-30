@@ -1,4 +1,19 @@
-node_modules/
-.next/
+node_modules
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+npm-debug.log
+yarn-error.log
+
+coverage
+
+.next
 .env.development.local
 .env.production.local
+
+.vercel

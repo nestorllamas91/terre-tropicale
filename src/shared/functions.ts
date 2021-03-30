@@ -1,4 +1,4 @@
-export function getTitle(page: string): string {
+export const getTitle = (page: string): string => {
   switch (page) {
     case '':
       return 'Terre Tropicale';
@@ -14,5 +14,7 @@ export function getTitle(page: string): string {
       return 'Terre Tropicale';
     case '500':
       return 'Terre Tropicale';
+    default:
+      throw new Error(`Unknown page type: ${page}`);
   }
-}
+};

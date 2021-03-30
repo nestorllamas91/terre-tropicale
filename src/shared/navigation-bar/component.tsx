@@ -1,10 +1,12 @@
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import MenuPages from './menu-pages/component';
-import Link from 'next/link';
-import Image from 'next/image';
-import Searcher from './searcher/component';
 import { makeStyles } from '@material-ui/core/styles';
+import Toolbar from '@material-ui/core/Toolbar';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+
+import MenuPages from './menu-pages/component';
+import Searcher from './searcher/component';
 
 type NavigationBarProps = {
   activePage?: string;
@@ -17,17 +19,17 @@ const useStyles = makeStyles({
     right: 0,
     left: 0,
     boxShadow: '0px 3px 5px 0px rgba(0, 0, 0, 0.5)',
-    backgroundColor: '#ecfccb'
+    backgroundColor: '#ecfccb',
   },
   toolBar: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
-export default function NavigationBar({ activePage }: NavigationBarProps): JSX.Element {
+const NavigationBar = ({ activePage }: NavigationBarProps): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -45,4 +47,6 @@ export default function NavigationBar({ activePage }: NavigationBarProps): JSX.E
       </nav>
     </AppBar>
   );
-}
+};
+
+export default NavigationBar;

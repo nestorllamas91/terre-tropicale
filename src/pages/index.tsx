@@ -1,5 +1,7 @@
+import React from 'react';
+
 import Accueil from '../accueil/component';
 
-export default function AccueilPage(): JSX.Element {
-  return <Accueil />;
-}
+const AccueilPage = (): JSX.Element => <Accueil />;
+
+export default AccueilPage;
