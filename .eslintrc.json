@@ -83,7 +83,9 @@
           "error",
           {
             "allow": [
-              "next/*"
+              "@material-ui/**/*",
+              "next/*",
+              "tailwindcss/*"
             ]
           }
         ],

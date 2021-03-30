@@ -1,13 +1,11 @@
-import React from 'react';
-
-export type HeaderProps = {
+type HeaderProps = {
   activePage: string;
 };
 
-const Header = ({}: HeaderProps): JSX.Element => (
-  <div>
-    <span>Header.</span>
-  </div>
-);
-
-export default Header;
+export default function Header({ activePage }: HeaderProps): JSX.Element {
+  return (
+    <div className="mt-14 bg-red-400">
+      <span>Header</span>
+    </div>
+  );
+}

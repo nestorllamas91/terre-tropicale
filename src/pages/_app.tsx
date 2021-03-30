@@ -1,15 +1,25 @@
-import '../styles.css';
+import '../styles-reset.css';
+import '../styles-global.css';
+import 'tailwindcss/tailwind.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from '../layout/component';
 import { getTitle } from '../shared/functions';
 
-const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
+const MyApp = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   const arraySubstringsPathname: string[] = router.pathname.split('/');
   const page: string = arraySubstringsPathname.length === 2 ? arraySubstringsPathname[1] : '';
+
+  useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.remove();
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -23,4 +33,4 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   );
 };
 
-export default App;
+export default MyApp;
