@@ -20,33 +20,33 @@ type MenuPagesProps = {
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: 0
+    padding: 0,
   },
   menuIcon: {
-    color: 'black'
+    color: 'black',
   },
   menu: {
-    width: 150
+    width: 150,
   },
   menuItemIconButton: {
     marginRight: 10,
-    minWidth: 20
+    minWidth: 20,
   },
   menuItemIcon: {
     fontSize: 24,
-    color: 'black'
+    color: 'black',
   },
   menuItemText: {
     fontFamily: 'Lato Regular',
     fontWeight: 400,
-    fontSize: 18
+    fontSize: 18,
   },
   menuItemTextActive: {
-    color: '#84cc16'
+    color: '#84cc16',
   },
   menuItemTextInactive: {
-    color: '#000000'
-  }
+    color: '#000000',
+  },
 });
 
 const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
@@ -83,7 +83,7 @@ const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
                       primary:
                         activePage === '/'
                           ? `${classes.menuItemText} ${classes.menuItemTextActive}`
-                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`
+                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`,
                     }}
                   />
                 </ListItem>
@@ -99,7 +99,7 @@ const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
                       primary:
                         activePage === '/nos-smoothies'
                           ? `${classes.menuItemText} ${classes.menuItemTextActive}`
-                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`
+                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`,
                     }}
                   />
                 </ListItem>
@@ -115,7 +115,7 @@ const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
                       primary:
                         activePage === '/nos-cocktails'
                           ? `${classes.menuItemText} ${classes.menuItemTextActive}`
-                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`
+                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`,
                     }}
                   />
                 </ListItem>
@@ -131,7 +131,7 @@ const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
                       primary:
                         activePage === '/a-propos'
                           ? `${classes.menuItemText} ${classes.menuItemTextActive}`
-                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`
+                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`,
                     }}
                   />
                 </ListItem>
@@ -147,7 +147,7 @@ const MenuPages = ({ activePage }: MenuPagesProps): JSX.Element => {
                       primary:
                         activePage === '/contact'
                           ? `${classes.menuItemText} ${classes.menuItemTextActive}`
-                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`
+                          : `${classes.menuItemText} ${classes.menuItemTextInactive}`,
                     }}
                   />
                 </ListItem>
