@@ -12,5 +12,6 @@ module.exports = {
   },
   reporters: ['default'],
   restoreMocks: true,
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
 };
