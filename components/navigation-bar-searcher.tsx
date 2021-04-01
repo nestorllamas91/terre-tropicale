@@ -5,11 +5,11 @@ import React, { useState } from 'react';
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: 0
+    padding: 0,
   },
   searchIcon: {
-    color: 'black'
-  }
+    color: 'black',
+  },
 });
 
 const Searcher = (): JSX.Element => {

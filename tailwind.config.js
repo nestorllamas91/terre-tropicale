@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       title: 'Montserrat SemiBold',
-      body: 'Lato Regular'
+      body: 'Lato Regular',
     },
     colors: {
       transparent: 'transparent',
@@ -34,11 +34,11 @@ module.exports = {
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
-      rose: colors.rose
-    }
+      rose: colors.rose,
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };
