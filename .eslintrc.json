@@ -53,10 +53,14 @@
             "message": "Use @ngneat/spectator/jest instead."
           }
         ],
-        "quotes": ["error", "single", {
-          "avoidEscape": true,
-          "allowTemplateLiterals": false
-        }],
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true,
+            "allowTemplateLiterals": false
+          }
+        ],
 
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-unused-vars": [
@@ -82,11 +86,7 @@
         "import/no-internal-modules": [
           "error",
           {
-            "allow": [
-              "@material-ui/**/*",
-              "next/*",
-              "tailwindcss/*"
-            ]
+            "allow": ["@material-ui/**/*", "next/*", "tailwindcss/*"]
           }
         ],
 
@@ -135,5 +135,10 @@
         "unicorn/no-useless-undefined": "off"
       }
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

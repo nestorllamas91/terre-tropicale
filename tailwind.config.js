@@ -1,9 +1,13 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./src/**/*.tsx'],
+  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   darkMode: false,
   theme: {
+    fontFamily: {
+      title: 'Montserrat SemiBold',
+      body: 'Lato Regular'
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
