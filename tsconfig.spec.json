@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "types": [
-      "jest",
-      "node"
-    ],
+    "types": ["jest", "node"],
     "jsx": "react"
   },
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

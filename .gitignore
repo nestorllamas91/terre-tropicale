@@ -17,3 +17,5 @@ coverage
 .env.production.local
 
 .vercel
+
+docs

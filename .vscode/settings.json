@@ -11,15 +11,9 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   "eslint.options": {
-    "extensions": [
-      ".ts",
-      ".tsx"
-    ]
+    "extensions": [".ts", ".tsx"]
   },
-  "eslint.validate": [
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.validate": ["typescript", "typescriptreact"],
 
   "typescript.tsdk": "node_modules/typescript/lib",
 
