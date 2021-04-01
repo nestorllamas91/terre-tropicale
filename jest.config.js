@@ -7,11 +7,10 @@ module.exports = {
   coveragePathIgnorePatterns: ['node_modules'],
   globals: {
     'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.spec.json'
+      tsconfig: '<rootDir>/tsconfig.spec.json'
     }
   },
   reporters: ['default'],
   restoreMocks: true,
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  transform: { '\\.[jt]sx?$': 'babel-jest' }
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
 };
