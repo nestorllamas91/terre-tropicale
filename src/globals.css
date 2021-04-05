@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Lato Regular';
+    font-weight: 400;
+    src: url(/assets/fonts/lato-regular.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat SemiBold';
+    font-weight: 600;
+    src: url(/assets/fonts/montserrat-semibold.ttf) format('truetype');
+  }
+  body {
+    @apply font-body font-normal text-base leading-5;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-semibold;
+  }
+  h2 {
+    @apply text-sm;
+  }
+  h3 {
+    @apply text-xs;
+  }
+}

@@ -1,12 +1,12 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
+  purge: ['./src/**/component.tsx'],
   darkMode: false,
   theme: {
     fontFamily: {
-      title: 'Montserrat SemiBold',
-      body: 'Lato Regular',
+      heading: ['Montserrat SemiBold', 'sans-serif'],
+      body: ['Lato Regular', 'sans-serif'],
     },
     colors: {
       transparent: 'transparent',

@@ -94,6 +94,7 @@
 
         "prefer-arrow/prefer-arrow-functions": "error",
 
+        "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [
           "warn",
           {
