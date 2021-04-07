@@ -1,4 +1,8 @@
-node_modules
-.next
-coverage
-**/*.js
+# installed dependencies
+/node_modules/
+
+# compiled output
+/.next/
+
+# unit testing
+/coverage/
