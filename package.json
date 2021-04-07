@@ -5,9 +5,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "format": "prettier --write \"./src/*\"",
-    "lint:code": "eslint --fix \"./src/**/*.{ts,tsx}\"",
-    "lint:types": "tsc --noEmit \"./src/**/*.{ts,tsx}\"",
+    "format": "prettier --write \"**/*.{tsx,ts,css,js,json,md}\"",
+    "lint:code": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint:types": "tsc --noEmit ./src/**/*.{ts,tsx}",
     "prepare": "husky install",
     "start": "next start",
     "test": "jest"

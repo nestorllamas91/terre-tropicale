@@ -1,4 +1,4 @@
 {
-  "./src/**/*.{ts,tsx}": ["npm run lint:code", "npm run lint:types"],
-  "./src/*": "npm run format"
+  "./src/**/*.{ts,tsx}": ["eslint", "tsc --noEmmit"],
+  "**/*.{tsx,ts,css,js,json,md}": "prettier --write"
 }
