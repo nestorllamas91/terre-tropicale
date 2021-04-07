@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
+    // "importHelpers": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["esnext", "dom", "dom.iterable"],

@@ -27,7 +27,4 @@
   h3 {
     @apply text-xs;
   }
-  h4 {
-    @apply text-xs;
-  }
 }
