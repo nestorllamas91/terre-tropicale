@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from 'next/link';
 
-import MenuPages from './menu-pages/component';
-import ShoppingCart from './shopping-cart/component';
+import MenuPages from '@/app/shared/layout/navigation-bar/menu-pages/component';
+import ShoppingCart from '@/app/shared/layout/navigation-bar/shopping-cart/component';
 
 const useStyles = makeStyles({
   appBar: {
@@ -13,14 +13,14 @@ const useStyles = makeStyles({
     right: 0,
     left: 0,
     boxShadow: '0px 3px 5px 0px rgba(0, 0, 0, 0.5)',
-    backgroundColor: '#ecfccb',
+    backgroundColor: '#ecfccb'
   },
   toolBar: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-  },
+    alignItems: 'center'
+  }
 });
 
 const NavigationBar = (): JSX.Element => {

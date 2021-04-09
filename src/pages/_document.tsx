@@ -1,5 +1,5 @@
 import { ServerStyleSheets } from '@material-ui/core/styles';
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { Children } from 'react';
 
 const MyDocument = (): JSX.Element => {
@@ -18,17 +18,18 @@ const MyDocument = (): JSX.Element => {
   );
 };
 
-MyDocument.getInitialProps = async (ctx: DocumentContext) => {
+MyDocument.getInitialProps = async ctx => {
   const sheets = new ServerStyleSheets();
   const originalRenderPage = ctx.renderPage;
-  ctx.renderPage = () =>
+  ctx.renderPage = () => {
     originalRenderPage({
-      enhanceApp: App => props => sheets.collect(<App {...props} />),
+      enhanceApp: App => props => sheets.collect(<App {...props} />)
     });
+  };
   const initialProps = await Document.getInitialProps(ctx);
   return {
     ...initialProps,
-    styles: [...Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [...Children.toArray(initialProps.styles), sheets.getStyleElement()]
   };
 };
 

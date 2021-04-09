@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Layout from '../layout/component';
+import Layout from '@/app/shared/layout/component';
 
 const Contact = (): JSX.Element => {
   return (

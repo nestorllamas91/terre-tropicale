@@ -1,1 +1,1 @@
-export { default } from '../a-propos/component';
+export { default } from '@/app/a-propos/component';

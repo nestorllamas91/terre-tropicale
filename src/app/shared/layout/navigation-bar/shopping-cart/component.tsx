@@ -4,12 +4,12 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: 0,
+    padding: 0
   },
   shoppingCartIcon: {
     fontSize: '30px',
-    color: 'black',
-  },
+    color: 'black'
+  }
 });
 
 const ShoppingCart = (): JSX.Element => {

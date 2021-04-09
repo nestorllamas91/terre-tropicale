@@ -1,6 +1,6 @@
-import type { WithChildren } from '../types';
-import Footer from './footer/component';
-import NavigationBar from './navigation-bar/component';
+import Footer from '@/app/shared/layout/footer/component';
+import NavigationBar from '@/app/shared/layout/navigation-bar/component';
+import type { WithChildren } from '@/app/shared/types';
 
 type LayoutProps = WithChildren;
 

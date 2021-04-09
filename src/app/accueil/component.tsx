@@ -3,24 +3,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Layout from '../layout/component';
+import Layout from '@/app/shared/layout/component';
 
 const useStyles = makeStyles({
   button: {
     backgroundColor: '#84cc16',
     '&:hover': {
-      backgroundColor: '#65a30d',
-    },
+      backgroundColor: '#65a30d'
+    }
   },
   buttonText: {
     fontSize: '10px',
     fontWeight: 600,
-    color: 'white',
-  },
-  tooltip: {
-    bottom: '50px',
-    maxWidth: '100%',
-  },
+    color: 'white'
+  }
 });
 
 const Accueil = (): JSX.Element => {

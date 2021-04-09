@@ -1,1 +1,1 @@
-export { default } from '../error-500/component';
+export { default } from '@/app/error-500/component';

@@ -1,4 +1,0 @@
-{
-  "./src/**/*.{ts,tsx}": ["eslint", "tsc --noEmmit"],
-  "**/*.{tsx,ts,css,js,json,md}": "prettier --write"
-}

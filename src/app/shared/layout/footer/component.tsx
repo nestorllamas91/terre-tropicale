@@ -15,23 +15,23 @@ const useStyles = makeStyles({
     marginBottom: '20px',
     backgroundColor: '#84cc16',
     '&:hover': {
-      backgroundColor: '#65a30d',
-    },
+      backgroundColor: '#65a30d'
+    }
   },
   buttonText: {
     fontSize: '10px',
     fontWeight: 600,
     textTransform: 'none',
-    color: 'white',
+    color: 'white'
   },
   contactIcon: {
     marginRight: '12px',
-    fontSize: '20px',
+    fontSize: '20px'
   },
   socialMediaIcon: {
     fontSize: '36px',
-    color: '#65a30d',
-  },
+    color: '#65a30d'
+  }
 });
 
 const Footer = (): JSX.Element => {

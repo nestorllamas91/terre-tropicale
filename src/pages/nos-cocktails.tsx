@@ -1,1 +1,1 @@
-export { default } from '../nos-cocktails/component';
+export { default } from '@/app/nos-cocktails/component';

@@ -1,16 +1,12 @@
-import '../globals.css';
+import '@/app/shared/globals.css';
 
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.remove();
-    }
+    document.querySelector('#jss-server-side')?.remove();
   }, []);
-
   return <Component {...pageProps} />;
 };
 
