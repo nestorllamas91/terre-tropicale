@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint:code": "eslint \"./src/**/*.{ts,tsx}\"",
-    "lint:types": "tsc --noEmit -p tsconfig.json \"./src/**/*.{ts,tsx}\"",
+    "lint:types": "tsc --noEmit \"./src/**/*.{ts,tsx}\"",
     "format": "prettier --write \"**/*.{ts,tsx,css,js,json,md}\"",
     "prepare": "husky install",
     "test": "jest"
