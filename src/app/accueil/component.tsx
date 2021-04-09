@@ -25,7 +25,7 @@ const Accueil = (): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>Terre Tropicale</title>
+        <title>Terre Tropicalew</title>
       </Head>
       <Layout>
         <header className="relative flex">
