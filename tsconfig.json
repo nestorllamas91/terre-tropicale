@@ -14,7 +14,7 @@
     },
     "module": "esnext",
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "jsx": "preserve",
     "noEmit": true,
     "esModuleInterop": true,
