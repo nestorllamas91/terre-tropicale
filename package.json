@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postinstall": "husky install",
     "lint:code": "eslint \"./src/**/*.{ts,tsx}\"",
     "lint:types": "tsc --noEmit",
     "format": "prettier --write \"**/*.{ts,tsx,css,js,json,md}\"",
-    "prepare": "husky install",
     "test": "jest"
   },
   "dependencies": {
