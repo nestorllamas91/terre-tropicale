@@ -19,8 +19,9 @@ const useStyles = makeStyles({
     }
   },
   buttonText: {
-    fontSize: '10px',
+    fontFamily: 'Montserrat SemiBold',
     fontWeight: 600,
+    fontSize: '12px',
     textTransform: 'none',
     color: 'white'
   },
@@ -88,7 +89,7 @@ const Footer = (): JSX.Element => {
         </div>
       )}
       <div className="flex flex-row justify-center items-center h-14 bg-coolGray-300">
-        <span>&copy; 2021 Terre Tropicale</span>
+        <span>&copy; {new Date().getFullYear()} Terre Tropicale</span>
       </div>
     </footer>
   );
