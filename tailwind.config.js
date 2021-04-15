@@ -8,12 +8,14 @@ myColors.transparent = 'transparent';
 myColors.current = 'currentColor';
 
 module.exports = {
-  purge: ['./src/**/component.tsx'],
+  purge: ['./src/app/**/component.tsx'],
   theme: {
-    fontFamily: {
-      body: ['Lato Regular', 'sans-serif'],
-      heading: ['Montserrat SemiBold', 'sans-serif']
-    },
-    colors: myColors
+    extend: {
+      fontFamily: {
+        body: ['Lato Regular', 'sans-serif'],
+        heading: ['Montserrat SemiBold', 'sans-serif']
+      },
+      colors: myColors
+    }
   }
 };

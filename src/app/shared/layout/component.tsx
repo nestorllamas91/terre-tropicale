@@ -1,15 +1,18 @@
+import type { ReactNode } from 'react';
+
 import Footer from '@/app/shared/layout/footer/component';
 import NavigationBar from '@/app/shared/layout/navigation-bar/component';
-import type { WithChildren } from '@/app/shared/types';
 
-type LayoutProps = WithChildren;
+type LayoutPropsType = {
+  children: ReactNode;
+};
 
-const Layout = ({ children }: LayoutProps): JSX.Element => (
-  <div className="flex flex-col">
+const Layout = ({ children }: LayoutPropsType): JSX.Element => (
+  <>
     <NavigationBar />
-    <div className="flex flex-col pt-14">{children}</div>
+    <div className=" flex flex-col mt-14">{children}</div>
     <Footer />
-  </div>
+  </>
 );
 
 export default Layout;

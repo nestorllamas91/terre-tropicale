@@ -42,7 +42,7 @@ const useStyles = makeStyles({
     color: '#84cc16'
   },
   menuItemTextInactive: {
-    color: '#000000'
+    color: 'black'
   }
 });
 
@@ -71,7 +71,7 @@ const MenuPages = (): JSX.Element => {
           <div onClick={() => toggleMenuPages(false)} onKeyDown={() => toggleMenuPages(false)}>
             <List>
               <Link href="/">
-                <ListItem button key={'Accueil'}>
+                <ListItem button>
                   <ListItemIcon classes={{ root: classes.menuItemIconButton }}>
                     <HomeIcon classes={{ root: classes.menuItemIcon }} />
                   </ListItemIcon>
@@ -87,7 +87,7 @@ const MenuPages = (): JSX.Element => {
                 </ListItem>
               </Link>
               <Link href="/nos-smoothies">
-                <ListItem button key={'Nos smoothies'}>
+                <ListItem button>
                   <ListItemIcon classes={{ root: classes.menuItemIconButton }}>
                     <LocalDrinkIcon classes={{ root: classes.menuItemIcon }} />
                   </ListItemIcon>
@@ -103,7 +103,7 @@ const MenuPages = (): JSX.Element => {
                 </ListItem>
               </Link>
               <Link href="/nos-cocktails">
-                <ListItem button key={'Nos cocktails'}>
+                <ListItem button>
                   <ListItemIcon classes={{ root: classes.menuItemIconButton }}>
                     <LocalBarIcon classes={{ root: classes.menuItemIcon }} />
                   </ListItemIcon>
@@ -119,7 +119,7 @@ const MenuPages = (): JSX.Element => {
                 </ListItem>
               </Link>
               <Link href="/a-propos">
-                <ListItem button key={'À propos'}>
+                <ListItem button>
                   <ListItemIcon classes={{ root: classes.menuItemIconButton }}>
                     <InfoIcon classes={{ root: classes.menuItemIcon }} />
                   </ListItemIcon>
@@ -135,7 +135,7 @@ const MenuPages = (): JSX.Element => {
                 </ListItem>
               </Link>
               <Link href="/contact">
-                <ListItem button key={'Contact'}>
+                <ListItem button>
                   <ListItemIcon classes={{ root: classes.menuItemIconButton }}>
                     <EmailIcon classes={{ root: classes.menuItemIcon }} />
                   </ListItemIcon>

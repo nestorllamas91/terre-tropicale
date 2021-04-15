@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ananas",
+    "slug": "ananas",
+    "smoothieDescription": "\"Nana\" parfum de parfums.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Corossol",
+    "slug": "corossol",
+    "smoothieDescription": "Onctueux et plein de beinfaits.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Goyave",
+    "slug": "goyave",
+    "smoothieDescription": "Tonique, énergisant naturel.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Lulo",
+    "slug": "lulo",
+    "smoothieDescription": "Originalement rafraîchissante.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Mandarine",
+    "slug": "mandarine",
+    "smoothieDescription": "Douce et pétillante.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Mangue",
+    "slug": "mangue",
+    "smoothieDescription": "Goût doux et apaisant.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Maracuja",
+    "slug": "maracuja",
+    "smoothieDescription": "Authentique and pleine de pep's",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Mûre Andine",
+    "slug": "mure-andine",
+    "smoothieDescription": "Intense et délicate.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Papaye",
+    "slug": "papaye",
+    "smoothieDescription": "Zen et équilibré.",
+    "fruitDescription": "Description."
+  },
+  {
+    "name": "Tamarillo",
+    "slug": "tamarillo",
+    "smoothieDescription": "Aromatique et acidulé.",
+    "fruitDescription": "Description."
+  }
+]
