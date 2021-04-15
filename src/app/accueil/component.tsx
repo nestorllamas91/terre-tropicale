@@ -6,170 +6,186 @@ import Link from 'next/link';
 import Layout from '@/app/shared/layout/component';
 
 const useStyles = makeStyles({
-  button: {
-    backgroundColor: '#84cc16',
-    '&:hover': {
-      backgroundColor: '#65a30d'
-    }
-  },
-  buttonText: {
+  buttonLabel: {
     fontFamily: 'Montserrat SemiBold',
     fontWeight: 600,
     fontSize: '10px',
     color: 'white'
+  },
+  buttonRoot: {
+    backgroundColor: '#84cc16',
+    '&:hover': {
+      backgroundColor: '#65a30d'
+    }
   }
 });
 
-const Accueil = (): JSX.Element => {
-  const classes = useStyles();
+const AccueilPage = (): JSX.Element => (
+  <>
+    <Head>
+      <title>Terre Tropicale</title>
+    </Head>
+    <Layout>
+      <HeaderSection />
+      <ServicesSection />
+      <ValeursSection />
+      <AvantagesSection />
+      <FruitsSection />
+    </Layout>
+  </>
+);
+
+export default AccueilPage;
+
+const HeaderSection = () => {
+  const { buttonLabel, buttonRoot } = useStyles();
 
   return (
-    <div>
-      <Head>
-        <title>Terre Tropicale</title>
-      </Head>
-      <Layout>
-        <header className="relative flex">
-          <img src="/assets/images/accueil/header.jpg" alt="Un fruit, une histoire..." />
-          <div className="absolute flex flex-col justify-center px-4 w-full h-full bg-black bg-opacity-40">
-            <div className="flex flex-col items-start text-white">
-              <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
-              <span className="mb-4">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</span>
-              <Link href="/contact">
-                <Button variant="contained" classes={{ root: classes.button, label: classes.buttonText }}>
-                  CONTACTEZ-NOUS
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </header>
-        <div className="py-6">
-          <h1 className="mb-2 text-center">NOTRE OFFRE DE SERVICES</h1>
-          <div className="flex flex-row">
-            <div className="relative flex mr-1">
-              <img src="/assets/images/accueil/services-1.jpg" alt="Pour les pros" />
-              <div className="absolute flex flex-col justify-center px-2 w-full h-full bg-black bg-opacity-40">
-                <div className="flex flex-col items-start text-white">
-                  <h2 className="mb-1">POUR LES PROS</h2>
-                  <span className="mb-2">Innovez et fidélisez votre clientèle</span>
-                  <Button variant="contained" classes={{ root: classes.button, label: classes.buttonText }}>
-                    DÉTAILS
-                  </Button>
-                </div>
-              </div>
-            </div>
-            <div className="relative flex">
-              <img src="/assets/images/accueil/services-2.jpg" alt="Pour vos événements" />
-              <div className="absolute flex flex-col justify-center px-2 w-full h-full bg-black bg-opacity-40">
-                <div className="flex flex-col items-start text-white">
-                  <h2 className="mb-1">POUR VOS ÉVÉNEMENTS</h2>
-                  <span className="mb-2">Surprenez vos convives</span>
-                  <Button variant="contained" classes={{ root: classes.button, label: classes.buttonText }}>
-                    DÉTAILS
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h1 className="mt-6 mb-2 text-center">NOS VALEURS</h1>
-          <div className="flex flex-col px-2">
-            <div className="flex flex-row items-center mb-1.5">
-              <img
-                src="/assets/images/accueil/valeurs-1.jpg"
-                alt="Une pulpe de fruit authentique"
-                className="border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24"
-              />
-              <div>
-                <h2 className="mb-1 text-lime-500">UNE PULPE DE FRUIT AUTHENTIQUE</h2>
-                <p className="text-xs">
-                  Notre pulpe est issue des fruits rigoureusement sélectionnés, récoltés à maturité optimale, traités
-                  sur place.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-row items-center mb-1.5">
-              <img
-                src="/assets/images/accueil/valeurs-2.jpg"
-                alt="Des saveurs tropicales uniques"
-                className="border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24"
-              />
-              <div>
-                <h2 className="mb-1 text-lime-500">DES SAVEURS TROPICALES UNIQUES</h2>
-                <p className="text-xs">
-                  Nous proposons une multitude de goûts originaux qui attendent d&apos;être découverts.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-row items-center">
-              <img
-                src="/assets/images/accueil/valeurs-3.jpg"
-                alt="Notre démarche éthique et sociale"
-                className="border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24"
-              />
-              <div>
-                <h2 className="mb-1 text-lime-500">NOTRE DÉMARCHE ÉTHIQUE ET SOCIALE</h2>
-                <p className="text-xs">
-                  Nous promouvons les cultures et l&apos;emploi local. Nos pulpes permettent à 2500 familles de
-                  producteurs colombiens.
-                </p>
-              </div>
-            </div>
-          </div>
-          <h1 className="mt-6 mb-2 text-center">LES AVANTAGES PRODUIT</h1>
-          <div className="relative flex">
-            <img src="/assets/images/accueil/avantages.jpg" alt="Les avantages produit" />
-            <div className="absolute flex flex-col justify-center px-4 w-full h-full bg-black bg-opacity-40">
-              <div className="flex flex-row items-center mb-2 text-white">
-                <div className="flex flex-row justify-center items-center mr-4 border-2 border-white rounded-full w-12 h-12">
-                  <span>1</span>
-                </div>
-                <span>Des fruits récoltés à maturité optimale</span>
-              </div>
-              <div className="flex flex-row items-center mb-2 text-white">
-                <div className="flex-none flex flex-row justify-center items-center mr-4 border-2 border-white rounded-full w-12 h-12">
-                  <span>2</span>
-                </div>
-                <span>Des goûts authentiques avec de grandes qualités nutritionnelles</span>
-              </div>
-              <div className="flex flex-row items-center mb-2 text-white">
-                <div className="flex flex-row justify-center items-center mr-4 border-2 border-white rounded-full w-12 h-12">
-                  <span>3</span>
-                </div>
-                <span>Préparation simple et rapide</span>
-              </div>
-              <div className="flex flex-row items-center text-white">
-                <div className="flex-none flex flex-row justify-center items-center mr-4 border-2 border-white rounded-full w-12 h-12">
-                  <span>4</span>
-                </div>
-                <span>Un grain de temps: pas de lavage ni d&apos;épluchage des fruits</span>
-              </div>
-            </div>
-          </div>
-          <h1 className="mt-6 mb-2 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h1>
-          <div className="grid grid-cols-2">
-            <img src="/assets/images/accueil/goyave.jpg" alt="Goyave" />
-            <img src="/assets/images/accueil/mure-andine.jpg" alt="Mure Andine" />
-          </div>
-          <div className="grid grid-cols-2">
-            <div className="grid grid-rows-2 ">
-              <img src="/assets/images/accueil/maracuja.jpg" alt="Maracuja" />
-              <img src="/assets/images/accueil/papaye.jpg" alt="Papaye" />
-            </div>
-            <img src="/assets/images/accueil/mangue.jpg" alt="Mangue" />
-          </div>
-          <div className="grid grid-cols-2">
-            <img src="/assets/images/accueil/lulo.jpg" alt="Lulo" />
-            <img src="/assets/images/accueil/corossol.jpg" alt="Corossol" />
-          </div>
-          <img src="/assets/images/accueil/tamarillo.jpg" alt="Tamarillo" />
-          <div className="grid grid-cols-2">
-            <img src="/assets/images/accueil/ananas.jpg" alt="Ananas" />
-            <img src="/assets/images/accueil/mandarine.jpg" alt="Mandarine" />
+    <header className="relative flex mb-6">
+      <img src="/assets/images/accueil/header.jpg" />
+      <div className="absolute flex flex-col items-start justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
+        <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
+        <p className="mb-4">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
+        <Link href="/contact">
+          <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
+            CONTACTEZ-NOUS
+          </Button>
+        </Link>
+      </div>
+    </header>
+  );
+};
+
+const ServicesSection = () => {
+  const { buttonLabel, buttonRoot } = useStyles();
+
+  return (
+    <div className="mb-6">
+      <h1 className="mb-2 text-center">NOTRE OFFRE DE SERVICES</h1>
+      <div className="flex flex-row">
+        <div className="relative flex mr-1">
+          <img src="/assets/images/accueil/services-1.jpg" />
+          <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
+            <h2 className="mb-1">POUR LES PROS</h2>
+            <p className="mb-2">Innovez et fidélisez votre clientèle</p>
+            <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
+              DÉTAILS
+            </Button>
           </div>
         </div>
-      </Layout>
+        <div className="relative flex">
+          <img src="/assets/images/accueil/services-2.jpg" />
+          <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
+            <h2 className="mb-1">POUR VOS ÉVÉNEMENTS</h2>
+            <p className="mb-2">Surprenez vos convives</p>
+            <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
+              DÉTAILS
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Accueil;
+const ValeursSection = (): JSX.Element => (
+  <div className="mb-6">
+    <h1 className="mb-2 text-center">NOS VALEURS</h1>
+    <div className="flex flex-col px-2">
+      <div className="flex flex-row items-center mb-1.5">
+        <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
+          <img src="/assets/images/accueil/valeurs-1.jpg" className="rounded-full" />
+        </div>
+        <div>
+          <h3 className="mb-1 text-lime-500">UNE PULPE DE FRUIT AUTHENTIQUE</h3>
+          <p className="text-xs">
+            Notre pulpe est issue des fruits rigoureusement sélectionnés, récoltés à maturité optimale, traités sur
+            place.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-row items-center mb-1.5">
+        <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
+          <img src="/assets/images/accueil/valeurs-2.jpg" className="rounded-full" />
+        </div>
+        <div>
+          <h3 className="mb-1 text-lime-500">DES SAVEURS TROPICALES UNIQUES</h3>
+          <p className="text-xs">
+            Nous proposons une multitude de goûts originaux qui attendent d&apos;être découverts.
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-row items-center">
+        <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
+          <img src="/assets/images/accueil/valeurs-3.jpg" className="rounded-full" />
+        </div>
+        <div>
+          <h3 className="mb-1 text-lime-500">NOTRE DÉMARCHE ÉTHIQUE ET SOCIALE</h3>
+          <p className="text-xs">
+            Nous promouvons les cultures et l&apos;emploi local. Nos pulpes permettent à 2500 familles de producteurs
+            colombiens.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export { ValeursSection };
+
+const AvantagesSection = () => (
+  <div className="mb-6">
+    <h1 className="mb-2 text-center">LES AVANTAGES PRODUIT</h1>
+    <div className="relative flex">
+      <img src="/assets/images/accueil/avantages.jpg" />
+      <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
+        <div className="flex flex-row items-center mb-2">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+            1
+          </div>
+          <p>Des fruits récoltés à maturité optimale</p>
+        </div>
+        <div className="flex flex-row items-center mb-2">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+            2
+          </div>
+          <p>Des goûts authentiques avec de grandes qualités nutritionnelles</p>
+        </div>
+        <div className="flex flex-row items-center mb-2">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+            3
+          </div>
+          <p>Préparation simple et rapide</p>
+        </div>
+        <div className="flex flex-row items-center">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+            4
+          </div>
+          <p>Un grain de temps: pas de lavage ni d&apos;épluchage des fruits</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const FruitsSection = () => {
+  const fruitsImagesPath = '/assets/images/accueil';
+
+  return (
+    <div className="mb-6">
+      <h1 className="mb-2 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h1>
+      <div className="grid grid-cols-2">
+        <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+        <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
+        <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
+        <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
+        <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
+        <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
+        <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
+        <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
+        <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
+        <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
+      </div>
+    </div>
+  );
+};

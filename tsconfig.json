@@ -3,29 +3,23 @@
     "baseUrl": "./src",
     "paths": {
       "@/config/*": ["config/*"],
-      "@/app/accueil/*": ["app/accueil/*"],
-      "@/app/nos-smoothies/*": ["app/nos-smoothies/*"],
-      "@/app/nos-cocktails/*": ["app/nos-cocktails/*"],
-      "@/app/a-propos/*": ["app/a-propos/*"],
-      "@/app/contact/*": ["app/contact/*"],
-      "@/app/error-404/*": ["app/error-404/*"],
-      "@/app/error-500/*": ["app/error-500/*"],
-      "@/app/shared/*": ["app/shared/*"]
+      "@/app/*": ["app/*"],
+      "@/data/*": ["data/*"]
     },
+    "strict": true,
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "allowJs": false,
     "jsx": "preserve",
-    "noEmit": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
-    "strict": false,
-    "target": "es5"
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".next"]
+  "exclude": ["node_modules"]
 }

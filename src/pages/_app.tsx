@@ -1,4 +1,4 @@
-import '@/app/shared/globals.css';
+import '@/app/shared/styles.css';
 
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
