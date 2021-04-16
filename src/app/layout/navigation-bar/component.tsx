@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from 'next/link';
 
-import MenuPages from '@/app/shared/layout/navigation-bar/menu-pages/component';
-import ShoppingCart from '@/app/shared/layout/navigation-bar/shopping-cart/component';
+import MenuPages from '@/app/layout/navigation-bar/menu-pages/component';
+import ShoppingCart from '@/app/layout/navigation-bar/shopping-cart/component';
 
 const useStyles = makeStyles({
   appBar: {

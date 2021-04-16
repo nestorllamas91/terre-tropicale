@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/app/layout/component';
 import cocktails from '@/data/cocktails.json';
 
 const useStyles = makeStyles({

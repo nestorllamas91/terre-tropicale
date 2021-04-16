@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { ValeursSection } from '@/app/accueil/component';
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/app/layout/component';
 
 const AProposPage = (): JSX.Element => {
   return (

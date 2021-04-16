@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import Footer from '@/app/shared/layout/footer/component';
-import NavigationBar from '@/app/shared/layout/navigation-bar/component';
+import Footer from '@/app/layout/footer/component';
+import NavigationBar from '@/app/layout/navigation-bar/component';
 
 type LayoutPropsType = {
   children: ReactNode;
