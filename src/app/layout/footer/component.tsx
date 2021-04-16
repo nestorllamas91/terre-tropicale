@@ -42,7 +42,7 @@ const Footer = (): JSX.Element => {
   return (
     <footer>
       {activePage !== '/contact' && (
-        <div className="flex flex-col items-center justify-center py-4 bg-coolGray-200">
+        <div className="flex flex-col items-center py-4 bg-coolGray-200">
           <h1>VOUS ÊTES INTÉRESSÉ</h1>
           <span className="mb-2.5">Inscrivez-vous pour une degustation gratuite ou.</span>
           <Link href="/contact">
@@ -50,31 +50,7 @@ const Footer = (): JSX.Element => {
               Demandez votre devis maintenant
             </Button>
           </Link>
-          <div className="flex flex-col mb-3 text-xs">
-            <div className="flex flex-row items-center mb-1.5">
-              <ScheduleIcon classes={{ root: classes.contactIcon }} />
-              <span className="mr-2 font-bold">HORAIRE</span>
-              <span>Lundi-Vendredi: 09:00-18:00</span>
-            </div>
-            <div className="flex flex-row items-center mb-1.5">
-              <BusinessIcon classes={{ root: classes.contactIcon }} />
-              <span className="mr-2 font-bold">ADRESSE POSTALE</span>
-              <div className="flex flex-col items-start">
-                <span className="leading-4">782 Route de Verlhaguet</span>
-                <span className="leading-4">82290 Montbeton, Montauban</span>
-              </div>
-            </div>
-            <div className="flex flex-row items-center mb-1.5">
-              <PhoneIcon classes={{ root: classes.contactIcon }} />
-              <span className="mr-2 font-bold">TÉLÉPHONE</span>
-              <span>+33 06 24 87 53 78</span>
-            </div>
-            <div className="flex flex-row items-center">
-              <EmailIcon classes={{ root: classes.contactIcon }} />
-              <span className="mr-2 font-bold">EMAIL</span>
-              <span>contact@terretropicale.com</span>
-            </div>
-          </div>
+          <ContactDetails />
           <div className="flex flex-row">
             <a href="https://www.facebook.com/terretropicale" rel="noreferrer" target="_blank" className="mr-3">
               <FacebookIcon classes={{ root: classes.socialMediaIcon }} />
@@ -96,3 +72,35 @@ const Footer = (): JSX.Element => {
 };
 
 export default Footer;
+
+export const ContactDetails = (): JSX.Element => {
+  const classes = useStyles();
+
+  return (
+    <div className="flex flex-col mb-3 text-xs">
+      <div className="flex flex-row items-center mb-1.5">
+        <ScheduleIcon classes={{ root: classes.contactIcon }} />
+        <span className="mr-2 font-bold">HORAIRE</span>
+        <span>Lundi-Vendredi: 09:00-18:00</span>
+      </div>
+      <div className="flex flex-row items-center mb-1.5">
+        <BusinessIcon classes={{ root: classes.contactIcon }} />
+        <span className="mr-2 font-bold">ADRESSE POSTALE</span>
+        <div className="flex flex-col items-start">
+          <span className="leading-4">782 Route de Verlhaguet</span>
+          <span className="leading-4">82290 Montbeton, Montauban</span>
+        </div>
+      </div>
+      <div className="flex flex-row items-center mb-1.5">
+        <PhoneIcon classes={{ root: classes.contactIcon }} />
+        <span className="mr-2 font-bold">TÉLÉPHONE</span>
+        <span>+33 06 24 87 53 78</span>
+      </div>
+      <div className="flex flex-row items-center">
+        <EmailIcon classes={{ root: classes.contactIcon }} />
+        <span className="mr-2 font-bold"> ADRESSE EMAIL</span>
+        <span>contact@terretropicale.com</span>
+      </div>
+    </div>
+  );
+};

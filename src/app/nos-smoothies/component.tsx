@@ -13,7 +13,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Head from 'next/head';
 import { useState } from 'react';
 
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/app/layout/component';
 import smoothies from '@/data/smoothies.json';
 
 const useStyles = makeStyles({

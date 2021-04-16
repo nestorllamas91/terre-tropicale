@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/app/layout/component';
 
 const useStyles = makeStyles({
   buttonLabel: {

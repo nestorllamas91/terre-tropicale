@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/app/layout/component';
 
 const Error500 = (): JSX.Element => (
   <div>
