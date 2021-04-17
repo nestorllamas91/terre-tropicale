@@ -18,14 +18,10 @@ const sendMail = async (request: VercelRequest, response: VercelResponse): Promi
       to: `Yenny Castillo <${process.env.EMAIL_USER}>`,
       subject: 'Formulaire de contact Terre Tropicale',
       html: `<h1>Formulaire de contact Terre Tropicale</h1>
-             <span>De: ${name}</span>
-             <br />
-             <span>Adresse email: ${email}</span>
-             <br />
-             <span>Téléphone: ${phone}</span>
-             <br />
-             <span>Entity: ${entity}</span>
-             <br />
+             <span>De: ${name}</span><br />
+             <span>Adresse email: ${email}</span><br />
+             <span>Téléphone: ${phone}</span><br />
+             <span>Entity: ${entity}</span><br />
              <br />
              <br />
              <p>${message.replace(/\r\n|\n|\r/g, '<br />')}</p>`
