@@ -1,8 +1,7 @@
 /node_modules/
-/.next/
 /coverage/
+/.next/
 /.env.development.local
-
 /npm-debug.log*
 /yarn-debug.log*
 /yarn-error.log*
