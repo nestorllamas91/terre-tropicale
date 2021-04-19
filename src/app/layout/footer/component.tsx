@@ -94,12 +94,12 @@ export const ContactDetails = (): JSX.Element => {
       <div className="flex flex-row items-center mb-1.5">
         <PhoneIcon classes={{ root: classes.contactIcon }} />
         <span className="mr-2 font-bold">TÉLÉPHONE</span>
-        <span>+33 06 24 87 53 78</span>
+        <span>06 24 87 53 78</span>
       </div>
       <div className="flex flex-row items-center">
         <EmailIcon classes={{ root: classes.contactIcon }} />
         <span className="mr-2 font-bold"> ADRESSE EMAIL</span>
-        <span>contact@terretropicale.com</span>
+        <span>contact@terretropicale.fr</span>
       </div>
     </div>
   );
