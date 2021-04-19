@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 
 type Dimensions = {
@@ -44,38 +45,43 @@ const Prueba = (): JSX.Element => {
   }, [webBrowserViewport, iframeViewport, boxDimensions]);
 
   return (
-    <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-red-500">
-      <span>
-        Device Pixel Ratio (píxeles reales de la pantalla del dispositivo / píxeles CSS del navegador web totales):{' '}
-        {devicePixelRatio}
-      </span>
-      <div className="flex flex-col p-4">
-        <span>Viewport total de la pantalla del dispositivo (píxeles reales):</span>
-        <span>- Anchura: {deviceScreenViewportTotal ? deviceScreenViewportTotal.width : 'unknown'} px</span>
-        <span>- Altura: {deviceScreenViewportTotal ? deviceScreenViewportTotal.height : 'unknown'} px</span>
+    <>
+      <Head>
+        <title>Terre Tropicale</title>
+      </Head>
+      <div className="main-div absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-red-500">
+        <span>
+          Device Pixel Ratio (píxeles reales de la pantalla del dispositivo / píxeles CSS del navegador web totales):{' '}
+          {devicePixelRatio}
+        </span>
+        <div className="flex flex-col p-4">
+          <span>Viewport total de la pantalla del dispositivo (píxeles reales):</span>
+          <span>- Anchura: {deviceScreenViewportTotal ? deviceScreenViewportTotal.width : 'unknown'} px</span>
+          <span>- Altura: {deviceScreenViewportTotal ? deviceScreenViewportTotal.height : 'unknown'} px</span>
+        </div>
+        <div className="flex flex-col p-4">
+          <span>Viewport total del navegador web (píxeles CSS):</span>
+          <span>- Anchura: {webBrowserViewportTotal ? webBrowserViewportTotal.width : 'unknown'} px</span>
+          <span>- Altura: {webBrowserViewportTotal ? webBrowserViewportTotal.height : 'unknown'} px</span>
+        </div>
+        <div className="flex flex-col p-4">
+          <span>Viewport actual del navegador web (píxeles CSS):</span>
+          <span>- Anchura: {webBrowserViewport ? webBrowserViewport.width : 'unknown'} px</span>
+          <span>- Altura: {webBrowserViewport ? webBrowserViewport.height : 'unknown'} px</span>
+        </div>
+        <div ref={iframe} className="flex flex-col p-4 w-2/3">
+          <span>Viewport de elemento iframe variable según el viewport actual del navegador web (píxeles CSS):</span>
+          <span>- Anchura: {iframeViewport ? iframeViewport.width : 'unknown'} px</span>
+          <span>- Altura: {iframeViewport ? iframeViewport.height : 'unknown'} px</span>
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"></iframe>
+        </div>
+        <div ref={box} className="flex flex-col p-4 w-2/5 bg-yellow-500">
+          <span>Dimensiones de elemento div variables según el viewport actual del navegador web (píxeles CSS):</span>
+          <span>- Anchura: {boxDimensions ? boxDimensions.width : 'unknown'} px</span>
+          <span>- Altura: {boxDimensions ? boxDimensions.height : 'unknown'} px</span>
+        </div>
       </div>
-      <div className="flex flex-col p-4">
-        <span>Viewport total del navegador web (píxeles CSS):</span>
-        <span>- Anchura: {webBrowserViewportTotal ? webBrowserViewportTotal.width : 'unknown'} px</span>
-        <span>- Altura: {webBrowserViewportTotal ? webBrowserViewportTotal.height : 'unknown'} px</span>
-      </div>
-      <div className="flex flex-col p-4">
-        <span>Viewport actual del navegador web (píxeles CSS):</span>
-        <span>- Anchura: {webBrowserViewport ? webBrowserViewport.width : 'unknown'} px</span>
-        <span>- Altura: {webBrowserViewport ? webBrowserViewport.height : 'unknown'} px</span>
-      </div>
-      <div ref={iframe} className="flex flex-col p-4 w-2/3">
-        <span>Viewport de elemento iframe variable según el viewport actual del navegador web (píxeles CSS):</span>
-        <span>- Anchura: {iframeViewport ? iframeViewport.width : 'unknown'} px</span>
-        <span>- Altura: {iframeViewport ? iframeViewport.height : 'unknown'} px</span>
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"></iframe>
-      </div>
-      <div ref={box} className="flex flex-col p-4 w-2/4 bg-yellow-500">
-        <span>Dimensiones de elemento div variables según el viewport actual del navegador web (píxeles CSS):</span>
-        <span>- Anchura: {boxDimensions ? boxDimensions.width : 'unknown'} px</span>
-        <span>- Altura: {boxDimensions ? boxDimensions.height : 'unknown'} px</span>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -32,3 +32,21 @@
     @apply mb-2;
   }
 }
+
+@media (min-width: 800px) {
+  .main-div {
+    background-color: orange;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-div {
+    background-color: yellow;
+  }
+}
+
+@media (min-width: 1600px) {
+  .main-div {
+    background-color: white;
+  }
+}
