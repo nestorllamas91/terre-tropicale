@@ -56,7 +56,7 @@ export default NosSmoothiesPage;
 
 const HeaderSection = () => (
   <header className="relative flex mb-6">
-    <img src="/assets/images/nos-smoothies/header.jpg" />
+    <img src="/assets/images/header-3.jpg" />
     <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
       <h1 className="mb-2">NOS SMOOTHIES</h1>
       <p>Découvrez les saveurs du paradis</p>
@@ -77,7 +77,7 @@ const SmoothiesSection = () => {
         return (
           <Card key={index}>
             <CardActionArea>
-              <CardMedia component="img" image={`/assets/images/nos-smoothies/${slug}.jpg`} />
+              <CardMedia component="img" image={`/assets/images/${slug}-2.jpg`} />
               <CardContent classes={{ root: cardContentRoot }}>
                 <h2>{name}</h2>
                 <p className="text-xs">{smoothieDescription}</p>
@@ -117,7 +117,7 @@ const DialogFruit = ({ smoothie: { name, slug, fruitDescription }, onClose }: Di
         </IconButton>
       </DialogTitle>
       <DialogContent dividers>
-        <img src={`/assets/images/nos-smoothies/${slug}.jpg`} className="mb-2.5" />
+        <img src={`/assets/images/${slug}-2.jpg`} className="mb-2.5" />
         <p>{fruitDescription}</p>
       </DialogContent>
     </Dialog>

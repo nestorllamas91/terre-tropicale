@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     right: 0,
     left: 0,
     boxShadow: '0px 3px 5px 0px rgba(0, 0, 0, 0.5)',
-    backgroundColor: '#ecfccb'
+    backgroundColor: 'lightblue'
   },
   toolBar: {
     display: 'flex',
@@ -32,7 +32,7 @@ const NavigationBar = (): JSX.Element => {
         <Toolbar classes={{ root: classes.toolBar }}>
           <MenuPages />
           <Link href="/">
-            <img src="/assets/images/logo/logo.svg" alt="Logo de Terre Tropicale" className="h-10" />
+            <img src="/assets/logo/logo.svg" alt="Logo de Terre Tropicale" className="h-10" />
           </Link>
           <ShoppingCart />
         </Toolbar>

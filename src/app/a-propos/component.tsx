@@ -22,7 +22,7 @@ export default AProposPage;
 
 const HeaderSection = () => (
   <header className="relative flex mb-6">
-    <img src="/assets/images/a-propos/header.jpg" />
+    <img src="/assets/images/header-2.jpg" />
     <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
       <h1 className="mb-2">À PROPOS</h1>
       <p>Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
@@ -46,6 +46,6 @@ const QuiSommesNousSection = () => (
       </p>
       <p>Laissez-vous tenter, dégustez et savourez!</p>
     </div>
-    <img src="/assets/images/a-propos/qui-sommes-nous.jpg" />
+    <img src="/assets/images/qui-sommes-nous.jpg" />
   </div>
 );

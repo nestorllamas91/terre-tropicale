@@ -42,7 +42,7 @@ const HeaderSection = () => {
 
   return (
     <header className="relative flex mb-6">
-      <img src="/assets/images/accueil/header.jpg" />
+      <img src="/assets/images/header-1.jpg" />
       <div className="absolute flex flex-col items-start justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-4">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
@@ -64,7 +64,7 @@ const ServicesSection = () => {
       <h1 className="mb-2 text-center">NOTRE OFFRE DE SERVICES</h1>
       <div className="flex flex-row">
         <div className="relative flex mr-1">
-          <img src="/assets/images/accueil/services-1.jpg" />
+          <img src="/assets/images/services-1.jpg" />
           <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
             <h2 className="mb-1">POUR LES PROS</h2>
             <p className="mb-2">Innovez et fidélisez votre clientèle</p>
@@ -74,7 +74,7 @@ const ServicesSection = () => {
           </div>
         </div>
         <div className="relative flex">
-          <img src="/assets/images/accueil/services-2.jpg" />
+          <img src="/assets/images/services-2.jpg" />
           <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
             <h2 className="mb-1">POUR VOS ÉVÉNEMENTS</h2>
             <p className="mb-2">Surprenez vos convives</p>
@@ -94,7 +94,7 @@ const ValeursSection = (): JSX.Element => (
     <div className="flex flex-col px-2">
       <div className="flex flex-row items-center mb-1.5">
         <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
-          <img src="/assets/images/accueil/valeurs-1.jpg" className="rounded-full" />
+          <img src="/assets/images/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">UNE PULPE DE FRUIT AUTHENTIQUE</h3>
@@ -106,7 +106,7 @@ const ValeursSection = (): JSX.Element => (
       </div>
       <div className="flex flex-row items-center mb-1.5">
         <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
-          <img src="/assets/images/accueil/valeurs-2.jpg" className="rounded-full" />
+          <img src="/assets/images/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">DES SAVEURS TROPICALES UNIQUES</h3>
@@ -117,7 +117,7 @@ const ValeursSection = (): JSX.Element => (
       </div>
       <div className="flex flex-row items-center">
         <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
-          <img src="/assets/images/accueil/valeurs-3.jpg" className="rounded-full" />
+          <img src="/assets/images/valeurs-3.jpg" className="rounded-full" />
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">NOTRE DÉMARCHE ÉTHIQUE ET SOCIALE</h3>
@@ -137,7 +137,7 @@ const AvantagesSection = () => (
   <div className="mb-6">
     <h1 className="mb-2 text-center">LES AVANTAGES PRODUIT</h1>
     <div className="relative flex">
-      <img src="/assets/images/accueil/avantages.jpg" />
+      <img src="/assets/images/avantages.jpg" />
       <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
         <div className="flex flex-row items-center mb-2">
           <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
@@ -169,7 +169,7 @@ const AvantagesSection = () => (
 );
 
 const FruitsSection = () => {
-  const fruitsImagesPath = '/assets/images/accueil';
+  const fruitsImagesPath = '/assets/images';
 
   return (
     <div className="mb-6">
