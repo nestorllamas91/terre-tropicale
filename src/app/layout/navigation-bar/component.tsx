@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     right: 0,
     left: 0,
     boxShadow: '0px 3px 5px 0px rgba(0, 0, 0, 0.5)',
-    backgroundColor: 'lightblue'
+    backgroundColor: '#ecfccb'
   },
   toolBar: {
     display: 'flex',
