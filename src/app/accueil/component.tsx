@@ -175,16 +175,16 @@ const FruitsSection = () => {
     <div className="mb-6">
       <h1 className="mb-2 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h1>
       <div className="grid grid-cols-2">
-        <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
-        <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
-        <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
-        <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
-        <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
-        <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
-        <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
-        <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
-        <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
-        <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
+        <img src={`${fruitsImagesPath}/goyave-1.jpg`} title="Goyave" />
+        <img src={`${fruitsImagesPath}/mure-andine-1.jpg`} title="Mûre Andine" />
+        <img src={`${fruitsImagesPath}/maracuja-1.jpg`} title="Maracuja" />
+        <img src={`${fruitsImagesPath}/mangue-1.jpg`} title="Mangue" className="row-span-2" />
+        <img src={`${fruitsImagesPath}/papaye-1.jpg`} title="Papaye" />
+        <img src={`${fruitsImagesPath}/lulo-1.jpg`} title="Lulo" />
+        <img src={`${fruitsImagesPath}/corossol-1.jpg`} title="Corossol" />
+        <img src={`${fruitsImagesPath}/tamarillo-1.jpg`} title="Tamarillo" className="col-span-2" />
+        <img src={`${fruitsImagesPath}/ananas-1.jpg`} title="Ananas" />
+        <img src={`${fruitsImagesPath}/mandarine-1.jpg`} title="Mandarine" />
       </div>
     </div>
   );
