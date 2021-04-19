@@ -1,1 +1,1 @@
-export { default } from '@/app/prueba';
+export { default } from '@/app/prueba/component';
