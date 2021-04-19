@@ -52,7 +52,7 @@ const HeaderSection = () => (
 
 const CocktailsSection = () => {
   const { arrowForwardIosIconRoot, buttonLabel, buttonRoot } = useStyles();
-  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/nos-cocktails/${slug}.jpg` }));
+  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/${slug}.jpg` }));
   const [cocktailImageCurrentIndex, setCocktailImageCurrentIndex] = useState(0);
 
   return (

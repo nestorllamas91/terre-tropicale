@@ -57,7 +57,7 @@ export default ContactPage;
 
 const HeaderSection = () => (
   <header className="relative flex mb-6">
-    <img src="/assets/images/contact/header.jpg" />
+    <img src="/assets/images/header-2.jpg" />
     <h1 className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
       RESTONS EN CONTACT
     </h1>
