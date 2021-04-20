@@ -49,7 +49,7 @@ const Prueba = (): JSX.Element => {
       <Head>
         <title>Terre Tropicale</title>
       </Head>
-      <div className="main-div absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full bg-red-500">
+      <div className="main-div absolute top-0 left-0 flex flex-col items-center justify-center w-full bg-red-500">
         <span>
           Device Pixel Ratio (píxeles reales de la pantalla del dispositivo / píxeles CSS del navegador web totales):{' '}
           {devicePixelRatio}
