@@ -17,11 +17,10 @@ const useStyles = makeStyles({
   buttonLabel: {
     fontFamily: 'Montserrat SemiBold',
     fontWeight: 600,
-    fontSize: '8px',
+    fontSize: '10px',
     color: 'white'
   },
   buttonRoot: {
-    marginTop: 'auto',
     backgroundColor: '#84cc16',
     '&:hover': {
       backgroundColor: '#65a30d'
@@ -35,18 +34,20 @@ const NosCocktailsPage = (): JSX.Element => (
       <title>Nos cocktails | Terre Tropicale</title>
     </Head>
     <Layout>
-      <HeaderSection />
+      <Header />
       <CocktailsSection />
     </Layout>
   </>
 );
 
-export default NosCocktailsPage;
-
-const HeaderSection = () => (
-  <header className="flex flex-col justify-center p-4 text-white bg-lime-500">
-    <h1>COOL FRUIT COCKTAILS</h1>
-    <h3>PRÉPARATION SANS ALCOOL 33 CL</h3>
+const Header = () => (
+  <header className="relative flex mb-8">
+    <img src="/assets/images/header-2.jpg" />
+    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+      <h1 className="mb-2 text-2xl">NOS COCKTAILS</h1>
+      <p className="mb-1">Cool fruit cocktails</p>
+      <p>Préparation sans alcool, 33 cl</p>
+    </div>
   </header>
 );
 
@@ -56,11 +57,11 @@ const CocktailsSection = () => {
   const [cocktailImageCurrentIndex, setCocktailImageCurrentIndex] = useState(0);
 
   return (
-    <div className="relative flex items-center">
+    <section className="relative flex items-center mb-8">
       <ImageGallery
         items={cocktailsImages}
         autoPlay={true}
-        slideInterval={4000}
+        slideInterval={5000}
         showThumbnails={false}
         showBullets={true}
         showPlayButton={false}
@@ -95,6 +96,8 @@ const CocktailsSection = () => {
           );
         }
       })}
-    </div>
+    </section>
   );
 };
+
+export default NosCocktailsPage;

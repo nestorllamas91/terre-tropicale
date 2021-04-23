@@ -1,1 +1,1 @@
-export { default } from '@/app/contact/controller';
+export { default } from '@/app/contact/serverless-functions';
