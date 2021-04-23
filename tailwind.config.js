@@ -12,8 +12,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Lato Regular', 'sans-serif'],
-        heading: ['Montserrat SemiBold', 'sans-serif']
+        heading: ['Montserrat SemiBold', 'sans-serif'],
+        body: ['Lato Regular', 'sans-serif']
       },
       colors: myColors
     }

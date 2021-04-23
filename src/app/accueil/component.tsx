@@ -26,7 +26,7 @@ const AccueilPage = (): JSX.Element => (
       <title>Terre Tropicale</title>
     </Head>
     <Layout>
-      <HeaderSection />
+      <Header />
       <ServicesSection />
       <ValeursSection />
       <AvantagesSection />
@@ -35,16 +35,14 @@ const AccueilPage = (): JSX.Element => (
   </>
 );
 
-export default AccueilPage;
-
-const HeaderSection = () => {
+const Header = () => {
   const { buttonLabel, buttonRoot } = useStyles();
 
   return (
-    <header className="relative flex mb-6">
+    <header className="relative flex mb-8">
       <img src="/assets/images/header-1.jpg" />
-      <div className="absolute flex flex-col items-start justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
-        <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
+      <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+        <h1 className="mb-2 text-2xl">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-4">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
         <Link href="/contact">
           <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -60,14 +58,14 @@ const ServicesSection = () => {
   const { buttonLabel, buttonRoot } = useStyles();
 
   return (
-    <div className="mb-6">
-      <h1 className="mb-2 text-center">NOTRE OFFRE DE SERVICES</h1>
+    <section className="mb-8">
+      <h1 className="mb-4 text-center">NOTRE OFFRE DE SERVICES</h1>
       <div className="flex flex-row">
         <div className="relative flex mr-1">
           <img src="/assets/images/services-1.jpg" />
-          <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
-            <h2 className="mb-1">POUR LES PROS</h2>
-            <p className="mb-2">Innovez et fidélisez votre clientèle</p>
+          <div className="absolute flex flex-col items-start px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+            <h2 className="mb-1 text-xs">POUR LES PROS</h2>
+            <p className="mb-2 text-sm">Innovez et fidélisez votre clientèle</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
               DÉTAILS
             </Button>
@@ -75,24 +73,24 @@ const ServicesSection = () => {
         </div>
         <div className="relative flex">
           <img src="/assets/images/services-2.jpg" />
-          <div className="absolute flex flex-col items-start justify-center px-2 w-full h-full text-white bg-black bg-opacity-40">
-            <h2 className="mb-1">POUR VOS ÉVÉNEMENTS</h2>
-            <p className="mb-2">Surprenez vos convives</p>
+          <div className="absolute flex flex-col items-start px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+            <h2 className="mb-1 text-xs">POUR VOS ÉVÉNEMENTS</h2>
+            <p className="mb-2 text-sm">Surprenez vos convives</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
               DÉTAILS
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 const ValeursSection = (): JSX.Element => (
-  <div className="mb-6">
-    <h1 className="mb-2 text-center">NOS VALEURS</h1>
-    <div className="flex flex-col px-2">
-      <div className="flex flex-row items-center mb-1.5">
+  <section className="mb-8 px-4">
+    <h1 className="mb-4 text-center">NOS VALEURS</h1>
+    <div className="flex flex-col">
+      <div className="flex flex-row items-center mb-2.5">
         <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
           <img src="/assets/images/valeurs-1.jpg" className="rounded-full" />
         </div>
@@ -104,7 +102,7 @@ const ValeursSection = (): JSX.Element => (
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center mb-1.5">
+      <div className="flex flex-row items-center mb-2.5">
         <div className="flex-none border-2 border-red-600 rounded-full mr-2 p-1 w-24 h-24">
           <img src="/assets/images/valeurs-2.jpg" className="rounded-full" />
         </div>
@@ -128,52 +126,50 @@ const ValeursSection = (): JSX.Element => (
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
-export { ValeursSection };
-
 const AvantagesSection = () => (
-  <div className="mb-6">
-    <h1 className="mb-2 text-center">LES AVANTAGES PRODUIT</h1>
+  <section className="mb-8">
+    <h1 className="mb-4 text-center">LES AVANTAGES PRODUIT</h1>
     <div className="relative flex">
       <img src="/assets/images/avantages.jpg" />
-      <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
-        <div className="flex flex-row items-center mb-2">
-          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+      <div className="absolute flex flex-col px-4 py-3 w-full h-full text-sm text-white bg-black bg-opacity-40">
+        <div className="flex flex-row items-center mb-4">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-10 h-10">
             1
           </div>
           <p>Des fruits récoltés à maturité optimale</p>
         </div>
-        <div className="flex flex-row items-center mb-2">
-          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+        <div className="flex flex-row items-center mb-4">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-10 h-10">
             2
           </div>
           <p>Des goûts authentiques avec de grandes qualités nutritionnelles</p>
         </div>
-        <div className="flex flex-row items-center mb-2">
-          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+        <div className="flex flex-row items-center mb-4">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-10 h-10">
             3
           </div>
           <p>Préparation simple et rapide</p>
         </div>
         <div className="flex flex-row items-center">
-          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-12 h-12">
+          <div className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-10 h-10">
             4
           </div>
           <p>Un grain de temps: pas de lavage ni d&apos;épluchage des fruits</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 const FruitsSection = () => {
   const fruitsImagesPath = '/assets/images';
 
   return (
-    <div className="mb-6">
-      <h1 className="mb-2 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h1>
+    <section className="mb-8">
+      <h1 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h1>
       <div className="grid grid-cols-2">
         <img src={`${fruitsImagesPath}/goyave-1.jpg`} title="Goyave" />
         <img src={`${fruitsImagesPath}/mure-andine-1.jpg`} title="Mûre Andine" />
@@ -186,6 +182,9 @@ const FruitsSection = () => {
         <img src={`${fruitsImagesPath}/ananas-1.jpg`} title="Ananas" />
         <img src={`${fruitsImagesPath}/mandarine-1.jpg`} title="Mandarine" />
       </div>
-    </div>
+    </section>
   );
 };
+
+export default AccueilPage;
+export { ValeursSection };

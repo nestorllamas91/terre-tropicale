@@ -10,7 +10,7 @@ const AProposPage = (): JSX.Element => {
         <title>À propos | Terre Tropicale</title>
       </Head>
       <Layout>
-        <HeaderSection />
+        <Header />
         <QuiSommesNousSection />
         <ValeursSection />
       </Layout>
@@ -18,22 +18,21 @@ const AProposPage = (): JSX.Element => {
   );
 };
 
-export default AProposPage;
-
-const HeaderSection = () => (
-  <header className="relative flex mb-6">
-    <img src="/assets/images/header-2.jpg" />
-    <div className="absolute flex flex-col justify-center px-4 w-full h-full text-white bg-black bg-opacity-40">
-      <h1 className="mb-2">À PROPOS</h1>
-      <p>Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
+const Header = () => (
+  <header className="relative flex mb-8">
+    <img src="/assets/images/header-3.jpg" />
+    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+      <h1 className="mb-2 text-2xl">À PROPOS</h1>
+      <p className="mb-1">Jus de fruits, smoothies et cocktails tropicaux</p>
+      <p>Naturel et responsable</p>
     </div>
   </header>
 );
 
 const QuiSommesNousSection = () => (
-  <div className="mb-6">
-    <h1 className="mb-2 text-center">QUI SOMMES-NOUS?</h1>
-    <div className="px-4">
+  <section className="mb-8">
+    <h1 className="mb-4 text-center">QUI SOMMES-NOUS?</h1>
+    <div className="mb-4 paragraphs-margin px-4">
       <p>
         Terre Tropicale est née en 2011 de la volonté de partager la culture et les saveurs des produits tropicaux en
         provenance d&apos;Amérique Latine. Nous nous spécialisons dans la distribution de pulpe des fruits, un produit
@@ -47,5 +46,7 @@ const QuiSommesNousSection = () => (
       <p>Laissez-vous tenter, dégustez et savourez!</p>
     </div>
     <img src="/assets/images/qui-sommes-nous.jpg" />
-  </div>
+  </section>
 );
+
+export default AProposPage;

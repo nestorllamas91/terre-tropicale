@@ -17,7 +17,7 @@ import { useState } from 'react';
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: 0
+    padding: '10px'
   },
   menuIcon: {
     fontSize: '30px',
@@ -34,8 +34,8 @@ const useStyles = makeStyles({
     color: 'black'
   },
   menuItemText: {
-    fontFamily: 'Montserrat SemiBold',
-    fontWeight: 600,
+    fontFamily: 'Lato Regular',
+    fontWeight: 400,
     fontSize: '16px'
   },
   menuItemTextActive: {
@@ -62,7 +62,7 @@ const MenuPages = (): JSX.Element => {
       </IconButton>
       <aside>
         <SwipeableDrawer
-          anchor="left"
+          anchor="right"
           open={isMenuPagesOpen}
           onOpen={() => toggleMenuPages(true)}
           onClose={() => toggleMenuPages(false)}

@@ -5,9 +5,9 @@ import { Children } from 'react';
 const MyDocument = (): JSX.Element => (
   <Html lang="en-US">
     <Head>
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-      <link rel="preload" as="font" type="font/ttf" crossOrigin="true" href="/assets/fonts/lato-regular.ttf" />
-      <link rel="preload" as="font" type="font/ttf" crossOrigin="true" href="/assets/fonts/montserrat-semibold.ttf" />
+      <link href="/favicon.png" rel="shortcut icon" type="image/x-icon" />
+      <link href="/assets/fonts/montserrat-semibold.ttf" rel="preload" as="font" type="font/ttf" crossOrigin="true" />
+      <link href="/assets/fonts/lato-regular.ttf" rel="preload" as="font" type="font/ttf" crossOrigin="true" />
     </Head>
     <body>
       <Main />
