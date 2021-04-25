@@ -3,7 +3,7 @@ name: Pull Request to Staging
 on:
   pull_request:
     branches:
-      - stage
+      - develop
 
 jobs:
   pull-request-staging:
