@@ -38,15 +38,15 @@ const Footer1 = () => {
   const classes = useStyles();
 
   return (
-    <div className="flex flex-col items-center px-4 py-3 bg-gray-100">
-      <h1 className="mb-1">VOUS ÊTES INTÉRESSÉ</h1>
-      <p className="mb-2">Inscrivez-vous pour une degustation gratuite</p>
+    <div className="flex flex-col items-center mb-8 px-4">
+      <h2 className="mb-4 text-center">VOUS ÊTES INTÉRESSÉ</h2>
+      <p className="mb-3">Inscrivez-vous pour une degustation gratuite</p>
       <Link href="/contact">
         <Button variant="contained" classes={{ root: classes.buttonRoot, label: classes.buttonLabel }}>
           Demandez votre devis maintenant
         </Button>
       </Link>
-      <div className="mt-4">
+      <div className="mt-6">
         <ContactDetailsSection />
       </div>
     </div>
@@ -54,20 +54,10 @@ const Footer1 = () => {
 };
 
 const Footer2 = () => (
-  <div className="flex flex-col items-center px-4 py-3 bg-blueGray-200">
+  <div className="flex flex-col items-center px-4 py-3 bg-lime-100">
     <img src="/assets/logo/symbol.svg" className="mb-1 h-12" />
     <SocialMedia />
     <span className="text-sm">&copy; {new Date().getFullYear()} Terre Tropicale</span>
-    <span className="text-xs">
-      Icons made by{' '}
-      <a href="https://www.flaticon.com/authors/freepik" rel="noreferrer" target="_blank">
-        Freepik
-      </a>{' '}
-      from{' '}
-      <a href="https://www.flaticon.com" rel="noreferrer" target="_blank">
-        www.flaticon.com
-      </a>
-    </span>
   </div>
 );
 

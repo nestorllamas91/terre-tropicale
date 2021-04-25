@@ -1,15 +1,16 @@
-name: Pull request to main branch
+name: Pull Request to Staging
 
 on:
   pull_request:
     branches:
-      - main
+      - develop
 
 jobs:
-  pull-request:
+  pull-request-staging:
+    name: Pull Request to Staging
     runs-on: ubuntu-20.04
     steps:
-      - name: Check-out the main branch of the repository for the workflow to use it.
+      - name: Check out the branch of the repository where this workflow is being executed for the runner to use it.
         uses: actions/checkout@v2
       - name: Setup the Node.js environment.
         uses: actions/setup-node@v2

@@ -54,11 +54,11 @@ const NosSmoothiesPage = (): JSX.Element => (
 
 const Header = () => (
   <header className="relative flex mb-8">
-    <img src="/assets/images/header-2.jpg" />
+    <img src="/assets/images/headers/header-2.jpg" />
     <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
-      <h1 className="mb-2 text-2xl">NOS SMOOTHIES</h1>
-      <p className="mb-1">Les saveurs du paradis</p>
-      <p>Fruits rigoureusement sélectionnés</p>
+      <h1 className="mb-2">NOS SMOOTHIES</h1>
+      <p className="mb-1 text-white">Les saveurs du paradis</p>
+      <p className="text-white">Fruits rigoureusement sélectionnés</p>
     </div>
   </header>
 );
@@ -77,9 +77,9 @@ const SmoothiesSection = () => {
           <figure key={index}>
             <Card>
               <CardActionArea>
-                <CardMedia component="img" image={`/assets/images/${slug}-2.jpg`} />
+                <CardMedia component="img" image={`/assets/images/smoothies/${slug}.jpg`} />
                 <CardContent classes={{ root: cardContentRoot }}>
-                  <h2>{name}</h2>
+                  <p className="font-bold">{name}</p>
                   <p className="text-xs">{smoothieDescription}</p>
                 </CardContent>
               </CardActionArea>
@@ -112,13 +112,13 @@ const DialogFruit = ({ smoothie: { name, slug, fruitDescription }, onClose }: Di
   return (
     <Dialog open={true} onClose={onClose}>
       <DialogTitle disableTypography classes={{ root: dialogTitleRoot }}>
-        <h2>{name} - Le fruit</h2>
+        <p className="font-bold">{name}: le fruit</p>
         <IconButton onClick={onClose}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
       <DialogContent dividers>
-        <img src={`/assets/images/${slug}-2.jpg`} className="mb-3" />
+        <img src={`/assets/images/smoothies/${slug}-fruit1.jpg`} className="mb-3" />
         <p>{fruitDescription}</p>
       </DialogContent>
     </Dialog>

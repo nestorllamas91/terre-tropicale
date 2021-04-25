@@ -63,9 +63,9 @@ const ContactPage = (): JSX.Element => {
 
 const Header = () => (
   <header className="relative flex mb-8">
-    <img src="/assets/images/header-3.jpg" />
+    <img src="/assets/images/headers/header-3.jpg" />
     <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
-      <h1 className="mb-2 text-2xl">CONTACT</h1>
+      <h1 className="mb-2">CONTACT</h1>
       <p className="mb-1">Restons en contact</p>
       <p>Inscrivez-vous pour une degustation gratuite</p>
     </div>
@@ -87,30 +87,30 @@ const ContactDetailsSection = (): JSX.Element => {
   return (
     <section className="text-xs">
       <div className="flex flex-row items-center mb-2">
-        <div className="flex flex-row items-center mr-3 font-bold whitespace-nowrap">
+        <div className="flex flex-row items-center mr-3">
           <ScheduleIcon classes={{ root: classes.contactIcon }} />
-          HORAIRE
+          <span className="font-bold whitespace-nowrap">HORAIRE</span>
         </div>
-        <p>Lundi-Vendredi, 09:00-18:00</p>
+        <span>Lundi-Vendredi, 09:00-18:00</span>
       </div>
       <div className="flex flex-row items-center mb-2">
-        <div className="flex flex-row items-center mr-3 font-bold whitespace-nowrap">
+        <div className="flex flex-row items-center mr-3">
           <BusinessIcon classes={{ root: classes.contactIcon }} />
-          ADRESSE POSTALE
+          <span className="font-bold whitespace-nowrap">ADRESSE POSTALE</span>
         </div>
         <address>9 Rue des Pruniers, 31150 Gratentour</address>
       </div>
       <div className="flex flex-row items-center mb-2">
-        <div className="flex flex-row items-center mr-3 font-bold whitespace-nowrap">
+        <div className="flex flex-row items-center mr-3">
           <PhoneIcon classes={{ root: classes.contactIcon }} />
-          TÉLÉPHONE
+          <span className="font-bold whitespace-nowrap">TÉLÉPHONE</span>
         </div>
         <address>06 24 87 53 78</address>
       </div>
       <div className="flex flex-row items-center">
-        <div className="flex flex-row items-center mr-3 font-bold whitespace-nowrap">
+        <div className="flex flex-row items-center mr-3">
           <EmailIcon classes={{ root: classes.contactIcon }} />
-          ADRESSE EMAIL
+          <span className="font-bold whitespace-nowrap">ADRESSE EMAIL</span>
         </div>
         <address>
           <a href="mailto:contact@terretropicale.com" rel="noreferrer" target="_blank">
@@ -163,7 +163,6 @@ const ContactFormSection = () => {
             },
             body: JSON.stringify(sender)
           });
-          console.log(response);
           if (response.status === 200) {
             MySwal.fire({
               icon: 'success',
