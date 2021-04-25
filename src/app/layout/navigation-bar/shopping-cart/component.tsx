@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: '10px'
+    padding: '12px'
   },
   shoppingCartIcon: {
     fontSize: '30px',

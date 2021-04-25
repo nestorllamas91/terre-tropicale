@@ -21,6 +21,7 @@ const useStyles = makeStyles({
     color: 'white'
   },
   buttonRoot: {
+    marginTop: 'auto',
     backgroundColor: '#84cc16',
     '&:hover': {
       backgroundColor: '#65a30d'
@@ -42,9 +43,9 @@ const NosCocktailsPage = (): JSX.Element => (
 
 const Header = () => (
   <header className="relative flex mb-8">
-    <img src="/assets/images/header-2.jpg" />
+    <img src="/assets/images/headers/header-2.jpg" />
     <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
-      <h1 className="mb-2 text-2xl">NOS COCKTAILS</h1>
+      <h1 className="mb-2">NOS COCKTAILS</h1>
       <p className="mb-1">Cool fruit cocktails</p>
       <p>Préparation sans alcool, 33 cl</p>
     </div>
@@ -53,7 +54,7 @@ const Header = () => (
 
 const CocktailsSection = () => {
   const { arrowForwardIosIconRoot, buttonLabel, buttonRoot } = useStyles();
-  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/${slug}.jpg` }));
+  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/cocktails/${slug}.jpg` }));
   const [cocktailImageCurrentIndex, setCocktailImageCurrentIndex] = useState(0);
 
   return (
@@ -76,7 +77,9 @@ const CocktailsSection = () => {
               className="absolute ml-10 border-2 border-lime-500 border-opacity-50 p-1"
             >
               <div className="flex flex-col p-2 w-36 h-40 text-white bg-black bg-opacity-40">
-                <h2 className="mb-2 border-b-2 border-lime-500 pb-1 text-xs">{name.toUpperCase()}</h2>
+                <p className="mb-2 border-b-2 border-lime-500 pb-1 font-bold text-xs text-white">
+                  {name.toUpperCase()}
+                </p>
                 <ul className="text-xs">
                   {ingredients.map((ingredient, index) => {
                     const marginBottomClassName = index === ingredients.length - 1 ? '' : 'mb-1';

@@ -17,7 +17,7 @@ import { useState } from 'react';
 
 const useStyles = makeStyles({
   menuIconButton: {
-    padding: '10px'
+    padding: '12px'
   },
   menuIcon: {
     fontSize: '30px',
