@@ -43,7 +43,7 @@ const Header = () => {
       <img src="/assets/images/headers/header-1.jpg" />
       <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
-        <p className="mb-4 text-white">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
+        <p className="mb-3 text-white">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
         <Link href="/contact">
           <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
             CONTACTEZ-NOUS
@@ -109,7 +109,7 @@ const ValeursSection = (): JSX.Element => (
         <div>
           <h3 className="mb-1 text-lime-500">DES SAVEURS TROPICALES UNIQUES</h3>
           <p className="text-xs">
-            Nous proposons une multitude de goûts originaux qui attendent d&apos;être découverts.
+            Nous proposons une multitude de goûts originaux qui attendent d&rsquo;être découverts.
           </p>
         </div>
       </div>
@@ -120,7 +120,7 @@ const ValeursSection = (): JSX.Element => (
         <div>
           <h3 className="mb-1 text-lime-500">NOTRE DÉMARCHE ÉTHIQUE ET SOCIALE</h3>
           <p className="text-xs">
-            Nous promouvons les cultures et l&apos;emploi local. Nos pulpes permettent à 2500 familles de producteurs
+            Nous promouvons les cultures et l&rsquo;emploi local. Nos pulpes permettent à 2500 familles de producteurs
             colombiens.
           </p>
         </div>
@@ -157,7 +157,7 @@ const AvantagesSection = () => (
           <span className="flex flex-row justify-center items-center flex-none mr-4 border-2 border-white rounded-full w-10 h-10 text-white">
             4
           </span>
-          <p className="text-white">Un grain de temps: pas de lavage ni d&apos;épluchage des fruits</p>
+          <p className="text-white">Un grain de temps: pas de lavage ni d&rsquo;épluchage des fruits</p>
         </div>
       </div>
     </div>
@@ -165,22 +165,22 @@ const AvantagesSection = () => (
 );
 
 const FruitsSection = () => {
-  const fruitsImagesPath = '/assets/images/smoothies';
+  const fruitsImagesPath = '/assets/images/fruits/collage';
 
   return (
     <section className="mb-8">
       <h2 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h2>
       <div className="grid grid-cols-2">
-        <img src={`${fruitsImagesPath}/goyave-fruit2.jpg`} title="Goyave" />
-        <img src={`${fruitsImagesPath}/mure-andine-fruit2.jpg`} title="Mûre Andine" />
-        <img src={`${fruitsImagesPath}/maracuja-fruit2.jpg`} title="Maracuja" />
-        <img src={`${fruitsImagesPath}/mangue-fruit2.jpg`} title="Mangue" className="row-span-2" />
-        <img src={`${fruitsImagesPath}/papaye-fruit2.jpg`} title="Papaye" />
-        <img src={`${fruitsImagesPath}/lulo-fruit2.jpg`} title="Lulo" />
-        <img src={`${fruitsImagesPath}/corossol-fruit2.jpg`} title="Corossol" />
-        <img src={`${fruitsImagesPath}/tamarillo-fruit2.jpg`} title="Tamarillo" className="col-span-2" />
-        <img src={`${fruitsImagesPath}/ananas-fruit2.jpg`} title="Ananas" />
-        <img src={`${fruitsImagesPath}/mandarine-fruit2.jpg`} title="Mandarine" />
+        <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+        <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
+        <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
+        <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
+        <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
+        <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
+        <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
+        <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
+        <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
+        <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
       </div>
     </section>
   );

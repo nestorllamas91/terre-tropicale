@@ -46,8 +46,8 @@ const Header = () => (
     <img src="/assets/images/headers/header-2.jpg" />
     <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
       <h1 className="mb-2">NOS COCKTAILS</h1>
-      <p className="mb-1">Cool fruit cocktails</p>
-      <p>Préparation sans alcool, 33 cl</p>
+      <p className="mb-1 text-white">Cool fruit cocktails</p>
+      <p className="text-white">Préparation sans alcool, 33 cl</p>
     </div>
   </header>
 );

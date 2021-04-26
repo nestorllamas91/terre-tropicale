@@ -83,7 +83,7 @@ const SocialMedia = () => (
       href="https://www.instagram.com/terretropicale"
       rel="noreferrer"
       target="_blank"
-      className="text-current hover:text-lime-600"
+      className="mr-3 text-current hover:text-lime-600"
     >
       <InstagramIcon />
     </a>

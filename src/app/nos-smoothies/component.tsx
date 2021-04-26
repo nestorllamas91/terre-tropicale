@@ -118,8 +118,8 @@ const DialogFruit = ({ smoothie: { name, slug, fruitDescription }, onClose }: Di
         </IconButton>
       </DialogTitle>
       <DialogContent dividers>
-        <img src={`/assets/images/smoothies/${slug}-fruit1.jpg`} className="mb-3" />
-        <p>{fruitDescription}</p>
+        <img src={`/assets/images/fruits/${slug}.jpg`} className="mb-3" />
+        <p className="text-sm">{fruitDescription}</p>
       </DialogContent>
     </Dialog>
   );
