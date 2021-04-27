@@ -20,7 +20,7 @@
   h1,
   h2,
   h3 {
-    @apply font-heading font-semibold;
+    @apply font-semibold font-heading;
   }
   h1 {
     @apply text-xl;
@@ -34,7 +34,7 @@
   p,
   span,
   address {
-    @apply font-body font-normal leading-5 text-black-opaque;
+    @apply font-normal leading-5 font-body text-black-opaque;
   }
   address {
     @apply not-italic;
@@ -57,5 +57,10 @@
   }
   .text-black-opaque {
     color: rgba(0, 0, 0, 0.8);
+  }
+  @variants responsive {
+    .w-160 {
+      width: 40rem;
+    }
   }
 }
