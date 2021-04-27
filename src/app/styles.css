@@ -47,8 +47,8 @@
   }
 }
 
-@layer components {
-}
+/* @layer components {
+} */
 
 @layer utilities {
   .paragraphs-margin > p:not(:last-of-type) {
