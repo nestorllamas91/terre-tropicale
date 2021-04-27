@@ -8,7 +8,7 @@ const Error500 = (): JSX.Element => (
       <title>Terre Tropicale</title>
     </Head>
     <Layout>
-      <div className="flex flex-col mt-14 pt-4 pb-8 px-4">
+      <div className="flex flex-col px-4 pt-4 pb-8 mt-14">
         <div className="flex flex-col mb-4 text-center">
           <span>Error in the server!</span>
           <span>500 Internal Server Error</span>

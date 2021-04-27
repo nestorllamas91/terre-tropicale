@@ -64,7 +64,7 @@ const ContactPage = (): JSX.Element => {
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-3.jpg" />
-    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">CONTACT</h1>
       <p className="mb-1 text-white">Restons en contact</p>
       <p className="text-white">Inscrivez-vous pour une degustation gratuite</p>

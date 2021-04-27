@@ -55,7 +55,7 @@ const NosSmoothiesPage = (): JSX.Element => (
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-2.jpg" />
-    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">NOS SMOOTHIES</h1>
       <p className="mb-1 text-white">Les saveurs du paradis</p>
       <p className="text-white">Fruits rigoureusement sélectionnés</p>
@@ -70,7 +70,7 @@ const SmoothiesSection = () => {
   const [smoothie, setSmoothie] = useState<Smoothie | null>(null);
 
   return (
-    <section className="grid grid-cols-2 gap-4 mb-8 px-4">
+    <section className="grid grid-cols-2 gap-4 px-4 mb-8">
       {smoothies.map((smoothie, index) => {
         const { name, slug, smoothieDescription } = smoothie;
         return (

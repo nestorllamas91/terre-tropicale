@@ -38,7 +38,7 @@ const Footer1 = () => {
   const classes = useStyles();
 
   return (
-    <div className="flex flex-col items-center mb-8 px-4">
+    <div className="flex flex-col items-center px-4 mb-8">
       <h2 className="mb-4 text-center">VOUS ÊTES INTÉRESSÉ</h2>
       <p className="mb-3">Inscrivez-vous pour une degustation gratuite</p>
       <Link href="/contact">
@@ -55,7 +55,7 @@ const Footer1 = () => {
 
 const Footer2 = () => (
   <div className="flex flex-col items-center px-4 py-3 bg-lime-100">
-    <img src="/assets/logo/symbol.svg" className="mb-1 h-12" />
+    <img src="/assets/logo/symbol.svg" className="h-12 mb-1" />
     <SocialMedia />
     <span className="text-sm">&copy; {new Date().getFullYear()} Terre Tropicale</span>
   </div>

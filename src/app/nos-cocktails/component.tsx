@@ -44,7 +44,7 @@ const NosCocktailsPage = (): JSX.Element => (
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-2.jpg" />
-    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">NOS COCKTAILS</h1>
       <p className="mb-1 text-white">Cool fruit cocktails</p>
       <p className="text-white">Préparation sans alcool, 33 cl</p>
@@ -74,10 +74,10 @@ const CocktailsSection = () => {
           return (
             <div
               key={cocktailImageCurrentIndex}
-              className="absolute ml-10 border-2 border-lime-500 border-opacity-50 p-1"
+              className="absolute p-1 ml-10 border-2 border-opacity-50 border-lime-500"
             >
-              <div className="flex flex-col p-2 w-36 h-40 text-white bg-black bg-opacity-40">
-                <p className="mb-2 border-b-2 border-lime-500 pb-1 font-bold text-xs text-white">
+              <div className="flex flex-col h-40 p-2 text-white bg-black w-36 bg-opacity-40">
+                <p className="pb-1 mb-2 text-xs font-bold text-white border-b-2 border-lime-500">
                   {name.toUpperCase()}
                 </p>
                 <ul className="text-xs">

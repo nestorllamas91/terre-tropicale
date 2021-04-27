@@ -21,7 +21,7 @@ const AProposPage = (): JSX.Element => {
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-3.jpg" />
-    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">À PROPOS</h1>
       <p className="mb-1 text-white">Jus de fruits, smoothies et cocktails tropicaux</p>
       <p className="text-white">Naturel et responsable</p>
@@ -32,7 +32,7 @@ const Header = () => (
 const QuiSommesNousSection = () => (
   <section className="mb-8">
     <h2 className="mb-4 text-center">QUI SOMMES-NOUS?</h2>
-    <div className="mb-4 paragraphs-margin px-4">
+    <div className="px-4 mb-4 paragraphs-margin">
       <p>
         Terre Tropicale est née en 2011 de la volonté de partager la culture et les saveurs des produits tropicaux en
         provenance d&rsquo;Amérique Latine. Nous nous spécialisons dans la distribution de pulpe des fruits, un produit
