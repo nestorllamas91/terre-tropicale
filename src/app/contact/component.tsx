@@ -64,10 +64,10 @@ const ContactPage = (): JSX.Element => {
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-3.jpg" />
-    <div className="absolute flex flex-col items-start justify-center px-4 py-3 w-full h-full text-white bg-black bg-opacity-40">
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">CONTACT</h1>
-      <p className="mb-1">Restons en contact</p>
-      <p>Inscrivez-vous pour une degustation gratuite</p>
+      <p className="mb-1 text-white">Restons en contact</p>
+      <p className="text-white">Inscrivez-vous pour une degustation gratuite</p>
     </div>
   </header>
 );
@@ -75,7 +75,7 @@ const Header = () => (
 const IntroSection = () => (
   <section className="mb-8">
     <p className="text-sm">
-      Vous êtes intéressé par nos produits et/ou services et vous souhaitez être contacté? N&apos;hesitez pas à nous
+      Vous êtes intéressé par nos produits et/ou services et vous souhaitez être contacté? N&rsquo;hesitez pas à nous
       écrire. Nous vous contacterons dans les plus bref délais.
     </p>
   </section>
