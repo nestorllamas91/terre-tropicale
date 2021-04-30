@@ -5,17 +5,15 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import BusinessIcon from '@material-ui/icons/Business';
-import EmailIcon from '@material-ui/icons/Email';
-import PhoneIcon from '@material-ui/icons/Phone';
-import ScheduleIcon from '@material-ui/icons/Schedule';
 import Head from 'next/head';
 import Router from 'next/router';
 import { ChangeEvent, MouseEvent, useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+import Icon from '@/app/icon/component';
 import Layout from '@/app/layout/component';
+import icons from '@/data/icons.json';
 
 const useStyles = makeStyles({
   buttonLabel: {
@@ -41,25 +39,23 @@ const useStyles = makeStyles({
   }
 });
 
-const ContactPage = (): JSX.Element => {
-  return (
-    <>
-      <Head>
-        <title>Contact | Terre Tropicale</title>
-      </Head>
-      <Layout>
-        <Header />
-        <div className="px-4">
-          <IntroSection />
-          <div className="mb-8">
-            <ContactDetailsSection />
-          </div>
-          <ContactFormSection />
+const ContactPage = (): JSX.Element => (
+  <>
+    <Head>
+      <title>Contact | Terre Tropicale</title>
+    </Head>
+    <Layout>
+      <Header />
+      <div className="px-4">
+        <IntroSection />
+        <div className="mb-8">
+          <ContactDetailsSection />
         </div>
-      </Layout>
-    </>
-  );
-};
+        <ContactFormSection />
+      </div>
+    </Layout>
+  </>
+);
 
 const Header = () => (
   <header className="relative flex mb-8">
@@ -82,34 +78,34 @@ const IntroSection = () => (
 );
 
 const ContactDetailsSection = (): JSX.Element => {
-  const classes = useStyles();
+  const { CLOCK, EMAIL, OFFICE, PHONE } = icons;
 
   return (
     <section className="text-xs">
       <div className="flex flex-row items-center mb-2">
         <div className="flex flex-row items-center mr-3">
-          <ScheduleIcon classes={{ root: classes.contactIcon }} />
+          <Icon path={CLOCK.path} viewBox={CLOCK.viewBox} className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">HORAIRE</span>
         </div>
         <span>Lundi-Vendredi, 09:00-18:00</span>
       </div>
       <div className="flex flex-row items-center mb-2">
         <div className="flex flex-row items-center mr-3">
-          <BusinessIcon classes={{ root: classes.contactIcon }} />
+          <Icon path={OFFICE.path} viewBox={OFFICE.viewBox} className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">ADRESSE POSTALE</span>
         </div>
         <address>9 Rue des Pruniers, 31150 Gratentour</address>
       </div>
       <div className="flex flex-row items-center mb-2">
         <div className="flex flex-row items-center mr-3">
-          <PhoneIcon classes={{ root: classes.contactIcon }} />
+          <Icon path={PHONE.path} viewBox={PHONE.viewBox} className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">TÉLÉPHONE</span>
         </div>
         <address>06 24 87 53 78</address>
       </div>
       <div className="flex flex-row items-center">
         <div className="flex flex-row items-center mr-3">
-          <EmailIcon classes={{ root: classes.contactIcon }} />
+          <Icon path={EMAIL.path} viewBox={EMAIL.viewBox} className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">ADRESSE EMAIL</span>
         </div>
         <address>
