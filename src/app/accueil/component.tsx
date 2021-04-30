@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 import Layout from '@/app/layout/component';
 
@@ -41,7 +42,7 @@ const Header = () => {
   return (
     <header className="relative flex mb-8">
       <img src="/assets/images/headers/header-1.jpg" />
-      <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
+      <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-3 text-white">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
         <Link href="/contact">
@@ -63,7 +64,7 @@ const ServicesSection = () => {
       <div className="flex flex-row">
         <div className="relative flex mr-1">
           <img src="/assets/images/misc/services-1.jpg" />
-          <div className="absolute flex flex-col items-start w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
             <h3 className="mb-1">POUR LES PROS</h3>
             <p className="mb-2 text-sm text-white">Innovez et fidélisez votre clientèle</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -73,7 +74,7 @@ const ServicesSection = () => {
         </div>
         <div className="relative flex">
           <img src="/assets/images/misc/services-2.jpg" />
-          <div className="absolute flex flex-col items-start w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
             <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
             <p className="mb-2 text-sm text-white">Surprenez vos convives</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -87,11 +88,11 @@ const ServicesSection = () => {
 };
 
 const ValeursSection = (): JSX.Element => (
-  <section className="px-4 mb-8">
+  <section className="px-4 py-3 mb-8 sm:px-10">
     <h2 className="mb-4 text-center">NOS VALEURS</h2>
-    <div className="flex flex-col">
-      <div className="flex flex-row items-center mb-2.5">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full">
+    <div className="flex flex-col sm:flex-row sm:text-center">
+      <div className="flex flex-row items-center mb-2.5 sm:flex-col sm:mr-3 sm:mb-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
           <img src="/assets/images/misc/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
@@ -102,8 +103,8 @@ const ValeursSection = (): JSX.Element => (
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center mb-2.5">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full">
+      <div className="flex flex-row items-center mb-2.5 sm:flex-col sm:mr-3 sm:mb-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
           <img src="/assets/images/misc/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
@@ -113,8 +114,8 @@ const ValeursSection = (): JSX.Element => (
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full">
+      <div className="flex flex-row items-center sm:flex-col">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
           <img src="/assets/images/misc/valeurs-3.jpg" className="rounded-full" />
         </div>
         <div>
@@ -133,28 +134,28 @@ const AvantagesSection = () => (
   <section className="mb-8">
     <h2 className="mb-4 text-center">LES AVANTAGES PRODUIT</h2>
     <div className="relative flex">
-      <img src="/assets/images/misc/avantages.jpg" />
-      <div className="absolute flex flex-col w-full h-full px-4 py-3 text-sm text-white bg-black bg-opacity-40">
-        <div className="flex flex-row items-center mb-4">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-white border-2 border-white rounded-full">
+      <img src="/assets/images/misc/avantages.jpg" className="sm:object-cover sm:w-full sm:h-64" />
+      <div className="absolute flex flex-col w-full h-full px-4 py-3 text-sm text-white bg-black bg-opacity-40 sm:flex-row sm:px-10 sm:pt-20 sm:text-center">
+        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
             1
           </span>
           <p className="text-white">Des fruits récoltés à maturité optimale</p>
         </div>
-        <div className="flex flex-row items-center mb-4">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-white border-2 border-white rounded-full">
+        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
             2
           </span>
           <p className="text-white">Des goûts authentiques avec de grandes qualités nutritionnelles</p>
         </div>
-        <div className="flex flex-row items-center mb-4">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-white border-2 border-white rounded-full">
+        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
             3
           </span>
           <p className="text-white">Préparation simple et rapide</p>
         </div>
-        <div className="flex flex-row items-center">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-white border-2 border-white rounded-full">
+        <div className="flex flex-row items-center sm:flex-col">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
             4
           </span>
           <p className="text-white">Un grain de temps: pas de lavage ni d&rsquo;épluchage des fruits</p>
@@ -165,23 +166,50 @@ const AvantagesSection = () => (
 );
 
 const FruitsSection = () => {
+  const [viewportWidth, setviewportWidth] = useState(0);
   const fruitsImagesPath = '/assets/images/fruits/collage';
+
+  useEffect(() => {
+    updateViewportWidth();
+    window.addEventListener('resize', updateViewportWidth);
+    return () => window.removeEventListener('resize', updateViewportWidth);
+  }, []);
+
+  const updateViewportWidth = () => {
+    const viewportWidth = window.innerWidth;
+    setviewportWidth(viewportWidth);
+  };
 
   return (
     <section className="mb-8">
       <h2 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h2>
-      <div className="grid grid-cols-2">
-        <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
-        <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
-        <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
-        <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
-        <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
-        <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
-        <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
-        <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
-        <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
-        <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
-      </div>
+      {viewportWidth < 640 ? (
+        <div className="grid grid-cols-2">
+          <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+          <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
+          <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
+          <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
+          <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
+          <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
+          <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
+          <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
+          <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
+          <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
+        </div>
+      ) : (
+        <div className="grid grid-cols-4">
+          <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+          <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
+          <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
+          <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
+          <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
+          <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
+          <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
+          <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
+          <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
+          <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
+        </div>
+      )}
     </section>
   );
 };

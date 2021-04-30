@@ -9,9 +9,9 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps): JSX.Element => (
-  <div className="flex flex-col min-h-screen">
+  <div className="flex flex-col min-h-screen lg:w-248 lg:m-auto">
     <NavigationBar />
-    <main className="flex flex-col flex-1 mt-16">{children}</main>
+    <main className="flex flex-col flex-1">{children}</main>
     <Footer />
   </div>
 );
