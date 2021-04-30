@@ -51,7 +51,11 @@ const Header = () => (
 const CocktailsSection = () => {
   const { ARROW } = icons;
   const { buttonLabel, buttonRoot } = useStyles();
-  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/cocktails/${slug}.jpg` }));
+  const cocktailsImages = cocktails.map(({ slug }) => ({
+    original: `/assets/images/cocktails/${slug}.jpg`,
+    sizes: '100vw',
+    srcSet: `/assets/images/cocktails/${slug}.jpg 100w`
+  }));
   const [cocktailImageCurrentIndex, setCocktailImageCurrentIndex] = useState(0);
 
   return (

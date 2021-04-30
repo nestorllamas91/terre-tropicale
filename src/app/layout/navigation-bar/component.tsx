@@ -30,7 +30,7 @@ const NavigationBar = (): JSX.Element => {
     <Disclosure as="nav" className="relative bg-white shadow">
       {({ open }) => (
         <>
-          <div className="px-4 mx-auto max-w-7xl bg-lime-100 sm:px-6 lg:px-8">
+          <div className="px-4 mx-auto bg-lime-100 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center flex-shrink-0">
                 <Link href="/">
