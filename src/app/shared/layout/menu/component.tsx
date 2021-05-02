@@ -9,7 +9,7 @@ import icons from '@/data/icons.json';
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
-// Comment.
+
 const Menu = (): JSX.Element => {
   const [viewportWidth, setviewportWidth] = useState(0);
   const [{ isOpenMenuSlidable, isOpenMenuSlidableButton }, setOpen] = useState<Open>({
@@ -139,7 +139,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
-          <div className="fixed bottom-0 right-0 flex flex-col w-5/6 space-y-1 h-menu-slidable bg-blueGray-100">
+          <div className="fixed inset-y-0 right-0 flex flex-col w-5/6 h-screen space-y-1 bg-blueGray-100">
             <div className="flex items-center h-16 px-4 bg-lime-100">
               <img src="/assets/logo/logo.svg" className="h-10" />
             </div>

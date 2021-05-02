@@ -6,11 +6,17 @@ import { useEffect } from 'react';
 
 import Maintenance from '@/app/maintenance/component';
 
+const updateViewportHeight = () => {
+  const viewportHeight = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${viewportHeight}px`);
+};
+
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
     document.querySelector('#jss-server-side')?.remove();
+    return () => window.removeEventListener('resize', updateViewportHeight);
   }, []);
 
   return (
