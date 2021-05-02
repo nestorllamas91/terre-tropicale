@@ -1,0 +1,49 @@
+@tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: 'Montserrat SemiBold';
+    font-weight: 600;
+    src: url(/assets/fonts/montserrat-semibold.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Lato Regular';
+    font-weight: 400;
+    src: url(/assets/fonts/lato-regular.ttf) format('truetype');
+  }
+  body {
+    @apply w-full h-full bg-white;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold font-heading;
+  }
+  h1 {
+    @apply text-xl;
+  }
+  h2 {
+    @apply text-base;
+  }
+  h3 {
+    @apply text-xs;
+  }
+  p,
+  span,
+  address,
+  a {
+    @apply font-normal leading-5 opacity-95 font-body;
+  }
+  svg {
+    @apply opacity-95;
+  }
+  address {
+    @apply not-italic;
+  }
+  a {
+    @apply text-lime-600;
+  }
+  a:hover {
+    @apply text-lime-500;
+  }
+}

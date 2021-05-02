@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import Layout from '@/app/layout/component';
+import Layout from '@/app/shared/layout/component';
 
 const useStyles = makeStyles({
   buttonLabel: {
@@ -214,5 +214,5 @@ const FruitsSection = () => {
   );
 };
 
-export default AccueilPage;
 export { ValeursSection };
+export default AccueilPage;

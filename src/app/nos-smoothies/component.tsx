@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Head from 'next/head';
 import { Fragment, useRef, useState } from 'react';
 
-import Layout from '@/app/layout/component';
+import Layout from '@/app/shared/layout/component';
 import smoothies from '@/data/smoothies.json';
 
 const NosSmoothiesPage = (): JSX.Element => (
@@ -27,8 +27,6 @@ const Header = () => (
     </div>
   </header>
 );
-
-type Smoothie = typeof smoothies[number];
 
 const SmoothiesSection = () => {
   const [smoothie, setSmoothie] = useState<Smoothie | null>(null);
@@ -60,11 +58,6 @@ const SmoothiesSection = () => {
       {smoothie && <DialogFruit smoothie={smoothie} handleCloseModal={() => setSmoothie(null)} />}
     </section>
   );
-};
-
-type DialogFruitProps = {
-  smoothie: Smoothie;
-  handleCloseModal: () => void;
 };
 
 const DialogFruit = ({ smoothie: { name, slug, fruitDescription }, handleCloseModal }: DialogFruitProps) => {
@@ -123,6 +116,13 @@ const DialogFruit = ({ smoothie: { name, slug, fruitDescription }, handleCloseMo
       </Dialog>
     </Transition.Root>
   );
+};
+
+type Smoothie = typeof smoothies[number];
+
+type DialogFruitProps = {
+  smoothie: Smoothie;
+  handleCloseModal: () => void;
 };
 
 export default NosSmoothiesPage;
