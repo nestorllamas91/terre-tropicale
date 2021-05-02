@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { ContactDetailsSection } from '@/app/contact/component';
-import Icon from '@/app/icon/component';
+import Icon from '@/app/shared/icon/component';
 import icons from '@/data/icons.json';
 
 const useStyles = makeStyles({

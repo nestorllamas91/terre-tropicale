@@ -11,8 +11,8 @@ import { ChangeEvent, MouseEvent, useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
-import Icon from '@/app/icon/component';
-import Layout from '@/app/layout/component';
+import Icon from '@/app/shared/icon/component';
+import Layout from '@/app/shared/layout/component';
 import icons from '@/data/icons.json';
 
 const useStyles = makeStyles({
@@ -94,7 +94,7 @@ const ContactDetailsSection = (): JSX.Element => {
           <Icon path={OFFICE.path} viewBox={OFFICE.viewBox} className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">ADRESSE POSTALE</span>
         </div>
-        <address>9 Rue des Pruniers, 31150 Gratentour</address>
+        <address>ZAC DES 4 SAISON RUE GEORGE BRASSENS 31140 FONBEAUZARD</address>
       </div>
       <div className="flex flex-row items-center mb-2">
         <div className="flex flex-row items-center mr-3">
@@ -116,14 +116,6 @@ const ContactDetailsSection = (): JSX.Element => {
       </div>
     </section>
   );
-};
-
-type Sender = {
-  name: string;
-  email: string;
-  phone?: string;
-  entity: string;
-  message: string;
 };
 
 const ContactFormSection = () => {
@@ -252,5 +244,13 @@ const ContactFormSection = () => {
   );
 };
 
-export default ContactPage;
+type Sender = {
+  name: string;
+  email: string;
+  phone?: string;
+  entity: string;
+  message: string;
+};
+
 export { ContactDetailsSection };
+export default ContactPage;

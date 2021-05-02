@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { ValeursSection } from '@/app/accueil/component';
-import Layout from '@/app/layout/component';
+import Layout from '@/app/shared/layout/component';
 
 const AProposPage = (): JSX.Element => {
   return (
@@ -32,7 +32,7 @@ const Header = () => (
 const QuiSommesNousSection = () => (
   <section className="mb-8">
     <h2 className="mb-4 text-center">QUI SOMMES-NOUS?</h2>
-    <div className="px-4 mb-4 paragraphs-margin">
+    <div className="px-4 mb-4 paragraph-margin">
       <p>
         Terre Tropicale est née en 2011 de la volonté de partager la culture et les saveurs des produits tropicaux en
         provenance d&rsquo;Amérique Latine. Nous nous spécialisons dans la distribution de pulpe des fruits, un produit
