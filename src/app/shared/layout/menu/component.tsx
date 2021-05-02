@@ -96,7 +96,10 @@ const MenuNavigationBar = ({
             <button
               type="button"
               onClick={handleMenuSlidableButton}
-              className={classNames('z-10 hamburger hamburger--spin', isOpenMenuSlidableButton ? 'is-active' : '')}
+              className={classNames(
+                'focus:outline-none z-10 hamburger hamburger--spin',
+                isOpenMenuSlidableButton ? 'is-active' : ''
+              )}
             >
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
