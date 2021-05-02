@@ -1,4 +1,4 @@
-import '@/app/styles.css';
+import '@/app/styles/index.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -8,6 +8,8 @@ import Maintenance from '@/app/maintenance/component';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     document.querySelector('#jss-server-side')?.remove();
   }, []);
 

@@ -1,4 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.encoding": "utf8"
+  "files.encoding": "utf8",
+  "css.lint.unknownAtRules": "ignore"
 }

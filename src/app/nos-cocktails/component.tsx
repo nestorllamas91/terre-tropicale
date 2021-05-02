@@ -1,19 +1,15 @@
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Head from 'next/head';
 import { useState } from 'react';
 import ImageGallery from 'react-image-gallery';
 
-import Layout from '@/app/layout/component';
+import Icon from '@/app/shared/icon/component';
+import Layout from '@/app/shared/layout/component';
 import cocktails from '@/data/cocktails.json';
+import icons from '@/data/icons.json';
 
 const useStyles = makeStyles({
-  arrowForwardIosIconRoot: {
-    marginRight: '4px',
-    fontSize: '12px',
-    color: '#84cc16'
-  },
   buttonLabel: {
     fontFamily: 'Montserrat SemiBold',
     fontWeight: 600,
@@ -53,8 +49,13 @@ const Header = () => (
 );
 
 const CocktailsSection = () => {
-  const { arrowForwardIosIconRoot, buttonLabel, buttonRoot } = useStyles();
-  const cocktailsImages = cocktails.map(({ slug }) => ({ original: `/assets/images/cocktails/${slug}.jpg` }));
+  const { ARROW } = icons;
+  const { buttonLabel, buttonRoot } = useStyles();
+  const cocktailsImages = cocktails.map(({ slug }) => ({
+    original: `/assets/images/cocktails/${slug}.jpg`,
+    sizes: '100vw',
+    srcSet: `/assets/images/cocktails/${slug}.jpg 100w`
+  }));
   const [cocktailImageCurrentIndex, setCocktailImageCurrentIndex] = useState(0);
 
   return (
@@ -85,7 +86,7 @@ const CocktailsSection = () => {
                     const marginBottomClassName = index === ingredients.length - 1 ? '' : 'mb-1';
                     return (
                       <li key={index} className={`flex items-center ${marginBottomClassName}`}>
-                        <ArrowForwardIosIcon classes={{ root: arrowForwardIosIconRoot }} />
+                        <Icon path={ARROW.path} viewBox={ARROW.viewBox} className="w-3 mr-2" />
                         {ingredient}
                       </li>
                     );
