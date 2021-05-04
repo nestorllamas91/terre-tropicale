@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header className="relative flex mb-8">
-      <img src="/assets/images/headers/header-1.jpg" />
+      <img src="/assets/images/headers/header-1.jpg" className="object-cover w-full smh:h-64" />
       <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-3 page-subtitle">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
@@ -64,8 +64,8 @@ const ServicesSection = () => {
       <h2 className="mb-4 text-center">NOTRE OFFRE DE SERVICES</h2>
       <div className="flex flex-row">
         <div className="relative flex mr-1">
-          <img src="/assets/images/misc/services-1.jpg" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
+          <img src="/assets/images/misc/services-1.jpg" className="object-cover w-full smh:h-56" />
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:pt-24 smh:pt-12 bg-opacity-40">
             <h3 className="mb-1">POUR LES PROS</h3>
             <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -74,8 +74,8 @@ const ServicesSection = () => {
           </div>
         </div>
         <div className="relative flex">
-          <img src="/assets/images/misc/services-2.jpg" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
+          <img src="/assets/images/misc/services-2.jpg" className="object-cover w-full smh:h-56" />
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:pt-24 smh:pt-12 bg-opacity-40">
             <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
             <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -93,7 +93,7 @@ const ValeursSection = (): JSX.Element => (
     <h2 className="mb-4 text-center">NOS VALEURS</h2>
     <div className="flex flex-col sm:flex-row sm:text-center">
       <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
           <img src="/assets/images/misc/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
@@ -105,7 +105,7 @@ const ValeursSection = (): JSX.Element => (
         </div>
       </div>
       <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
           <img src="/assets/images/misc/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
@@ -114,7 +114,7 @@ const ValeursSection = (): JSX.Element => (
         </div>
       </div>
       <div className="flex flex-row items-center sm:flex-col">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
           <img src="/assets/images/misc/valeurs-3.jpg" className="rounded-full" />
         </div>
         <div>
