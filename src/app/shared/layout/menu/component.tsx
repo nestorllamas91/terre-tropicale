@@ -33,8 +33,8 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="flex items-center h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
-      <div className="flex flex-row justify-start flex-auto">
+    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
+      <div className="flex flex-row justify-start flex-1">
         <Link href="/">
           <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
         </Link>
@@ -46,7 +46,7 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
           ))}
         </div>
       )}
-      <div className="flex flex-row justify-end flex-auto space-x-6">
+      <div className="flex flex-row justify-end flex-1 space-x-6">
         <>
           {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
           {viewportWidth < BREAKPOINT_2 && (
@@ -86,7 +86,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
-          <div className="fixed inset-y-0 right-0 flex flex-col h-screen space-y-4 bg-white w-72">
+          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 smh:w-1/2">
             <button onClick={closeMenuSlidable} className="mt-5 ml-auto mr-4 focus:outline-none">
               <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
             </button>

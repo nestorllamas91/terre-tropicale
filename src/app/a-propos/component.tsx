@@ -21,8 +21,8 @@ const AProposPage = (): JSX.Element => {
 
 const Header = () => (
   <header className="relative flex mb-8">
-    <img src="/assets/images/headers/header-3.jpg" />
-    <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
+    <img src="/assets/images/headers/header-3.jpg" className="object-cover w-full smh:h-64" />
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
       <h1 className="mb-2">À PROPOS</h1>
       <p className="page-subtitle">Jus de fruits, smoothies et cocktails tropicaux</p>
       <p className="page-subtitle">Naturel et responsable</p>

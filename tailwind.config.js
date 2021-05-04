@@ -11,11 +11,22 @@ module.exports = {
   purge: ['./src/app/**/component.tsx'],
   theme: {
     extend: {
+      screens: {
+        sm: {
+          raw: '(min-width: 640px) and (orientation: portrait)'
+        },
+        smh: {
+          raw: '(min-width: 640px) and (orientation: landscape)'
+        },
+        lgh: {
+          raw: '(min-width: 1024px) and (orientation: landscape)'
+        }
+      },
+      colors: myColors,
       fontFamily: {
         heading: ['Montserrat SemiBold', 'sans-serif'],
         body: ['Lato Regular', 'sans-serif']
-      },
-      colors: myColors
+      }
     }
   }
 };
