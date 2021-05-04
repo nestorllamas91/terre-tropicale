@@ -33,25 +33,29 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="flex items-center justify-between h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
-      <Link href="/">
-        <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
-      </Link>
+    <div className="flex items-center h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
+      <div className="flex flex-row justify-start flex-auto">
+        <Link href="/">
+          <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
+        </Link>
+      </div>
       {viewportWidth >= BREAKPOINT_2 && (
-        <div className="flex space-x-6">
+        <div className="flex flex-row justify-center flex-auto space-x-4">
           {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
         </div>
       )}
-      {viewportWidth < BREAKPOINT_2 && (
-        <div className="flex space-x-6">
+      <div className="flex flex-row justify-end flex-auto space-x-6">
+        <>
           {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
-          <button onClick={openMenuSlidable} className="focus:outline-none">
-            <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
-          </button>
-        </div>
-      )}
+          {viewportWidth < BREAKPOINT_2 && (
+            <button onClick={openMenuSlidable} className="focus:outline-none">
+              <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
+            </button>
+          )}
+        </>
+      </div>
     </div>
   );
 };
@@ -99,7 +103,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
 const PageMenuNavigationBar = ({ pathname, page, activePage }: PageMenuNavigationBarProps) => (
   <Link href={pathname}>
     <a className={classNames('page-menu-navigation-bar', activePage === pathname ? 'active-page' : 'inactive-page')}>
-      <h2 className="uppercase">{page}</h2>
+      <span className="text-base uppercase font-heading">{page}</span>
     </a>
   </Link>
 );
@@ -108,7 +112,7 @@ const PageMenuSlidable = ({ pathname, page, activePage, icon }: PageMenuSlidable
   <Link href={pathname}>
     <a className={classNames('page-menu-slidable', activePage === pathname ? 'active-page' : 'inactive-page')}>
       <Icon path={icon.path} viewBox={icon.viewBox} className="w-6 mr-3" />
-      <h2 className="uppercase">{page}</h2>
+      <span className="text-base uppercase font-heading">{page}</span>
     </a>
   </Link>
 );
