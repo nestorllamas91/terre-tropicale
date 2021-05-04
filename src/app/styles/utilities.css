@@ -1,9 +1,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .h-menu-slidable {
-    height: calc(var(--vh) * 100);
-  }
   @variants responsive {
     .w-160 {
       width: 40rem;

@@ -4,18 +4,12 @@ import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
 
 import Icon from '@/app/shared/icon/component';
-import icons from '@/data/icons.json';
-
-const classNames = (...classes: string[]) => {
-  return classes.filter(Boolean).join(' ');
-};
+import { BREAKPOINT_2 } from '@/data/constants.json';
+import { CLOSE, COCKTAIL, CONTACT, HOME, INFO, MENU, SMOOTHIE } from '@/data/icons.json';
 
 const Menu = (): JSX.Element => {
   const [viewportWidth, setviewportWidth] = useState(0);
-  const [{ isOpenMenuSlidable, isOpenMenuSlidableButton }, setOpen] = useState<Open>({
-    isOpenMenuSlidable: false,
-    isOpenMenuSlidableButton: false
-  });
+  const [isOpenMenuSlidable, setIsOpenMenuSlidable] = useState(false);
 
   useEffect(() => {
     updateViewportWidth();
@@ -23,97 +17,46 @@ const Menu = (): JSX.Element => {
     return () => window.removeEventListener('resize', updateViewportWidth);
   }, []);
 
-  const updateViewportWidth = () => {
-    const viewportWidth = window.innerWidth;
-    setviewportWidth(viewportWidth);
-  };
-
-  const handleMenuSlidableButton = () => {
-    if (!isOpenMenuSlidableButton) {
-      setOpen({
-        isOpenMenuSlidable: true,
-        isOpenMenuSlidableButton: true
-      });
-    } else {
-      setOpen({
-        isOpenMenuSlidable: false,
-        isOpenMenuSlidableButton: false
-      });
-    }
-  };
-
-  const closeMenuSlidable = () => {
-    setOpen(prevIsOpenMenuSlidable => ({
-      isOpenMenuSlidable: false,
-      isOpenMenuSlidableButton: prevIsOpenMenuSlidable.isOpenMenuSlidableButton
-    }));
-  };
+  const updateViewportWidth = () => setviewportWidth(window.innerWidth);
 
   return (
     <>
-      <MenuNavigationBar
-        viewportWidth={viewportWidth}
-        isOpenMenuSlidableButton={isOpenMenuSlidableButton}
-        handleMenuSlidableButton={handleMenuSlidableButton}
-      />
-      {viewportWidth < 1024 && (
-        <MenuSlidable isOpenMenuSlidable={isOpenMenuSlidable} closeMenuSlidable={closeMenuSlidable} />
+      <MenuNavigationBar viewportWidth={viewportWidth} openMenuSlidable={() => setIsOpenMenuSlidable(true)} />
+      {viewportWidth < BREAKPOINT_2 && (
+        <MenuSlidable isOpenMenuSlidable={isOpenMenuSlidable} closeMenuSlidable={() => setIsOpenMenuSlidable(false)} />
       )}
     </>
   );
 };
 
-const MenuNavigationBar = ({
-  viewportWidth,
-  isOpenMenuSlidableButton,
-  handleMenuSlidableButton
-}: MenuNavigationBarProps) => {
+const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBarProps) => {
   const activePage = useRouter().asPath;
 
   return (
-    <div className="flex justify-between h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
-      <div className="flex items-center flex-shrink-0">
-        <Link href="/">
-          <img src="/assets/logo/logo.svg" className="block w-auto h-10 cursor-pointer" />
-        </Link>
-      </div>
-      <div className="flex sm:space-x-8">
-        {viewportWidth >= 1024 &&
-          [
-            { pathname: '/', page: 'Accueil' },
-            { pathname: '/nos-smoothies', page: 'Nos smoothies' },
-            { pathname: '/nos-cocktails', page: 'Nos cocktails' },
-            { pathname: '/a-propos', page: 'À propos' },
-            { pathname: '/contact', page: 'Contact' }
-          ].map(({ pathname, page }) => (
+    <div className="flex items-center justify-between h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
+      <Link href="/">
+        <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
+      </Link>
+      {viewportWidth >= BREAKPOINT_2 && (
+        <div className="flex space-x-6">
+          {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
-      </div>
-      <div className="flex items-center">
-        {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
-        {viewportWidth < 1024 && (
-          <div className="inline-flex items-center justify-center ml-6">
-            <button
-              type="button"
-              onClick={handleMenuSlidableButton}
-              className={classNames(
-                'focus:outline-none z-10 hamburger hamburger--spin',
-                isOpenMenuSlidableButton ? 'is-active' : ''
-              )}
-            >
-              <span className="hamburger-box">
-                <span className="hamburger-inner"></span>
-              </span>
-            </button>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
+      {viewportWidth < BREAKPOINT_2 && (
+        <div className="flex space-x-6">
+          {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
+          <button onClick={openMenuSlidable} className="focus:outline-none">
+            <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
 const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidableProps) => {
-  const { COCKTAIL, CONTACT, HOME, INFO, SMOOTHIE } = icons;
   const activePage = useRouter().asPath;
 
   return (
@@ -128,7 +71,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Dialog.Overlay className="fixed inset-0 transition-opacity bg-gray-700 bg-opacity-75" />
+          <Dialog.Overlay className="fixed inset-0 h-screen transition-opacity bg-gray-700 bg-opacity-75" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -139,17 +82,11 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
-          <div className="fixed inset-y-0 right-0 flex flex-col w-5/6 h-screen space-y-1 bg-blueGray-100">
-            <div className="flex items-center h-16 px-4 bg-lime-100">
-              <img src="/assets/logo/logo.svg" className="h-10" />
-            </div>
-            {[
-              { pathname: '/', page: 'Accueil', icon: HOME },
-              { pathname: '/nos-smoothies', page: 'Nos smoothies', icon: SMOOTHIE },
-              { pathname: '/nos-cocktails', page: 'Nos cocktails', icon: COCKTAIL },
-              { pathname: '/a-propos', page: 'À propos', icon: INFO },
-              { pathname: '/contact', page: 'Contact', icon: CONTACT }
-            ].map(({ pathname, page, icon }) => (
+          <div className="fixed inset-y-0 right-0 flex flex-col h-screen space-y-4 bg-white w-72">
+            <button onClick={closeMenuSlidable} className="mt-5 ml-auto mr-4 focus:outline-none">
+              <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
+            </button>
+            {pages.map(({ pathname, page, icon }) => (
               <PageMenuSlidable key={pathname} pathname={pathname} page={page} icon={icon} activePage={activePage} />
             ))}
           </div>
@@ -161,14 +98,8 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
 
 const PageMenuNavigationBar = ({ pathname, page, activePage }: PageMenuNavigationBarProps) => (
   <Link href={pathname}>
-    <a
-      className={classNames(
-        'page-menu-nav-bar',
-        activePage === pathname ? 'active-page' : 'inactive-page',
-        'uppercase'
-      )}
-    >
-      {page}
+    <a className={classNames('page-menu-navigation-bar', activePage === pathname ? 'active-page' : 'inactive-page')}>
+      <h2 className="uppercase">{page}</h2>
     </a>
   </Link>
 );
@@ -177,20 +108,26 @@ const PageMenuSlidable = ({ pathname, page, activePage, icon }: PageMenuSlidable
   <Link href={pathname}>
     <a className={classNames('page-menu-slidable', activePage === pathname ? 'active-page' : 'inactive-page')}>
       <Icon path={icon.path} viewBox={icon.viewBox} className="w-6 mr-3" />
-      <span className="uppercase">{page}</span>
+      <h2 className="uppercase">{page}</h2>
     </a>
   </Link>
 );
 
-type Open = {
-  isOpenMenuSlidable: boolean;
-  isOpenMenuSlidableButton: boolean;
+const pages = [
+  { pathname: '/', page: 'Accueil', icon: HOME },
+  { pathname: '/nos-smoothies', page: 'Nos smoothies', icon: SMOOTHIE },
+  { pathname: '/nos-cocktails', page: 'Nos cocktails', icon: COCKTAIL },
+  { pathname: '/a-propos', page: 'À propos', icon: INFO },
+  { pathname: '/contact', page: 'Contact', icon: CONTACT }
+];
+
+const classNames = (...classes: string[]) => {
+  return classes.filter(Boolean).join(' ');
 };
 
 type MenuNavigationBarProps = {
   viewportWidth: number;
-  isOpenMenuSlidableButton: boolean;
-  handleMenuSlidableButton: () => void;
+  openMenuSlidable: () => void;
 };
 
 type MenuSlidableProps = {

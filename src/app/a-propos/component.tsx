@@ -12,6 +12,7 @@ const AProposPage = (): JSX.Element => {
       <Layout>
         <Header />
         <QuiSommesNousSection />
+        {/* Petición de quitarlo, pero lo mantengo. */}
         <ValeursSection />
       </Layout>
     </>
@@ -23,8 +24,8 @@ const Header = () => (
     <img src="/assets/images/headers/header-3.jpg" />
     <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40">
       <h1 className="mb-2">À PROPOS</h1>
-      <p className="mb-1 text-white">Jus de fruits, smoothies et cocktails tropicaux</p>
-      <p className="text-white">Naturel et responsable</p>
+      <p className="page-subtitle">Jus de fruits, smoothies et cocktails tropicaux</p>
+      <p className="page-subtitle">Naturel et responsable</p>
     </div>
   </header>
 );
@@ -45,7 +46,8 @@ const QuiSommesNousSection = () => (
       </p>
       <p>Laissez-vous tenter, dégustez et savourez!</p>
     </div>
-    <img src="/assets/images/misc/qui-sommes-nous.jpg" />
+    {/* Petición de quitarlo. */}
+    {/* <img src="/assets/images/misc/qui-sommes-nous.jpg" /> */}
   </section>
 );
 

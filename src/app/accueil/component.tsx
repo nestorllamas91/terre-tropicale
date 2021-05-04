@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import Layout from '@/app/shared/layout/component';
+import { BREAKPOINT_1 } from '@/data/constants.json';
 
 const useStyles = makeStyles({
   buttonLabel: {
-    fontFamily: 'Montserrat SemiBold',
-    fontWeight: 600,
-    fontSize: '10px',
+    fontFamily: 'Lato Regular',
+    fontWeight: 400,
+    fontSize: '14px',
     color: 'white'
   },
   buttonRoot: {
@@ -44,10 +45,10 @@ const Header = () => {
       <img src="/assets/images/headers/header-1.jpg" />
       <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
-        <p className="mb-3 text-white">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
+        <p className="mb-3 page-subtitle">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
         <Link href="/contact">
           <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-            CONTACTEZ-NOUS
+            Contactez-nous
           </Button>
         </Link>
       </div>
@@ -66,9 +67,9 @@ const ServicesSection = () => {
           <img src="/assets/images/misc/services-1.jpg" />
           <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
             <h3 className="mb-1">POUR LES PROS</h3>
-            <p className="mb-2 text-sm text-white">Innovez et fidélisez votre clientèle</p>
+            <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-              DÉTAILS
+              Détails
             </Button>
           </div>
         </div>
@@ -76,9 +77,9 @@ const ServicesSection = () => {
           <img src="/assets/images/misc/services-2.jpg" />
           <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:py-24 bg-opacity-40">
             <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
-            <p className="mb-2 text-sm text-white">Surprenez vos convives</p>
+            <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-              DÉTAILS
+              Détails
             </Button>
           </div>
         </div>
@@ -91,27 +92,25 @@ const ValeursSection = (): JSX.Element => (
   <section className="px-4 py-3 mb-8 sm:px-10">
     <h2 className="mb-4 text-center">NOS VALEURS</h2>
     <div className="flex flex-col sm:flex-row sm:text-center">
-      <div className="flex flex-row items-center mb-2.5 sm:flex-col sm:mr-3 sm:mb-0">
+      <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
         <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
           <img src="/assets/images/misc/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">UNE PULPE DE FRUIT AUTHENTIQUE</h3>
-          <p className="text-xs">
+          <p>
             Notre pulpe est issue des fruits rigoureusement sélectionnés, récoltés à maturité optimale, traités sur
             place.
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center mb-2.5 sm:flex-col sm:mr-3 sm:mb-0">
+      <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
         <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0">
           <img src="/assets/images/misc/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">DES SAVEURS TROPICALES UNIQUES</h3>
-          <p className="text-xs">
-            Nous proposons une multitude de goûts originaux qui attendent d&rsquo;être découverts.
-          </p>
+          <p>Nous proposons une multitude de goûts originaux qui attendent d&rsquo;être découverts.</p>
         </div>
       </div>
       <div className="flex flex-row items-center sm:flex-col">
@@ -120,7 +119,7 @@ const ValeursSection = (): JSX.Element => (
         </div>
         <div>
           <h3 className="mb-1 text-lime-500">NOTRE DÉMARCHE ÉTHIQUE ET SOCIALE</h3>
-          <p className="text-xs">
+          <p>
             Nous promouvons les cultures et l&rsquo;emploi local. Nos pulpes permettent à 2500 familles de producteurs
             colombiens.
           </p>
@@ -134,28 +133,28 @@ const AvantagesSection = () => (
   <section className="mb-8">
     <h2 className="mb-4 text-center">LES AVANTAGES PRODUIT</h2>
     <div className="relative flex">
-      <img src="/assets/images/misc/avantages.jpg" className="sm:object-cover sm:w-full sm:h-64" />
-      <div className="absolute flex flex-col w-full h-full px-4 py-3 text-sm text-white bg-black bg-opacity-40 sm:flex-row sm:px-10 sm:pt-20 sm:text-center">
+      <img src="/assets/images/misc/avantages.jpg" className="object-cover w-full h-64" />
+      <div className="absolute flex flex-col justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40 sm:flex-row sm:px-10 sm:pt-16 sm:text-center">
         <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
             1
           </span>
           <p className="text-white">Des fruits récoltés à maturité optimale</p>
         </div>
         <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
             2
           </span>
           <p className="text-white">Des goûts authentiques avec de grandes qualités nutritionnelles</p>
         </div>
         <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
             3
           </span>
           <p className="text-white">Préparation simple et rapide</p>
         </div>
         <div className="flex flex-row items-center sm:flex-col">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 text-black rounded-full bg-lime-500 sm:mr-0 sm:mb-1">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
             4
           </span>
           <p className="text-white">Un grain de temps: pas de lavage ni d&rsquo;épluchage des fruits</p>
@@ -183,7 +182,7 @@ const FruitsSection = () => {
   return (
     <section className="mb-8">
       <h2 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h2>
-      {viewportWidth < 640 ? (
+      {viewportWidth < BREAKPOINT_1 ? (
         <div className="grid grid-cols-2">
           <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
           <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
