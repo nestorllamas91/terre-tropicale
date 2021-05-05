@@ -42,8 +42,8 @@ const Header = () => {
 
   return (
     <header className="relative flex mb-8">
-      <img src="/assets/images/headers/header-1.jpg" className="object-cover w-full smh:h-64" />
-      <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
+      <img src="/assets/images/headers/header-1.jpg" className="object-cover w-full h-auto mh:h-64 th:h-auto" />
+      <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-3 page-subtitle">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
         <Link href="/contact">
@@ -64,8 +64,8 @@ const ServicesSection = () => {
       <h2 className="mb-4 text-center">NOTRE OFFRE DE SERVICES</h2>
       <div className="flex flex-row">
         <div className="relative flex mr-1">
-          <img src="/assets/images/misc/services-1.jpg" className="object-cover w-full smh:h-56" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:pt-24 smh:pt-12 bg-opacity-40">
+          <img src="/assets/images/misc/services-1.jpg" className="object-cover w-full mh:h-56" />
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
             <h3 className="mb-1">POUR LES PROS</h3>
             <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -74,8 +74,8 @@ const ServicesSection = () => {
           </div>
         </div>
         <div className="relative flex">
-          <img src="/assets/images/misc/services-2.jpg" className="object-cover w-full smh:h-56" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black sm:px-10 sm:pt-24 smh:pt-12 bg-opacity-40">
+          <img src="/assets/images/misc/services-2.jpg" className="object-cover w-full mh:h-56" />
+          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
             <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
             <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
             <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
@@ -89,11 +89,11 @@ const ServicesSection = () => {
 };
 
 const ValeursSection = (): JSX.Element => (
-  <section className="px-4 py-3 mb-8 sm:px-10">
+  <section className="px-4 py-3 mb-8 tv:px-10 mh:px-4">
     <h2 className="mb-4 text-center">NOS VALEURS</h2>
-    <div className="flex flex-col sm:flex-row sm:text-center">
-      <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
+    <div className="flex flex-col mh:flex-row mh:text-center th:flex-row th:text-center">
+      <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
@@ -104,8 +104,8 @@ const ValeursSection = (): JSX.Element => (
           </p>
         </div>
       </div>
-      <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3 sm:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
+      <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
@@ -113,8 +113,8 @@ const ValeursSection = (): JSX.Element => (
           <p>Nous proposons une multitude de goûts originaux qui attendent d&rsquo;être découverts.</p>
         </div>
       </div>
-      <div className="flex flex-row items-center sm:flex-col">
-        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full sm:mb-3 sm:mr-0 lgh:w-32 lgh:h-32">
+      <div className="flex flex-row items-center flex-1 mh:flex-col th:flex-col">
+        <div className="flex-none w-24 h-24 p-1 mr-2 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-3.jpg" className="rounded-full" />
         </div>
         <div>
@@ -134,27 +134,27 @@ const AvantagesSection = () => (
     <h2 className="mb-4 text-center">LES AVANTAGES PRODUIT</h2>
     <div className="relative flex">
       <img src="/assets/images/misc/avantages.jpg" className="object-cover w-full h-64" />
-      <div className="absolute flex flex-col justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40 sm:flex-row sm:px-10 sm:pt-16 sm:text-center">
-        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
+      <div className="absolute flex flex-col justify-center w-full h-full px-4 py-3 text-white bg-black bg-opacity-40 tv:px-10 mh:flex-row mh:px-10 mh:pt-16 mh:text-center th:flex-row th:px-10 th:pt-16 th:text-center">
+        <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 tv:mr-4 mh:mr-0 mh:mb-3 th:mr-0 th:mb-3">
             1
           </span>
           <p className="text-white">Des fruits récoltés à maturité optimale</p>
         </div>
-        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
+        <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 tv:mr-4 mh:mr-0 mh:mb-3 th:mr-0 th:mb-3">
             2
           </span>
           <p className="text-white">Des goûts authentiques avec de grandes qualités nutritionnelles</p>
         </div>
-        <div className="flex flex-row items-center mb-4 sm:flex-col sm:mr-3">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
+        <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 tv:mr-4 mh:mr-0 mh:mb-3 th:mr-0 th:mb-3">
             3
           </span>
           <p className="text-white">Préparation simple et rapide</p>
         </div>
-        <div className="flex flex-row items-center sm:flex-col">
-          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 sm:mr-0 sm:mb-1">
+        <div className="flex flex-row items-center flex-1 mh:flex-col mh:mb-0 th:flex-col th:mr-3 th:mb-0">
+          <span className="flex flex-row items-center justify-center flex-none w-10 h-10 mr-4 font-bold text-white border-2 rounded-full border-lime-700 bg-lime-500 tv:mr-4 mh:mr-0 mh:mb-3 th:mr-0 th:mb-3">
             4
           </span>
           <p className="text-white">Un grain de temps: pas de lavage ni d&rsquo;épluchage des fruits</p>
@@ -175,8 +175,7 @@ const FruitsSection = () => {
   }, []);
 
   const updateViewportWidth = () => {
-    const viewportWidth = window.innerWidth;
-    setviewportWidth(viewportWidth);
+    setviewportWidth(window.innerWidth);
   };
 
   return (
@@ -184,29 +183,129 @@ const FruitsSection = () => {
       <h2 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h2>
       {viewportWidth < BREAKPOINT_1 ? (
         <div className="grid grid-cols-2">
-          <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
-          <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
-          <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
-          <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
-          <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
-          <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
-          <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
-          <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
-          <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
-          <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Goyave
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/mure-andine.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mûre Andine
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/maracuja.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Maracuja
+            </span>
+          </div>
+          <div className="relative flex row-span-2">
+            <img src={`${fruitsImagesPath}/mangue.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mangue
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/papaye.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Papaye
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/lulo.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Lulo
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/corossol.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Corossol
+            </span>
+          </div>
+          <div className="relative flex col-span-2">
+            <img src={`${fruitsImagesPath}/tamarillo.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Tamarillo
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/ananas.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Ananas
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/mandarine.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mandarine
+            </span>
+          </div>
         </div>
       ) : (
         <div className="grid grid-cols-4">
-          <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
-          <img src={`${fruitsImagesPath}/mangue.jpg`} title="Mangue" className="row-span-2" />
-          <img src={`${fruitsImagesPath}/mure-andine.jpg`} title="Mûre Andine" />
-          <img src={`${fruitsImagesPath}/maracuja.jpg`} title="Maracuja" />
-          <img src={`${fruitsImagesPath}/papaye.jpg`} title="Papaye" />
-          <img src={`${fruitsImagesPath}/lulo.jpg`} title="Lulo" />
-          <img src={`${fruitsImagesPath}/corossol.jpg`} title="Corossol" />
-          <img src={`${fruitsImagesPath}/ananas.jpg`} title="Ananas" />
-          <img src={`${fruitsImagesPath}/mandarine.jpg`} title="Mandarine" />
-          <img src={`${fruitsImagesPath}/tamarillo.jpg`} title="Tamarillo" className="col-span-2" />
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Goyave
+            </span>
+          </div>
+          <div className="relative flex row-span-2">
+            <img src={`${fruitsImagesPath}/mangue.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mangue
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/mure-andine.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mûre Andine
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/maracuja.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Maracuja
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/papaye.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Papaye
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/lulo.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Lulo
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/corossol.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Corossol
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/ananas.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Ananas
+            </span>
+          </div>
+          <div className="relative flex">
+            <img src={`${fruitsImagesPath}/mandarine.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Mandarine
+            </span>
+          </div>
+          <div className="relative flex col-span-2">
+            <img src={`${fruitsImagesPath}/tamarillo.jpg`} />
+            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
+              Tamarillo
+            </span>
+          </div>
         </div>
       )}
     </section>

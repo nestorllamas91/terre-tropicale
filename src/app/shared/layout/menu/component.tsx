@@ -17,7 +17,9 @@ const Menu = (): JSX.Element => {
     return () => window.removeEventListener('resize', updateViewportWidth);
   }, []);
 
-  const updateViewportWidth = () => setviewportWidth(window.innerWidth);
+  const updateViewportWidth = () => {
+    setviewportWidth(window.innerWidth);
+  };
 
   return (
     <>
@@ -33,7 +35,7 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 sm:px-6 lg:px-8">
+    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 tv:px-6 th:px-8">
       <div className="flex flex-row justify-start flex-1">
         <Link href="/">
           <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
@@ -50,7 +52,7 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
         <>
           {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
           {viewportWidth < BREAKPOINT_2 && (
-            <button onClick={openMenuSlidable} className="focus:outline-none">
+            <button onClick={openMenuSlidable} className="p-1 focus:outline-none rounded-lg hover:bg-lime-300">
               <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
             </button>
           )}
@@ -79,19 +81,29 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="transform transition ease-out duration-500 sm:duration-700"
+          enter="transform transition ease-out duration-500 tv:duration-700"
           enterFrom="translate-x-full"
           enterTo="translate-x-0"
-          leave="transform transition ease-out duration-500 sm:duration-700"
+          leave="transform transition ease-out duration-500 tv:duration-700"
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
-          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 smh:w-1/2">
-            <button onClick={closeMenuSlidable} className="mt-5 ml-auto mr-4 focus:outline-none">
+          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2">
+            <button
+              onClick={closeMenuSlidable}
+              className="mt-5 ml-auto mr-4 p-1 rounded-lg hover:bg-lime-300 focus:outline-none"
+            >
               <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
             </button>
             {pages.map(({ pathname, page, icon }) => (
-              <PageMenuSlidable key={pathname} pathname={pathname} page={page} icon={icon} activePage={activePage} />
+              <PageMenuSlidable
+                key={pathname}
+                pathname={pathname}
+                page={page}
+                activePage={activePage}
+                icon={icon}
+                closeMenuSlidable={closeMenuSlidable}
+              />
             ))}
           </div>
         </Transition.Child>
@@ -108,14 +120,25 @@ const PageMenuNavigationBar = ({ pathname, page, activePage }: PageMenuNavigatio
   </Link>
 );
 
-const PageMenuSlidable = ({ pathname, page, activePage, icon }: PageMenuSlidableProps) => (
-  <Link href={pathname}>
-    <a className={classNames('page-menu-slidable', activePage === pathname ? 'active-page' : 'inactive-page')}>
-      <Icon path={icon.path} viewBox={icon.viewBox} className="w-6 mr-3" />
-      <span className="text-base uppercase font-heading">{page}</span>
-    </a>
-  </Link>
-);
+const PageMenuSlidable = ({ pathname, page, activePage, icon, closeMenuSlidable }: PageMenuSlidableProps) => {
+  const handleClick = (pathname: string) => {
+    if (pathname === activePage) {
+      closeMenuSlidable();
+    }
+  };
+
+  return (
+    <Link href={pathname}>
+      <a
+        onClick={() => handleClick(pathname)}
+        className={classNames('page-menu-slidable', activePage === pathname ? 'active-page' : 'inactive-page')}
+      >
+        <Icon path={icon.path} viewBox={icon.viewBox} className="w-6 mr-3" />
+        <span className="text-base uppercase font-heading">{page}</span>
+      </a>
+    </Link>
+  );
+};
 
 const pages = [
   { pathname: '/', page: 'Accueil', icon: HOME },
@@ -153,6 +176,7 @@ type PageMenuSlidableProps = {
     path: string;
     viewBox: string;
   };
+  closeMenuSlidable: () => void;
 };
 
 export default Menu;
