@@ -39,8 +39,8 @@ const NosCocktailsPage = (): JSX.Element => (
 
 const Header = () => (
   <header className="relative flex mb-8">
-    <img src="/assets/images/headers/header-2.jpg" className="object-cover w-full smh:h-64" />
-    <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 sm:px-10 sm:py-24">
+    <img src="/assets/images/headers/header-2.jpg" className="object-cover w-full h-auto mh:h-64 th:h-auto" />
+    <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
       <h1 className="mb-2">NOS COCKTAILS</h1>
       <p className="page-subtitle">Cool fruit cocktails</p>
       <p className="page-subtitle">Préparation sans alcool, 33 cl</p>

@@ -20,19 +20,19 @@
     @apply font-semibold font-heading;
   }
   h1 {
-    @apply text-xl sm:text-2xl;
+    @apply text-xl tv:text-2xl;
   }
   h2 {
-    @apply text-base sm:text-lg;
+    @apply text-base tv:text-lg;
   }
   h3 {
-    @apply text-sm sm:text-base;
+    @apply text-sm tv:text-base;
   }
   p,
   span,
   address,
   a {
-    @apply text-sm font-normal opacity-95 font-body sm:text-base;
+    @apply text-sm font-normal opacity-95 font-body tv:text-base;
   }
   svg {
     @apply opacity-95;
