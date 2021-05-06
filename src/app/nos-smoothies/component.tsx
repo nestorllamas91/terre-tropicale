@@ -42,16 +42,10 @@ const SmoothiesSection = () => {
             onClick={() => setSmoothie(smoothie)}
             className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
           >
-            <div className="flex-shrink-0">
-              <img src={`/assets/images/smoothies/${slug}.jpg`} />
-            </div>
-            <div className="flex flex-col justify-between flex-1 p-6 bg-white">
-              <div className="flex-1">
-                <div className="block mt-2">
-                  <h3 className="font-semibold text-gray-900 font-heading">{name}</h3>
-                  <p className="mt-3 text-gray-500">{smoothieDescription}</p>
-                </div>
-              </div>
+            <img src={`/assets/images/smoothies/${slug}.jpg`} />
+            <div className="flex flex-col justify-between flex-1 p-6 bg-warmGray-50">
+              <h3 className="text-lime-500">{name}</h3>
+              <p className="mt-3 text-gray-500">{smoothieDescription}</p>
             </div>
           </figure>
         );
