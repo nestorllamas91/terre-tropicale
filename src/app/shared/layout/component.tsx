@@ -7,7 +7,7 @@ import Menu from '@/app/shared/layout/menu/component';
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <div className="flex flex-col min-h-screen">
     <Menu />
-    <main className="flex flex-col flex-1 pt-20 th:w-248 th:m-auto">{children}</main>
+    <main className="flex flex-col flex-1 pt-24 th:w-248 th:m-auto">{children}</main>
     <Footer />
   </div>
 );

@@ -60,7 +60,7 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
     viewportWidth: 0,
     viewportHeight: 0
   });
-  const dialogRef = useRef<HTMLDivElement>(null);
+  const refModalFruit = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     updateViewportDimensions();
@@ -75,8 +75,8 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
   if (!(viewportWidth && viewportHeight)) return null;
   return (
     <Transition.Root show={smoothie ? true : false} as={Fragment}>
-      <Dialog as="div" static initialFocus={dialogRef} open={smoothie ? true : false} onClose={closeFruit}>
-        <div ref={dialogRef} className="fixed inset-0 z-20 flex justify-center items-center px-10 overflow-y-auto">
+      <Dialog as="div" static initialFocus={refModalFruit} open={smoothie ? true : false} onClose={closeFruit}>
+        <div ref={refModalFruit} className="fixed inset-0 z-20 flex justify-center items-center px-10 overflow-y-auto">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -88,8 +88,6 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
           >
             <Dialog.Overlay className="fixed inset-0 h-screen transition-opacity bg-gray-700 bg-opacity-75" />
           </Transition.Child>
-          {/* This element is to trick the browser into centering the modal contents. */}
-          <span className="hidden h-screen align-middle">&#8203;</span>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

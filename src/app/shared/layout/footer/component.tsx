@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
 
 import { ContactDetailsSection } from '@/app/contact/component';
-import Button from '@/app/shared/button/component';
 import Icon from '@/app/shared/icon/component';
-import { CONTACT, FACEBOOK, INSTAGRAM, TWITTER } from '@/data/icons.json';
+import { FACEBOOK, INSTAGRAM, TWITTER } from '@/data/icons.json';
 
 const Footer = (): JSX.Element => {
   const activePage = useRouter().asPath;
@@ -23,7 +22,9 @@ const Footer1 = () => {
     <div className="flex flex-col items-center px-4 mb-8">
       <h2 className="mb-4 text-center">VOUS ÊTES INTÉRESSÉ</h2>
       <p className="mb-3">Inscrivez-vous pour une degustation gratuite</p>
-      <Button action="Demandez votre devis maintenant" icon={CONTACT} onClick={() => router.push('/contact')} />
+      <button onClick={() => router.push('/contact')} className="button">
+        Demandez votre devis maintenant
+      </button>
       <div className="mt-6">
         <ContactDetailsSection />
       </div>

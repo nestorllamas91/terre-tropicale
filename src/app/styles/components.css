@@ -1,6 +1,9 @@
 @tailwind components;
 
 @layer components {
+  .button {
+    @apply px-4 py-1.5 rounded text-white bg-lime-500 hover:bg-lime-600 focus:outline-none;
+  }
   .page-menu-slidable {
     @apply flex items-center mt-1 pl-3 pr-4 border-l-4;
   }

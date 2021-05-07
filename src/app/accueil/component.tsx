@@ -2,10 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import Button from '@/app/shared/button/component';
 import Layout from '@/app/shared/layout/component';
 import { BREAKPOINT_1 } from '@/data/constants.json';
-import { CONTACT, INFO } from '@/data/icons.json';
 
 const AccueilPage = (): JSX.Element => (
   <>
@@ -31,7 +29,9 @@ const Header = () => {
       <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-3 page-subtitle">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
-        <Button action="Contactez-nous" icon={CONTACT} onClick={() => router.push('/contact')} />
+        <button onClick={() => router.push('/contact')} className="button">
+          Contactez-nous
+        </button>
       </div>
     </header>
   );
@@ -46,7 +46,7 @@ const ServicesSection = () => (
         <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
           <h3 className="mb-1">POUR LES PROS</h3>
           <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
-          <Button action="Détails" icon={INFO} onClick={() => console.log('pending')} />
+          <button className="button">Détails</button>
         </div>
       </div>
       <div className="relative flex">
@@ -54,7 +54,7 @@ const ServicesSection = () => (
         <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
           <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
           <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
-          <Button action="Détails" icon={INFO} onClick={() => console.log('pending')} />
+          <button className="button">Détails</button>
         </div>
       </div>
     </div>

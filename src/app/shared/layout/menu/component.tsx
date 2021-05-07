@@ -35,28 +35,26 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 shadow-md">
-      <div className="flex flex-row justify-start flex-1">
+    <div className="z-10 fixed top-0 flex justify-center items-center w-full h-20 px-8 py-4 bg-lime-100 shadow-md">
+      <div className="flex flex-row justify-start flex-none w-48">
         <Link href="/">
-          <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
+          <img src="/assets/logo/logo.svg" className="cursor-pointer" />
         </Link>
       </div>
       {viewportWidth >= BREAKPOINT_2 && (
-        <div className="flex flex-row justify-center flex-1 space-x-6 whitespace-nowrap">
+        <div className="flex flex-row justify-center flex-auto space-x-4 whitespace-nowrap">
           {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
         </div>
       )}
-      <div className="flex flex-row justify-end flex-1 space-x-6">
-        <>
-          {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
-          {viewportWidth < BREAKPOINT_2 && (
-            <button onClick={openMenuSlidable} className="p-1 focus:outline-none rounded-lg hover:bg-lime-300">
-              <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
-            </button>
-          )}
-        </>
+      <div className="flex flex-row justify-end items-center flex-auto space-x-6 th:flex-none w-48 th:w-auto xl:w-48">
+        {/* <Icon path={SHOPPING_CART.path} viewBox={SHOPPING_CART.viewBox} className="h-6" /> */}
+        {viewportWidth < BREAKPOINT_2 && (
+          <button onClick={openMenuSlidable} className="p-2 rounded hover:bg-lime-300 focus:outline-none">
+            <Icon path={MENU.path} viewBox={MENU.viewBox} className="h-6" />
+          </button>
+        )}
       </div>
     </div>
   );
@@ -70,10 +68,10 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
       <Dialog as="div" static open={isOpenMenuSlidable} onClose={closeMenuSlidable}>
         <Transition.Child
           as={Fragment}
-          enter="ease-in-out duration-500"
+          enter="ease-in-out duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="ease-in-out duration-500"
+          leave="ease-in-out duration-300"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
@@ -81,17 +79,17 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="transform transition ease-out duration-500 tv:duration-700"
+          enter="transform transition ease-out duration-300"
           enterFrom="translate-x-full"
           enterTo="translate-x-0"
-          leave="transform transition ease-out duration-500 tv:duration-700"
+          leave="transform transition ease-out duration-300"
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
         >
-          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2">
+          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2 tv:w-72">
             <button
               onClick={closeMenuSlidable}
-              className="mt-5 ml-auto mr-4 p-1 rounded-lg hover:bg-lime-300 focus:outline-none"
+              className="ml-auto mr-4 mt-5 p-2 rounded hover:bg-lime-300 focus:outline-none"
             >
               <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
             </button>
