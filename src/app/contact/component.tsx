@@ -6,7 +6,7 @@ import { Fragment, MouseEvent, useRef, useState } from 'react';
 import Icon from '@/app/shared/icon/component';
 import Layout from '@/app/shared/layout/component';
 import { CLOCK, EMAIL, ERROR, OFFICE, PHONE, SUCCESS, WARNING } from '@/data/icons.json';
-
+//
 const ContactPage = (): JSX.Element => (
   <>
     <Head>
