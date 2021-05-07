@@ -44,8 +44,8 @@ const SmoothiesSection = () => {
           >
             <img src={`/assets/images/smoothies/${slug}.jpg`} />
             <div className="flex flex-col justify-between flex-1 p-6 bg-warmGray-50">
-              <h3 className="text-lime-500">{name}</h3>
-              <p className="mt-3 text-gray-500">{smoothieDescription}</p>
+              <h3 className="text-lime-600">{name}</h3>
+              <p className="mt-3">{smoothieDescription}</p>
             </div>
           </figure>
         );

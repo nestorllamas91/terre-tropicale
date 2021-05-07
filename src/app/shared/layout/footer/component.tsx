@@ -1,26 +1,9 @@
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { ContactDetailsSection } from '@/app/contact/component';
+import Button from '@/app/shared/button/component';
 import Icon from '@/app/shared/icon/component';
-import { FACEBOOK, INSTAGRAM, TWITTER } from '@/data/icons.json';
-
-const useStyles = makeStyles({
-  buttonLabel: {
-    fontFamily: 'Lato Regular',
-    fontWeight: 400,
-    fontSize: '14px',
-    color: 'white'
-  },
-  buttonRoot: {
-    backgroundColor: '#84cc16',
-    '&:hover': {
-      backgroundColor: '#65a30d'
-    }
-  }
-});
+import { CONTACT, FACEBOOK, INSTAGRAM, TWITTER } from '@/data/icons.json';
 
 const Footer = (): JSX.Element => {
   const activePage = useRouter().asPath;
@@ -34,17 +17,13 @@ const Footer = (): JSX.Element => {
 };
 
 const Footer1 = () => {
-  const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className="flex flex-col items-center px-4 mb-8">
       <h2 className="mb-4 text-center">VOUS ÊTES INTÉRESSÉ</h2>
       <p className="mb-3">Inscrivez-vous pour une degustation gratuite</p>
-      <Link href="/contact">
-        <Button variant="contained" classes={{ root: classes.buttonRoot, label: classes.buttonLabel }}>
-          Demandez votre devis maintenant
-        </Button>
-      </Link>
+      <Button action="Demandez votre devis maintenant" icon={CONTACT} onClick={() => router.push('/contact')} />
       <div className="mt-6">
         <ContactDetailsSection />
       </div>

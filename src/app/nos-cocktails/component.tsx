@@ -1,27 +1,9 @@
-// import Button from '@material-ui/core/Button';
-// import { makeStyles } from '@material-ui/core/styles';
 import Head from 'next/head';
 
 import Icon from '@/app/shared/icon/component';
 import Layout from '@/app/shared/layout/component';
 import cocktails from '@/data/cocktails.json';
 import { ARROW } from '@/data/icons.json';
-
-// const useStyles = makeStyles({
-//   buttonLabel: {
-//     fontFamily: 'Lato Regular',
-//     fontWeight: 400,
-//     fontSize: '12px',
-//     color: 'white'
-//   },
-//   buttonRoot: {
-//     marginTop: 'auto',
-//     backgroundColor: '#84cc16',
-//     '&:hover': {
-//       backgroundColor: '#65a30d'
-//     }
-//   }
-// });
 
 const NosCocktailsPage = (): JSX.Element => (
   <>
@@ -46,39 +28,31 @@ const Header = () => (
   </header>
 );
 
-const CocktailsSection = () => {
-  // const { buttonLabel, buttonRoot } = useStyles();
-
-  return (
-    <section className="grid grid-cols-1 gap-4 mb-8 px-4 mh:grid-cols-2 tv:grid-cols-2 th:grid-cols-2 th:px-0">
-      {cocktails.map((cocktail, index) => {
-        const { name, slug, ingredients } = cocktail;
-        return (
-          <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow-lg">
-            <img src={`/assets/images/cocktails/${slug}.jpg`} className="object-cover w-1/2" />
-            <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
-              <h3 className="mb-2 text-lime-500">{name}</h3>
-              <ul className="space-y-1">
-                {ingredients.map(ingredient => (
-                  <li key={ingredient} className="flex flex-row items-center">
-                    <Icon path={ARROW.path} viewBox={ARROW.viewBox} className="w-3 mr-2" />
-                    <span>{ingredient}</span>
-                  </li>
-                ))}
-              </ul>
-              {/* <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-                En savoir plus
-              </Button> */}
-            </div>
-          </figure>
-        );
-      })}
-    </section>
-  );
-};
+const CocktailsSection = () => (
+  <section className="grid grid-cols-1 gap-4 mb-8 px-4 mh:grid-cols-2 tv:grid-cols-2 th:grid-cols-2 th:px-0">
+    {cocktails.map((cocktail, index) => {
+      const { name, slug, ingredients } = cocktail;
+      return (
+        <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow-lg">
+          <img src={`/assets/images/cocktails/${slug}.jpg`} className="object-cover w-1/2" />
+          <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
+            <h3 className="mb-2 text-lime-600">{name}</h3>
+            <ul className="space-y-1">
+              {ingredients.map(ingredient => (
+                <li key={ingredient} className="flex flex-row items-center">
+                  <Icon path={ARROW.path} viewBox={ARROW.viewBox} className="w-3 mr-2" />
+                  <span>{ingredient}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </figure>
+      );
+    })}
+  </section>
+);
 
 // const CocktailsSection = () => {
-//   const { buttonLabel, buttonRoot } = useStyles();
 //   const cocktailsImages = cocktails.map(({ slug }) => ({
 //     original: `/assets/images/cocktails/${slug}.jpg`,
 //     sizes: '100vw',
@@ -118,9 +92,6 @@ const CocktailsSection = () => {
 //                     );
 //                   })}
 //                 </ul>
-//                 <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-//                   En savoir plus
-//                 </Button>
 //               </div>
 //             </div>
 //           );
