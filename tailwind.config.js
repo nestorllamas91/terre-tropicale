@@ -13,13 +13,14 @@ module.exports = {
       mv: { raw: '(max-width: 639px)' },
       mh: { raw: '(min-width: 640px) and (max-width: 1023px) and (orientation: landscape)' },
       tv: { raw: '(min-width: 640px) and (max-width: 1023px) and (orientation: portrait)' },
-      th: { raw: '(min-width: 1024px)' }
+      th: { raw: '(min-width: 1024px)' },
+      xl: { raw: '(min-width: 1280px)' }
     },
+    colors: myColors,
     fontFamily: {
       heading: ['Montserrat SemiBold', 'sans-serif'],
       body: ['Lato Regular', 'sans-serif']
-    },
-    colors: myColors
+    }
   },
   plugins: [require('@tailwindcss/forms')],
   purge: ['./src/app/**/component.tsx']
