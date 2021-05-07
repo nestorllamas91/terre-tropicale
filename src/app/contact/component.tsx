@@ -1,39 +1,13 @@
-import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import Head from 'next/head';
 import Router from 'next/router';
-import { ChangeEvent, MouseEvent, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 
+import Button from '@/app/shared/button/component';
 import Icon from '@/app/shared/icon/component';
 import Layout from '@/app/shared/layout/component';
-import { CLOCK, EMAIL, OFFICE, PHONE } from '@/data/icons.json';
-
-const useStyles = makeStyles({
-  buttonLabel: {
-    fontFamily: 'Lato Regular',
-    fontWeight: 400,
-    fontSize: '14px',
-    color: 'white'
-  },
-  buttonRoot: {
-    backgroundColor: '#84cc16',
-    '&:hover': {
-      backgroundColor: '#65a30d'
-    }
-  },
-  formFieldRoot: {
-    '&:not(:last-child)': {
-      marginBottom: '8px'
-    }
-  }
-});
+import { CLOCK, EMAIL, OFFICE, PHONE, SEND } from '@/data/icons.json';
 
 const ContactPage = (): JSX.Element => (
   <>
@@ -45,7 +19,7 @@ const ContactPage = (): JSX.Element => (
       <div className="px-4">
         <IntroSection />
         <ContactFormSection />
-        <div className="mb-8">
+        <div className="flex justify-center mb-8">
           <ContactDetailsSection />
         </div>
       </div>
@@ -74,19 +48,17 @@ const IntroSection = () => (
 );
 
 const ContactFormSection = () => {
-  const { formFieldRoot, buttonLabel, buttonRoot } = useStyles();
   const [sender, setSender] = useState<Sender>({
     name: '',
     email: '',
     phone: '',
-    entity: '',
+    entity: 'Particulier',
     message: ''
   });
-  const { name, email, phone, entity, message } = sender;
   const MySwal = withReactContent(Swal);
 
-  const handleForm = async (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  const handleForm = async (e: MouseEvent<HTMLButtonElement>): Promise<void> => {
+    e.preventDefault();
     MySwal.fire({
       icon: 'warning',
       title: 'Are you sure?',
@@ -138,84 +110,103 @@ const ContactFormSection = () => {
   };
 
   return (
-    <section className="mb-8">
-      <form className="flex flex-col">
-        <TextField
-          label="Nom"
-          value={name}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => setSender({ ...sender, name: event.target.value })}
-          variant="outlined"
-          fullWidth
-          required
-          classes={{ root: formFieldRoot }}
-        />
-        <TextField
-          label="Adresse email"
-          value={email}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => setSender({ ...sender, email: event.target.value })}
-          variant="outlined"
-          fullWidth
-          required
-          classes={{ root: formFieldRoot }}
-        />
-        <TextField
-          label="Téléphone"
-          value={phone}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => setSender({ ...sender, phone: event.target.value })}
-          variant="outlined"
-          fullWidth
-          classes={{ root: formFieldRoot }}
-        />
-        <FormControl variant="outlined" required classes={{ root: formFieldRoot }}>
-          <InputLabel>Vous êtes</InputLabel>
-          <Select
-            label="Vous êtes"
-            value={entity}
-            onChange={(event: ChangeEvent<{ value: unknown }>) =>
-              setSender({ ...sender, entity: event.target.value as string })
-            }
-          >
-            <MenuItem value="Particulier">Particulier</MenuItem>
-            <MenuItem value="Professionnel">Professionnel</MenuItem>
-            <MenuItem value="Enterprise">Enterprise</MenuItem>
-          </Select>
-        </FormControl>
-        <TextField
-          label="Message"
-          value={message}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => setSender({ ...sender, message: event.target.value })}
-          multiline
-          rows={10}
-          variant="outlined"
-          fullWidth
-          required
-          classes={{ root: formFieldRoot }}
-        />
-        <Button variant="contained" onClick={handleForm} classes={{ root: buttonRoot, label: buttonLabel }}>
-          ENVOYER
-        </Button>
+    <section className="mb-8 mh:w-1/2 mh:mx-auto tv:w-1/2 tv:mx-auto th:w-1/2 th:mx-auto">
+      <form>
+        <div className="space-y-3 mb-5">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-lime-600">
+              Nom
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              onChange={event => setSender({ ...sender, name: event.target.value })}
+              className="mt-1 py-1 block w-full shadow-md focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-lime-600">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              onChange={event => setSender({ ...sender, email: event.target.value })}
+              className="mt-1 py-1 block w-full shadow-md focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-lime-600">
+              Téléphone
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              onChange={event => setSender({ ...sender, phone: event.target.value })}
+              className="mt-1 py-1 block w-full shadow-md focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+            />
+          </div>
+          <div>
+            <label htmlFor="entity" className="block text-sm font-medium text-lime-600">
+              Vous êtes
+            </label>
+            <select
+              id="entity"
+              name="entity"
+              required
+              onChange={event => setSender({ ...sender, entity: event.target.value })}
+              className="mt-1 py-1 block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-md border-gray-300 rounded-md"
+            >
+              <option value="Particulier" selected>
+                Particulier
+              </option>
+              <option value="Professionnel">Professionnel</option>
+              <option value="Enterprise">Enterprise</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-lime-600">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              defaultValue=""
+              required
+              onChange={event => setSender({ ...sender, message: event.target.value })}
+              className="mt-1 py-1 shadow-md block w-full resize-none focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+            />
+          </div>
+        </div>
+        <Button action="Envoyer" icon={SEND} onClick={e => handleForm(e)} />
       </form>
     </section>
   );
 };
 
 const ContactDetailsSection = (): JSX.Element => (
-  <section>
-    <div className="flex flex-row items-center mb-2">
+  <section className="space-y-4">
+    <div className="flex flex-row items-center">
       <div className="flex flex-row items-center mr-3">
         <Icon path={CLOCK.path} viewBox={CLOCK.viewBox} className="w-5 mr-2" />
         <span className="font-bold whitespace-nowrap">Horaire</span>
       </div>
       <span>Lundi-Vendredi, 09:00-18:00</span>
     </div>
-    <div className="flex flex-row items-start mb-2">
+    <div className="flex flex-row items-start">
       <div className="flex flex-row items-center mr-3">
         <Icon path={OFFICE.path} viewBox={OFFICE.viewBox} className="w-5 mr-2" />
         <span className="font-bold whitespace-nowrap">Adresse postale</span>
       </div>
       <address>ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard</address>
     </div>
-    <div className="flex flex-row items-center mb-2">
+    <div className="flex flex-row items-center">
       <div className="flex flex-row items-center mr-3">
         <Icon path={PHONE.path} viewBox={PHONE.viewBox} className="w-5 mr-2" />
         <span className="font-bold whitespace-nowrap">Téléphone</span>

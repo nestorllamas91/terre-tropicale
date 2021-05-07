@@ -8,7 +8,6 @@ myColors.transparent = 'transparent';
 myColors.current = 'currentColor';
 
 module.exports = {
-  purge: ['./src/app/**/component.tsx'],
   theme: {
     screens: {
       mv: { raw: '(max-width: 639px)' },
@@ -21,5 +20,7 @@ module.exports = {
       body: ['Lato Regular', 'sans-serif']
     },
     colors: myColors
-  }
+  },
+  plugins: [require('@tailwindcss/forms')],
+  purge: ['./src/app/**/component.tsx']
 };

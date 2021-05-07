@@ -35,14 +35,14 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 tv:px-6 th:px-8">
+    <div className="fixed top-0 z-10 flex items-center w-full h-16 px-4 bg-lime-100 shadow-md">
       <div className="flex flex-row justify-start flex-1">
         <Link href="/">
           <img src="/assets/logo/logo.svg" className="cursor-pointer h-11" />
         </Link>
       </div>
       {viewportWidth >= BREAKPOINT_2 && (
-        <div className="flex flex-row justify-center flex-auto space-x-4">
+        <div className="flex flex-row justify-center flex-1 space-x-6 whitespace-nowrap">
           {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
@@ -115,7 +115,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
 const PageMenuNavigationBar = ({ pathname, page, activePage }: PageMenuNavigationBarProps) => (
   <Link href={pathname}>
     <a className={classNames('page-menu-navigation-bar', activePage === pathname ? 'active-page' : 'inactive-page')}>
-      <span className="text-base uppercase font-heading">{page}</span>
+      <span className="font-heading text-sm uppercase">{page}</span>
     </a>
   </Link>
 );
@@ -133,8 +133,12 @@ const PageMenuSlidable = ({ pathname, page, activePage, icon, closeMenuSlidable 
         onClick={() => handleClick(pathname)}
         className={classNames('page-menu-slidable', activePage === pathname ? 'active-page' : 'inactive-page')}
       >
-        <Icon path={icon.path} viewBox={icon.viewBox} className="w-6 mr-3" />
-        <span className="text-base uppercase font-heading">{page}</span>
+        <Icon
+          path={icon.path}
+          viewBox={icon.viewBox}
+          className={classNames('w-6 mr-3', activePage === pathname ? 'fill-current text-lime-600' : '')}
+        />
+        <span className="font-heading text-sm uppercase">{page}</span>
       </a>
     </Link>
   );

@@ -1,26 +1,11 @@
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 import Head from 'next/head';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
+import Button from '@/app/shared/button/component';
 import Layout from '@/app/shared/layout/component';
 import { BREAKPOINT_1 } from '@/data/constants.json';
-
-const useStyles = makeStyles({
-  buttonLabel: {
-    fontFamily: 'Lato Regular',
-    fontWeight: 400,
-    fontSize: '14px',
-    color: 'white'
-  },
-  buttonRoot: {
-    backgroundColor: '#84cc16',
-    '&:hover': {
-      backgroundColor: '#65a30d'
-    }
-  }
-});
+import { CONTACT, INFO } from '@/data/icons.json';
 
 const AccueilPage = (): JSX.Element => (
   <>
@@ -38,7 +23,7 @@ const AccueilPage = (): JSX.Element => (
 );
 
 const Header = () => {
-  const { buttonLabel, buttonRoot } = useStyles();
+  const router = useRouter();
 
   return (
     <header className="relative flex mb-8">
@@ -46,47 +31,35 @@ const Header = () => {
       <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
         <h1 className="mb-2">UN FRUIT, UNE HISTOIRE...</h1>
         <p className="mb-3 page-subtitle">Découvrez des gouts authentiques venus des mythiques cordillères des Andes</p>
-        <Link href="/contact">
-          <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-            Contactez-nous
-          </Button>
-        </Link>
+        <Button action="Contactez-nous" icon={CONTACT} onClick={() => router.push('/contact')} />
       </div>
     </header>
   );
 };
 
-const ServicesSection = () => {
-  const { buttonLabel, buttonRoot } = useStyles();
-
-  return (
-    <section className="mb-8">
-      <h2 className="mb-4 text-center">NOTRE OFFRE DE SERVICES</h2>
-      <div className="flex flex-row">
-        <div className="relative flex mr-1">
-          <img src="/assets/images/misc/services-1.jpg" className="object-cover w-full mh:h-56" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
-            <h3 className="mb-1">POUR LES PROS</h3>
-            <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
-            <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-              Détails
-            </Button>
-          </div>
-        </div>
-        <div className="relative flex">
-          <img src="/assets/images/misc/services-2.jpg" className="object-cover w-full mh:h-56" />
-          <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
-            <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
-            <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
-            <Button variant="contained" classes={{ root: buttonRoot, label: buttonLabel }}>
-              Détails
-            </Button>
-          </div>
+const ServicesSection = () => (
+  <section className="mb-8">
+    <h2 className="mb-4 text-center">NOTRE OFFRE DE SERVICES</h2>
+    <div className="flex flex-row">
+      <div className="relative flex mr-1">
+        <img src="/assets/images/misc/services-1.jpg" className="object-cover w-full mh:h-56" />
+        <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
+          <h3 className="mb-1">POUR LES PROS</h3>
+          <p className="mb-3 leading-4 text-white">Innovez et fidélisez votre clientèle</p>
+          <Button action="Détails" icon={INFO} onClick={() => console.log('pending')} />
         </div>
       </div>
-    </section>
-  );
-};
+      <div className="relative flex">
+        <img src="/assets/images/misc/services-2.jpg" className="object-cover w-full mh:h-56" />
+        <div className="absolute flex flex-col items-start w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:pt-24 mh:px-10 mh:pt-12 th:px-20 th:pt-28">
+          <h3 className="mb-1">POUR VOS ÉVÉNEMENTS</h3>
+          <p className="mb-3 leading-4 text-white">Surprenez vos convives</p>
+          <Button action="Détails" icon={INFO} onClick={() => console.log('pending')} />
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 const ValeursSection = (): JSX.Element => (
   <section className="px-4 py-3 mb-8 tv:px-10 mh:px-4">

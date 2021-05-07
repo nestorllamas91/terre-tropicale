@@ -12,7 +12,6 @@ const AProposPage = (): JSX.Element => {
       <Layout>
         <Header />
         <QuiSommesNousSection />
-        {/* Petición de quitarlo, pero lo mantengo. */}
         <ValeursSection />
       </Layout>
     </>
@@ -46,8 +45,6 @@ const QuiSommesNousSection = () => (
       </p>
       <p>Laissez-vous tenter, dégustez et savourez!</p>
     </div>
-    {/* Petición de quitarlo. */}
-    {/* <img src="/assets/images/misc/qui-sommes-nous.jpg" /> */}
   </section>
 );
 

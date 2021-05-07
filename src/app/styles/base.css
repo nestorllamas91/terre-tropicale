@@ -17,25 +17,28 @@
   h1,
   h2,
   h3 {
-    @apply font-semibold font-heading;
+    @apply font-heading font-semibold;
   }
   h1 {
-    @apply text-xl tv:text-2xl;
+    @apply text-xl mh:text-xl tv:text-2xl th:text-2xl;
   }
   h2 {
-    @apply text-base tv:text-lg;
+    @apply text-base mh:text-base tv:text-lg th:text-lg;
   }
   h3 {
-    @apply text-sm tv:text-base;
+    @apply text-sm mh:text-sm tv:text-base th:text-base;
   }
   p,
   span,
   address,
-  a {
-    @apply text-sm font-normal opacity-95 font-body tv:text-base;
+  label,
+  input,
+  a,
+  button {
+    @apply font-body font-normal opacity-95 text-sm mh:text-sm tv:text-base th:text-base;
   }
   svg {
-    @apply opacity-95;
+    @apply opacity-90;
   }
   address {
     @apply not-italic;
