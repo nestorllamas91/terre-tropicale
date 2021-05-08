@@ -1,12 +1,11 @@
 import { Dialog, Transition } from '@headlessui/react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { Fragment, MouseEvent, useRef, useState } from 'react';
+import { FormEvent, Fragment, useRef, useState } from 'react';
 
 import Icon from '@/app/shared/icon/component';
 import Layout from '@/app/shared/layout/component';
-import { CLOCK, EMAIL, ERROR, OFFICE, PHONE, SUCCESS, WARNING } from '@/data/icons.json';
-//
+import { CLOCK, CLOSE, EMAIL, FAILURE, OFFICE, PHONE, SUCCESS, WARNING } from '@/data/icons.json';
+
 const ContactPage = (): JSX.Element => (
   <>
     <Head>
@@ -14,12 +13,10 @@ const ContactPage = (): JSX.Element => (
     </Head>
     <Layout>
       <Header />
-      <div className="px-4">
-        <IntroSection />
-        <ContactFormSection />
-        <div className="flex justify-center mb-8">
-          <ContactDetailsSection />
-        </div>
+      <IntroSection />
+      <ContactFormSection />
+      <div className="flex justify-center mb-8">
+        <ContactDetailsSection />
       </div>
     </Layout>
   </>
@@ -28,8 +25,8 @@ const ContactPage = (): JSX.Element => (
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-3.jpg" className="object-cover w-full h-auto mh:h-64 th:h-auto" />
-    <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
-      <h1 className="mb-2">CONTACT</h1>
+    <div className="absolute inset-0 flex flex-col items-start justify-center p-4 text-white bg-black bg-opacity-40 tv:p-10 mh:p-10 th:p-20">
+      <h1 className="mb-1">CONTACT</h1>
       <p className="page-subtitle">Restons en contact</p>
       <p className="page-subtitle">Inscrivez-vous pour une degustation gratuite</p>
     </div>
@@ -37,7 +34,7 @@ const Header = () => (
 );
 
 const IntroSection = () => (
-  <section className="mb-8">
+  <section className="mb-8 px-4">
     <p>
       Vous êtes intéressé par nos produits et/ou services et vous souhaitez être contacté? N&rsquo;hesitez pas à nous
       écrire. Nous vous contacterons dans les plus bref délais.
@@ -46,48 +43,53 @@ const IntroSection = () => (
 );
 
 const ContactFormSection = () => {
-  const [sender, setSender] = useState<Sender>({
-    name: '',
-    email: '',
-    phone: '',
-    entity: 'Particulier',
-    message: ''
-  });
-  const [isOpenConfirmation, setIsOpenConfirmation] = useState(false);
-  const [isOpenSuccess, setIsOpenSuccess] = useState(false);
-  const [isOpenError, setIsOpenError] = useState(false);
-
-  const handleSend = (e: MouseEvent<HTMLButtonElement>) => {
+  const [sender, setSender] = useState<Sender>(senderInitialValue);
+  const [isOpenModalConfirmation, setIsOpenModalConfirmation] = useState(false);
+  const [isOpenModalSuccess, setIsOpenModalSuccess] = useState(false);
+  const [isOpenModalFailure, setIsOpenModalFailure] = useState(false);
+  const { name, email, phone, entity, message } = sender;
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsOpenConfirmation(true);
+    setIsOpenModalConfirmation(true);
+  };
+
+  const openModalSuccess = () => {
+    setSender(senderInitialValue);
+    setIsOpenModalSuccess(true);
+  };
+
+  const openModalFailure = () => {
+    setIsOpenModalFailure(true);
   };
 
   return (
-    <section className="mb-8 mh:w-1/2 mh:mx-auto tv:w-1/2 tv:mx-auto th:w-1/2 th:mx-auto">
-      <form>
+    <section className="mb-8 px-4 mh:w-1/2 mh:mx-auto tv:w-1/2 tv:mx-auto th:w-1/2 th:mx-auto">
+      <form onSubmit={e => handleSubmit(e)} className="flex flex-col">
         <div className="space-y-3 mb-5">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-lime-600">
-              Nom
+              Nom <span className="text-red-500">*</span>
             </label>
             <input
               id="name"
               name="name"
               type="text"
               required
+              value={name}
               onChange={event => setSender({ ...sender, name: event.target.value })}
               className="mt-1 py-1 block w-full shadow focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             />
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-lime-600">
-              Email
+              Email <span className="text-red-500">*</span>
             </label>
             <input
               id="email"
               name="email"
               type="email"
               required
+              value={email}
               onChange={event => setSender({ ...sender, email: event.target.value })}
               className="mt-1 py-1 block w-full shadow focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             />
@@ -100,6 +102,7 @@ const ContactFormSection = () => {
               id="phone"
               name="phone"
               type="text"
+              value={phone}
               onChange={event => setSender({ ...sender, phone: event.target.value })}
               className="mt-1 py-1 block w-full shadow focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             />
@@ -111,53 +114,53 @@ const ContactFormSection = () => {
             <select
               id="entity"
               name="entity"
-              required
+              value={entity}
               onChange={event => setSender({ ...sender, entity: event.target.value })}
               className="mt-1 py-1 block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow border-gray-300 rounded-md"
             >
-              <option value="Particulier" selected>
-                Particulier
-              </option>
+              <option value="Particulier">Particulier</option>
               <option value="Professionnel">Professionnel</option>
               <option value="Enterprise">Enterprise</option>
             </select>
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-lime-600">
-              Message
+              Message <span className="text-red-500">*</span>
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              defaultValue=""
               required
+              value={message}
               onChange={event => setSender({ ...sender, message: event.target.value })}
               className="mt-1 py-1 shadow block w-full resize-none focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
             />
           </div>
         </div>
-        <button onClick={e => handleSend(e)} className="button">
-          Envoyer
-        </button>
+        <input type="submit" value="Envoyer" className="button self-end" />
       </form>
-      {isOpenConfirmation && (
+      {isOpenModalConfirmation && (
         <ModalConfirmation
           sender={sender}
-          isOpenConfirmation={isOpenConfirmation}
-          closeConfirmation={() => setIsOpenConfirmation(false)}
-          handleOpenSuccess={() => setIsOpenSuccess(true)}
-          handleOpenError={() => setIsOpenError(true)}
+          isOpenModalConfirmation={isOpenModalConfirmation}
+          closeModalConfirmation={() => setIsOpenModalConfirmation(false)}
+          openModalSuccess={openModalSuccess}
+          openModalFailure={openModalFailure}
         />
       )}
-      {isOpenSuccess && <ModalSuccess isOpenSuccess={isOpenSuccess} closeSuccess={() => setIsOpenSuccess(false)} />}
-      {isOpenError && <ModalError isOpenError={isOpenError} closeError={() => setIsOpenError(false)} />}
+      {isOpenModalSuccess && (
+        <ModalSuccess isOpenModalSuccess={isOpenModalSuccess} closeModalSuccess={() => setIsOpenModalSuccess(false)} />
+      )}
+      {isOpenModalFailure && (
+        <ModalFailure isOpenModalFailure={isOpenModalFailure} closeModalFailure={() => setIsOpenModalFailure(false)} />
+      )}
     </section>
   );
 };
 
 const ContactDetailsSection = (): JSX.Element => (
-  <section className="space-y-4">
+  <section className="px-4 space-y-4">
     <div className="flex flex-row items-center">
       <div className="flex flex-row items-center mr-3">
         <Icon path={CLOCK.path} viewBox={CLOCK.viewBox} className="w-5 mr-2" />
@@ -195,38 +198,42 @@ const ContactDetailsSection = (): JSX.Element => (
 
 const ModalConfirmation = ({
   sender,
-  isOpenConfirmation,
-  closeConfirmation,
-  handleOpenSuccess,
-  handleOpenError
+  isOpenModalConfirmation,
+  closeModalConfirmation,
+  openModalSuccess,
+  openModalFailure
 }: ModalConfirmationProps) => {
-  const refButtonCancel = useRef<HTMLButtonElement>(null);
+  const refButtonConfirm = useRef<HTMLButtonElement>(null);
 
-  const handleConfirm = async (action: boolean) => {
-    closeConfirmation();
-    if (action) {
-      try {
-        const url = '/api/contact';
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(sender)
-        });
-        if (response.status === 200) {
-          handleOpenSuccess();
-        }
-        if (response.status === 500) {
-          handleOpenError();
-        }
-      } catch {
-        handleOpenError();
+  const handleConfirm = async () => {
+    closeModalConfirmation();
+    try {
+      const url = '/api/contact';
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(sender)
+      });
+      if (response.status === 200) {
+        openModalSuccess();
       }
+      if (response.status === 500) {
+        openModalFailure();
+      }
+    } catch {
+      openModalFailure();
     }
   };
 
   return (
-    <Transition.Root show={isOpenConfirmation} as={Fragment}>
-      <Dialog as="div" static initialFocus={refButtonCancel} open={isOpenConfirmation} onClose={closeConfirmation}>
+    <Transition.Root show={isOpenModalConfirmation} as={Fragment}>
+      <Dialog
+        as="div"
+        static
+        initialFocus={refButtonConfirm}
+        open={isOpenModalConfirmation}
+        onClose={closeModalConfirmation}
+      >
         <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
@@ -248,27 +255,29 @@ const ModalConfirmation = ({
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
-              <div className="px-6 py-5 bg-white">
+            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+              <button
+                onClick={closeModalConfirmation}
+                className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
+              >
+                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+              </button>
+              <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-orange-100">
                   <Icon path={WARNING.path} viewBox={WARNING.viewBox} className="w-7 fill-current text-orange-400" />
                 </div>
-                <div className="mt-2 text-center">
-                  <Dialog.Title as="h3">Êtes-vous sûr?</Dialog.Title>
-                  <p className="mt-1 text-sm text-gray-500">Vous allez envoyer ce message à l&rsquo;administrateur.</p>
+                <div className="flex flex-col mt-2 text-center">
+                  <Dialog.Title as="span" className="font-semibold">
+                    Êtes-vous sûr?
+                  </Dialog.Title>
+                  <span className="mt-1 text-sm text-gray-500">Vous allez envoyer ce message.</span>
                 </div>
               </div>
               <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
                 <button
-                  ref={refButtonCancel}
-                  onClick={() => handleConfirm(false)}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Annuler
-                </button>
-                <button
-                  onClick={() => handleConfirm(true)}
-                  className="flex-1 px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  ref={refButtonConfirm}
+                  onClick={handleConfirm}
+                  className="px-4 py-1.5 border border-transparent rounded-md shadow-sm text-white bg-lime-500 hover:bg-lime-600 focus:outline-none"
                 >
                   Confirmer
                 </button>
@@ -281,18 +290,12 @@ const ModalConfirmation = ({
   );
 };
 
-const ModalSuccess = ({ isOpenSuccess, closeSuccess }: ModalSuccessProps) => {
+const ModalSuccess = ({ isOpenModalSuccess, closeModalSuccess }: ModalSuccessProps) => {
   const refButtonOk = useRef<HTMLButtonElement>(null);
-  const router = useRouter();
-
-  const handleOk = () => {
-    closeSuccess();
-    router.push('/');
-  };
 
   return (
-    <Transition.Root show={isOpenSuccess} as={Fragment}>
-      <Dialog as="div" static initialFocus={refButtonOk} open={isOpenSuccess} onClose={handleOk}>
+    <Transition.Root show={isOpenModalSuccess} as={Fragment}>
+      <Dialog as="div" static initialFocus={refButtonOk} open={isOpenModalSuccess} onClose={closeModalSuccess}>
         <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
@@ -314,21 +317,29 @@ const ModalSuccess = ({ isOpenSuccess, closeSuccess }: ModalSuccessProps) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
-              <div className="px-6 py-5 bg-white">
+            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+              <button
+                onClick={closeModalSuccess}
+                className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
+              >
+                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+              </button>
+              <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
                   <Icon path={SUCCESS.path} viewBox={SUCCESS.viewBox} className="w-7 fill-current text-green-400" />
                 </div>
-                <div className="mt-2 text-center">
-                  <Dialog.Title as="h3">Message envoyé!</Dialog.Title>
-                  <p className="mt-1 text-sm text-gray-500">Votre message a été envoyé à l&rsquo;administrateur.</p>
+                <div className="flex flex-col mt-2 text-center">
+                  <Dialog.Title as="span" className="font-semibold">
+                    Message envoyé!
+                  </Dialog.Title>
+                  <span className="mt-1 text-sm text-gray-500">Votre message a été envoyé.</span>
                 </div>
               </div>
               <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
                 <button
                   ref={refButtonOk}
-                  onClick={handleOk}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  onClick={closeModalSuccess}
+                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none"
                 >
                   OK
                 </button>
@@ -341,16 +352,12 @@ const ModalSuccess = ({ isOpenSuccess, closeSuccess }: ModalSuccessProps) => {
   );
 };
 
-const ModalError = ({ isOpenError, closeError }: ModalErrorProps) => {
+const ModalFailure = ({ isOpenModalFailure, closeModalFailure }: ModalFailureProps) => {
   const refButtonOk = useRef<HTMLButtonElement>(null);
 
-  const handleOk = () => {
-    closeError();
-  };
-
   return (
-    <Transition.Root show={isOpenError} as={Fragment}>
-      <Dialog as="div" static initialFocus={refButtonOk} open={isOpenError} onClose={closeError}>
+    <Transition.Root show={isOpenModalFailure} as={Fragment}>
+      <Dialog as="div" static initialFocus={refButtonOk} open={isOpenModalFailure} onClose={closeModalFailure}>
         <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
@@ -372,23 +379,29 @@ const ModalError = ({ isOpenError, closeError }: ModalErrorProps) => {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
-              <div className="px-6 py-5 bg-white">
+            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+              <button
+                onClick={closeModalFailure}
+                className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
+              >
+                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+              </button>
+              <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                  <Icon path={ERROR.path} viewBox={ERROR.viewBox} className="w-7 fill-current text-red-400" />
+                  <Icon path={FAILURE.path} viewBox={FAILURE.viewBox} className="w-7 fill-current text-red-400" />
                 </div>
-                <div className="mt-2 text-center">
-                  <Dialog.Title as="h3">Message non envoyé!</Dialog.Title>
-                  <p className="mt-1 text-sm text-gray-500">
-                    Votre message n&rsquo;a pas pu être envoyé à l&rsquo;administrateur.
-                  </p>
+                <div className="flex flex-col mt-2 text-center">
+                  <Dialog.Title as="span" className="font-semibold">
+                    Message non envoyé!
+                  </Dialog.Title>
+                  <span className="mt-1 text-sm text-gray-500">Votre message n&rsquo;a pas pu être envoyé.</span>
                 </div>
               </div>
               <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
                 <button
                   ref={refButtonOk}
-                  onClick={handleOk}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  onClick={closeModalFailure}
+                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none"
                 >
                   OK
                 </button>
@@ -399,6 +412,14 @@ const ModalError = ({ isOpenError, closeError }: ModalErrorProps) => {
       </Dialog>
     </Transition.Root>
   );
+};
+
+const senderInitialValue = {
+  name: '',
+  email: '',
+  phone: '',
+  entity: 'Particulier',
+  message: ''
 };
 
 type Sender = {
@@ -411,20 +432,20 @@ type Sender = {
 
 type ModalConfirmationProps = {
   sender: Sender;
-  isOpenConfirmation: boolean;
-  closeConfirmation: () => void;
-  handleOpenSuccess: () => void;
-  handleOpenError: () => void;
+  isOpenModalConfirmation: boolean;
+  closeModalConfirmation: () => void;
+  openModalSuccess: () => void;
+  openModalFailure: () => void;
 };
 
 type ModalSuccessProps = {
-  isOpenSuccess: boolean;
-  closeSuccess: () => void;
+  isOpenModalSuccess: boolean;
+  closeModalSuccess: () => void;
 };
 
-type ModalErrorProps = {
-  isOpenError: boolean;
-  closeError: () => void;
+type ModalFailureProps = {
+  isOpenModalFailure: boolean;
+  closeModalFailure: () => void;
 };
 
 export { ContactDetailsSection };

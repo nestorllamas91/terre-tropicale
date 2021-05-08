@@ -21,8 +21,8 @@ const NosSmoothiesPage = (): JSX.Element => (
 const Header = () => (
   <header className="relative flex mb-8">
     <img src="/assets/images/headers/header-2.jpg" className="object-cover w-full h-auto mh:h-64 th:h-auto" />
-    <div className="absolute flex flex-col items-start justify-center w-full h-full px-3 py-4 text-white bg-black bg-opacity-40 tv:px-10 tv:py-24 mh:px-10 mh:py-24 th:px-20">
-      <h1 className="mb-2">NOS SMOOTHIES</h1>
+    <div className="absolute inset-0 flex flex-col items-start justify-center p-4 text-white bg-black bg-opacity-40 tv:p-10 mh:p-10 th:p-20">
+      <h1 className="mb-1">NOS SMOOTHIES</h1>
       <p className="page-subtitle">Les saveurs du paradis</p>
       <p className="page-subtitle">Fruits rigoureusement sélectionnés</p>
     </div>
@@ -43,7 +43,7 @@ const SmoothiesSection = () => {
             className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
           >
             <img src={`/assets/images/smoothies/${slug}.jpg`} />
-            <div className="flex flex-col justify-between flex-1 p-6 bg-warmGray-50">
+            <div className="flex flex-col justify-between flex-1 p-4 bg-warmGray-50">
               <h3 className="text-lime-600">{name}</h3>
               <p className="mt-3">{smoothieDescription}</p>
             </div>

@@ -35,14 +35,14 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
   const activePage = useRouter().asPath;
 
   return (
-    <div className="z-10 fixed top-0 flex justify-center items-center w-full h-20 px-8 py-4 bg-lime-100 shadow-md">
+    <div className="z-10 fixed top-0 flex justify-center items-center w-full p-2.5 bg-lime-100 shadow-md mh:p-4 tv:px-8 tv:py-4 th:px-8 th:py-4">
       <div className="flex flex-row justify-start flex-none w-48">
         <Link href="/">
           <img src="/assets/logo/logo.svg" className="cursor-pointer" />
         </Link>
       </div>
       {viewportWidth >= BREAKPOINT_2 && (
-        <div className="flex flex-row justify-center flex-auto space-x-4 whitespace-nowrap">
+        <div className="flex flex-row justify-center flex-auto space-x-6 whitespace-nowrap">
           {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
