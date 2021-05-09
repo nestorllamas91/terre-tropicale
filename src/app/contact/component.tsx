@@ -419,8 +419,8 @@ const CompanyLocationSection = () => {
         {
           mv: <IFrameCompanyLocation width={300} height={250} />,
           mh: <IFrameCompanyLocation width={600} height={250} />,
-          tv: <IFrameCompanyLocation width={600} height={250} />,
-          th: <IFrameCompanyLocation width={1000} height={250} />
+          tv: <IFrameCompanyLocation width={600} height={300} />,
+          th: <IFrameCompanyLocation width={900} height={300} />
         }[layout]
       }
     </section>
@@ -437,7 +437,7 @@ const IFrameCompanyLocation = ({ width, height }: IFrameCompanyLocationProps) =>
       height={height}
       loading="lazy"
       allowFullScreen
-      className="shadow-md"
+      className="shadow-md mx-4"
     ></iframe>
   );
 };
