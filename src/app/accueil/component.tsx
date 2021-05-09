@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import Layout from '@/app/shared/layout/component';
-import { BREAKPOINT_1 } from '@/data/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2 } from '@/data/constants.json';
 
 const AccueilPage = (): JSX.Element => (
   <>
@@ -66,7 +66,7 @@ const ValeursSection = (): JSX.Element => (
     <h2 className="mb-4 text-center">NOS VALEURS</h2>
     <div className="flex flex-col mh:flex-row mh:text-center th:flex-row th:text-center">
       <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-3 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-4 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-1.jpg" className="rounded-full" />
         </div>
         <div>
@@ -78,7 +78,7 @@ const ValeursSection = (): JSX.Element => (
         </div>
       </div>
       <div className="flex flex-row items-center flex-1 mb-4 mh:flex-col mh:mr-3 mh:mb-0 th:flex-col th:mr-3 th:mb-0">
-        <div className="flex-none w-24 h-24 p-1 mr-3 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-4 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-2.jpg" className="rounded-full" />
         </div>
         <div>
@@ -87,7 +87,7 @@ const ValeursSection = (): JSX.Element => (
         </div>
       </div>
       <div className="flex flex-row items-center flex-1 mh:flex-col th:flex-col">
-        <div className="flex-none w-24 h-24 p-1 mr-3 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
+        <div className="flex-none w-24 h-24 p-1 mr-4 border-2 border-red-600 rounded-full mh:mb-3 mh:mr-0 th:w-32 th:h-32 th:mb-3 th:mr-0">
           <img src="/assets/images/misc/valeurs-3.jpg" className="rounded-full" />
         </div>
         <div>
@@ -138,23 +138,35 @@ const AvantagesSection = () => (
 );
 
 const FruitsSection = () => {
-  const [viewportWidth, setviewportWidth] = useState(0);
+  const [{ viewportWidth, viewportHeight }, setviewportDimensions] = useState<ViewportDimensions>({
+    viewportWidth: 0,
+    viewportHeight: 0
+  });
+  let layout = '';
   const fruitsImagesPath = '/assets/images/fruits/collage';
 
   useEffect(() => {
-    updateViewportWidth();
-    window.addEventListener('resize', updateViewportWidth);
-    return () => window.removeEventListener('resize', updateViewportWidth);
+    updateViewportDimensions();
+    window.addEventListener('resize', updateViewportDimensions);
+    return () => window.removeEventListener('resize', updateViewportDimensions);
   }, []);
 
-  const updateViewportWidth = () => {
-    setviewportWidth(window.innerWidth);
+  const updateViewportDimensions = () => {
+    setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
   };
+
+  if (viewportWidth < BREAKPOINT_1) {
+    layout = 'mv';
+  } else if (viewportWidth < BREAKPOINT_2) {
+    layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
+  } else {
+    layout = 'th';
+  }
 
   return (
     <section className="mb-8">
       <h2 className="mb-4 text-center">ORIGINALEMENT RAFRAÎCHISSANTE</h2>
-      {viewportWidth < BREAKPOINT_1 ? (
+      {layout === 'mv' ? (
         <div className="grid grid-cols-2">
           <div className="relative flex">
             <img src={`${fruitsImagesPath}/goyave.jpg`} title="Goyave" />
@@ -283,6 +295,11 @@ const FruitsSection = () => {
       )}
     </section>
   );
+};
+
+type ViewportDimensions = {
+  viewportWidth: number;
+  viewportHeight: number;
 };
 
 export { ValeursSection };
