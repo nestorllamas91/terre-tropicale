@@ -2,6 +2,7 @@ import '@/app/styles/index.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { appWithTranslation } from 'next-i18next';
 
 import Maintenance from '@/app/maintenance/component';
 
@@ -15,4 +16,4 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   </>
 );
 
-export default App;
+export default appWithTranslation(App);
