@@ -3,20 +3,19 @@ import nodemailer from 'nodemailer';
 
 const sendMail = async (request: VercelRequest, response: VercelResponse): Promise<void> => {
   try {
-    const { EMAIL_HOST, EMAIL_USER, EMAIL_PASS } = process.env;
     const { name, email, phone, entity, message } = request.body;
     const transporter = nodemailer.createTransport({
-      host: EMAIL_HOST,
+      host: process.env.EMAIL_HOST,
       port: 587,
       secure: false,
       auth: {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
       }
     });
     const mailOptions = {
-      from: EMAIL_USER,
-      to: `Yenny Castillo <${EMAIL_USER}>`,
+      from: process.env.EMAIL_USER,
+      to: `Yenny Castillo <${process.env.EMAIL_USER}>`,
       subject: 'Formulaire de contact Terre Tropicale',
       html: `<h1>Formulaire de contact Terre Tropicale</h1>
              <span>De: ${name}</span><br />

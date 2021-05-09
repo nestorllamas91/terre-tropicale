@@ -429,15 +429,15 @@ const CompanyLocationSection = () => {
 
 const IFrameCompanyLocation = ({ width, height }: IFrameCompanyLocationProps) => {
   const mapMode = 'place';
-  const { GOOGLE_MAPS_API_KEY } = process.env;
+
   return (
     <iframe
-      src={`https://www.google.com/maps/embed/v1/${mapMode}?key=${GOOGLE_MAPS_API_KEY}&q=place_id:${GOOGLE_MAPS_PLACE_ID}`}
+      src={`https://www.google.com/maps/embed/v1/${mapMode}?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=place_id:${GOOGLE_MAPS_PLACE_ID}`}
       width={width}
       height={height}
       loading="lazy"
       allowFullScreen
-      className="shadow-lg"
+      className="shadow-md"
     ></iframe>
   );
 };
