@@ -1,10 +1,11 @@
 import { Dialog, Transition } from '@headlessui/react';
 import Head from 'next/head';
-import { FormEvent, Fragment, useRef, useState } from 'react';
+import { FormEvent, Fragment, useEffect, useRef, useState } from 'react';
 
 import Icon from '@/app/shared/icon/component';
 import Layout from '@/app/shared/layout/component';
-import { CLOCK, CLOSE, EMAIL, FAILURE, OFFICE, PHONE, SUCCESS, WARNING } from '@/data/icons.json';
+import { BREAKPOINT_1, BREAKPOINT_2, GOOGLE_MAPS_PLACE_ID } from '@/data/constants.json';
+import { CLOCK, CLOSE, EMAIL, FAILURE, PHONE, PLACEHOLDER, SUCCESS, WARNING } from '@/data/icons.json';
 
 const ContactPage = (): JSX.Element => (
   <>
@@ -15,6 +16,7 @@ const ContactPage = (): JSX.Element => (
       <Header />
       <IntroSection />
       <ContactFormSection />
+      <CompanyLocationSection />
       <div className="flex justify-center mb-8">
         <ContactDetailsSection />
       </div>
@@ -41,6 +43,14 @@ const IntroSection = () => (
     </p>
   </section>
 );
+
+const senderInitialValue = {
+  name: '',
+  email: '',
+  phone: '',
+  entity: 'Particulier',
+  message: ''
+};
 
 const ContactFormSection = () => {
   const [sender, setSender] = useState<Sender>(senderInitialValue);
@@ -158,43 +168,6 @@ const ContactFormSection = () => {
     </section>
   );
 };
-
-const ContactDetailsSection = (): JSX.Element => (
-  <section className="px-4 space-y-4">
-    <div className="flex flex-row items-center">
-      <div className="flex flex-row items-center mr-3">
-        <Icon path={CLOCK.path} viewBox={CLOCK.viewBox} className="w-5 mr-2" />
-        <span className="font-bold whitespace-nowrap">Horaire</span>
-      </div>
-      <span>Lundi-Vendredi, 09:00-18:00</span>
-    </div>
-    <div className="flex flex-row items-start">
-      <div className="flex flex-row items-center mr-3">
-        <Icon path={OFFICE.path} viewBox={OFFICE.viewBox} className="w-5 mr-2" />
-        <span className="font-bold whitespace-nowrap">Adresse postale</span>
-      </div>
-      <address>ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard</address>
-    </div>
-    <div className="flex flex-row items-center">
-      <div className="flex flex-row items-center mr-3">
-        <Icon path={PHONE.path} viewBox={PHONE.viewBox} className="w-5 mr-2" />
-        <span className="font-bold whitespace-nowrap">Téléphone</span>
-      </div>
-      <address>06 24 87 53 78</address>
-    </div>
-    <div className="flex flex-row items-center">
-      <div className="flex flex-row items-center mr-3">
-        <Icon path={EMAIL.path} viewBox={EMAIL.viewBox} className="w-5 mr-2" />
-        <span className="font-bold whitespace-nowrap">Email</span>
-      </div>
-      <address>
-        <a href="mailto:contact@terretropicale.com" rel="noreferrer" target="_blank">
-          contact@terretropicale.com
-        </a>
-      </address>
-    </div>
-  </section>
-);
 
 const ModalConfirmation = ({
   sender,
@@ -414,13 +387,97 @@ const ModalFailure = ({ isOpenModalFailure, closeModalFailure }: ModalFailurePro
   );
 };
 
-const senderInitialValue = {
-  name: '',
-  email: '',
-  phone: '',
-  entity: 'Particulier',
-  message: ''
+const CompanyLocationSection = () => {
+  const [{ viewportWidth, viewportHeight }, setviewportDimensions] = useState<ViewportDimensions>({
+    viewportWidth: 0,
+    viewportHeight: 0
+  });
+  let layout = '';
+
+  useEffect(() => {
+    updateViewportDimensions();
+    window.addEventListener('resize', updateViewportDimensions);
+    return () => window.removeEventListener('resize', updateViewportDimensions);
+  }, []);
+
+  const updateViewportDimensions = () => {
+    setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
+  };
+
+  if (viewportWidth < BREAKPOINT_1) {
+    layout = 'mv';
+  } else if (viewportWidth < BREAKPOINT_2) {
+    layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
+  } else {
+    layout = 'th';
+  }
+
+  if (!(viewportWidth && viewportHeight)) return null;
+  return (
+    <section className="mx-auto mb-8">
+      {
+        {
+          mv: <IFrameCompanyLocation width={300} height={250} />,
+          mh: <IFrameCompanyLocation width={600} height={250} />,
+          tv: <IFrameCompanyLocation width={600} height={250} />,
+          th: <IFrameCompanyLocation width={1000} height={250} />
+        }[layout]
+      }
+    </section>
+  );
 };
+
+const IFrameCompanyLocation = ({ width, height }: IFrameCompanyLocationProps) => {
+  const mapMode = 'place';
+  const { GOOGLE_MAPS_API_KEY } = process.env;
+  return (
+    <iframe
+      src={`https://www.google.com/maps/embed/v1/${mapMode}?key=${GOOGLE_MAPS_API_KEY}&q=place_id:${GOOGLE_MAPS_PLACE_ID}`}
+      width={width}
+      height={height}
+      loading="lazy"
+      allowFullScreen
+      className="shadow-lg"
+    ></iframe>
+  );
+};
+
+const ContactDetailsSection = (): JSX.Element => (
+  <section className="px-4 space-y-4">
+    <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center mr-3">
+        <Icon path={CLOCK.path} viewBox={CLOCK.viewBox} className="w-5 mr-2" />
+        <span className="font-bold whitespace-nowrap">Horaire</span>
+      </div>
+      <span>Lundi-Vendredi, 09:00-18:00</span>
+    </div>
+    <div className="flex flex-row items-start">
+      <div className="flex flex-row items-center mr-3">
+        <Icon path={PLACEHOLDER.path} viewBox={PLACEHOLDER.viewBox} className="w-5 mr-2" />
+        <span className="font-bold whitespace-nowrap">Adresse postale</span>
+      </div>
+      <address>ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard</address>
+    </div>
+    <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center mr-3">
+        <Icon path={PHONE.path} viewBox={PHONE.viewBox} className="w-5 mr-2" />
+        <span className="font-bold whitespace-nowrap">Téléphone</span>
+      </div>
+      <address>06 24 87 53 78</address>
+    </div>
+    <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center mr-3">
+        <Icon path={EMAIL.path} viewBox={EMAIL.viewBox} className="w-5 mr-2" />
+        <span className="font-bold whitespace-nowrap">Email</span>
+      </div>
+      <address>
+        <a href="mailto:contact@terretropicale.com" rel="noreferrer" target="_blank">
+          contact@terretropicale.com
+        </a>
+      </address>
+    </div>
+  </section>
+);
 
 type Sender = {
   name: string;
@@ -446,6 +503,16 @@ type ModalSuccessProps = {
 type ModalFailureProps = {
   isOpenModalFailure: boolean;
   closeModalFailure: () => void;
+};
+
+type ViewportDimensions = {
+  viewportWidth: number;
+  viewportHeight: number;
+};
+
+type IFrameCompanyLocationProps = {
+  width: number;
+  height: number;
 };
 
 export { ContactDetailsSection };

@@ -36,13 +36,13 @@ const MenuNavigationBar = ({ viewportWidth, openMenuSlidable }: MenuNavigationBa
 
   return (
     <div className="z-10 fixed top-0 flex justify-center items-center w-full p-2.5 bg-lime-100 shadow-md mh:p-4 tv:px-8 tv:py-4 th:px-8 th:py-4">
-      <div className="flex flex-row justify-start flex-none w-48">
+      <div className="flex flex-row justify-start flex-none">
         <Link href="/">
-          <img src="/assets/logo/logo.svg" className="cursor-pointer" />
+          <img src="/assets/logo/logo.svg" className="h-10 cursor-pointer" />
         </Link>
       </div>
       {viewportWidth >= BREAKPOINT_2 && (
-        <div className="flex flex-row justify-center flex-auto space-x-6 whitespace-nowrap">
+        <div className="flex flex-row justify-center flex-auto space-x-7 whitespace-nowrap">
           {pages.map(({ pathname, page }) => (
             <PageMenuNavigationBar key={pathname} pathname={pathname} page={page} activePage={activePage} />
           ))}
@@ -89,7 +89,7 @@ const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidablePro
           <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2 tv:w-72">
             <button
               onClick={closeMenuSlidable}
-              className="ml-auto mr-4 mt-5 p-2 rounded hover:bg-lime-300 focus:outline-none"
+              className="ml-auto mr-2.5 mt-2.5 p-2 rounded hover:bg-lime-300 focus:outline-none mh:mr-4 mh:mt-4 tv:mr-8 tv:mt-4"
             >
               <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
             </button>

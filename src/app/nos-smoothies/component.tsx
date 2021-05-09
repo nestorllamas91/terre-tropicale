@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import Layout from '@/app/shared/layout/component';
-import { BREAKPOINT_2 } from '@/data/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2 } from '@/data/constants.json';
 import smoothies from '@/data/smoothies.json';
 
 const NosSmoothiesPage = (): JSX.Element => (
@@ -60,6 +60,7 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
     viewportWidth: 0,
     viewportHeight: 0
   });
+  let layout = '';
   const refModalFruit = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,6 +72,14 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
   const updateViewportDimensions = () => {
     setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
   };
+
+  if (viewportWidth < BREAKPOINT_1) {
+    layout = 'mv';
+  } else if (viewportWidth < BREAKPOINT_2) {
+    layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
+  } else {
+    layout = 'th';
+  }
 
   if (!(viewportWidth && viewportHeight)) return null;
   return (
@@ -98,7 +107,7 @@ const DialogFruit = ({ smoothie, closeFruit }: DialogFruitProps) => {
             leaveTo="opacity-0 translate-y-4 tv:translate-y-0 tv:scale-95"
           >
             <div className="px-4 py-4 overflow-hidden align-bottom transition-all transform bg-white rounded-lg shadow-xl tv:w-full tv:max-w-sm tv:p-6 tv:my-8 tv:align-middle mh:max-w-md mh:max-h-60 mh:p-6 th:w-full th:max-w-sm th:p-6 th:my-8 th:align-middle">
-              {viewportWidth < BREAKPOINT_2 && viewportWidth > viewportHeight ? (
+              {layout === 'mh' ? (
                 <div className="flex flex-row">
                   <div className="mr-4">
                     <Dialog.Title as="h3" className="mb-4 font-bold">
