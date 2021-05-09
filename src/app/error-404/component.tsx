@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Layout from '@/app/shared/layout/component';
 
 const Error404 = (): JSX.Element => (
-  <div>
+  <>
     <Head>
       <title>Terre Tropicale</title>
     </Head>
@@ -18,7 +18,7 @@ const Error404 = (): JSX.Element => (
         </div>
       </div>
     </Layout>
-  </div>
+  </>
 );
 
 export default Error404;
