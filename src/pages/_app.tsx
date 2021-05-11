@@ -17,4 +17,3 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
 );
 
 export default appWithTranslation(App);
-//
