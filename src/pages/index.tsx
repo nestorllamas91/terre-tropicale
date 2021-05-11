@@ -6,7 +6,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return locale
     ? {
         props: {
-          ...(await serverSideTranslations(locale, ['common', 'menu', 'footer']))
+          ...(await serverSideTranslations(locale, ['home-page', 'contact-page', 'menu', 'footer']))
         }
       }
     : {
@@ -14,4 +14,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       };
 };
 
-export { default } from '@/app/accueil/component';
+export { default } from '@/app/home-page/component';
