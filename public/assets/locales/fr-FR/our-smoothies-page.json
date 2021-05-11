@@ -1,0 +1,69 @@
+{
+  "fruit-heading-description": "le fruit",
+  "header-body-1": "Les saveurs du paradis",
+  "header-body-2": "Fruits rigoureusement sélectionnés",
+  "header-heading": "NOS SMOOTHIES",
+  "page-title": "Nos smoothies | Terre Tropicale",
+  "smoothies": [
+    {
+      "filename": "pineapple.jpg",
+      "fruitDescription": "Sa pulpe juteuse d'arôme exotique et son goût rafraîchissant, fruité et sucré lui permettent facilement de se marier avec d'autres fruits.",
+      "name": "Ananas",
+      "smoothieDescription": "\"Nana\" parfum de parfums."
+    },
+    {
+      "filename": "soursop.jpg",
+      "fruitDescription": "Sa pulpe est crémeuse, de saveur douce, très parfumée et sucrée.",
+      "name": "Corossol",
+      "smoothieDescription": "Onctueux et plein de beinfaits."
+    },
+    {
+      "filename": "guava.jpg",
+      "fruitDescription": "Ce fruit est très apprécié pour sa chair rose et son goût sucré. Il évoque le parfum doux des tropiques.",
+      "name": "Goyave",
+      "smoothieDescription": "Tonique, énergisant naturel."
+    },
+    {
+      "filename": "solanum-quitoense.jpg",
+      "fruitDescription": "Sa saveur acidulée et rafraîchissant, nous transporte dans les cordillères des Andes en Amérique Latine où ce fruit est cultivé. Le lulo se consomme principalement en jus.",
+      "name": "Lulo",
+      "smoothieDescription": "Originalement rafraîchissant."
+    },
+    {
+      "filename": "mandarin-orange.jpg",
+      "fruitDescription": "Originaire des cordillères des Andes en Amérique du Sud, ce fruit parfumé, légèrement sucré et à la fois acidulé.",
+      "name": "Mandarine",
+      "smoothieDescription": "Douce et pétillante."
+    },
+    {
+      "filename": "mango.jpg",
+      "fruitDescription": "Sa pulpe tendre, juteuse et très parfumée nous offre une douce saveur sucrée avec un délicat goût acidulé.",
+      "name": "Mangue",
+      "smoothieDescription": "Goût doux et apaisant."
+    },
+    {
+      "filename": "passion-fruit.jpg",
+      "fruitDescription": "Aromatique et très juteux, ce fruit est originaire du bassin amazonien. Il possède une saveur sucrée et légèrement acidulée qui offre des nouvelles sensations à votre palais.",
+      "name": "Maracuja",
+      "smoothieDescription": "Authentique and pleine de pep's"
+    },
+    {
+      "filename": "blackberry.jpg",
+      "fruitDescription": "Goût très parfumé, la mûre a une saveur à la fois douce et acidulée. Selon les variétés, ce fruit gourmand par excellence, est de couleur violet plus ou moins foncé.",
+      "name": "Mûre Andine",
+      "smoothieDescription": "Intense et délicate."
+    },
+    {
+      "filename": "papaya.jpg",
+      "fruitDescription": "Sa chair est juteuse, sucrée et délicatement parfumée, même si elle est très gourmande.",
+      "name": "Papaye",
+      "smoothieDescription": "Zen et équilibré."
+    },
+    {
+      "filename": "tamarillo.jpg",
+      "fruitDescription": "Ce fruit parfumé, légèrement sucré et à la fois acidulé. Il est produit toute l'année principalement en Equateur et Colombie dans des zones d'altitude de 1000 à 2000 mètres.",
+      "name": "Tamarillo",
+      "smoothieDescription": "Aromatique et acidulé."
+    }
+  ]
+}

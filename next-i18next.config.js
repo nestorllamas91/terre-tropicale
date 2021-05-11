@@ -1,8 +1,10 @@
 module.exports = {
   i18n: {
-    locales: ['en-US', 'fr-FR', 'es-ES'],
+    locales: ['en-US', 'es-ES', 'fr-FR'],
     defaultLocale: 'fr-FR',
     localeDetection: false
   },
-  defaultNS: 'accueil'
+  localePath: './public/assets/locales',
+  defaultNS: 'home-page',
+  returnObjects: true
 };

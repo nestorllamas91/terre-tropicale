@@ -1,27 +1,26 @@
 import Head from 'next/head';
 
-const Maintenance = (): JSX.Element => (
+const MaintenancePage = (): JSX.Element => (
   <>
     <Head>
       <title>Terre Tropicale</title>
     </Head>
-    <div className="w-screen min-h-screen bg-lime-50">
-      <div className="absolute flex flex-col items-center px-6 top-1/4 tv:inset-x-0 tv:w-2/3 tv:mx-auto th:w-160">
+    <div className="flex flex-col min-h-screen bg-lime-50">
+      <main className="flex flex-col flex-1 items-center justify-center p-4 mh:w-5/6 mh:mx-auto mh:p-8 tv:w-2/3 tv:mx-auto th:w-160 th:mx-auto">
         <img src="/assets/logo/logo.svg" className="w-2/3 mb-6" />
-        <article className="text-left">
-          <h1 className="mb-2 text-3xl text-center">We&rsquo;ll be back soon!</h1>
-          <div className="paragraph-margin">
-            <p>
-              Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you
-              can always <a href="mailto:contact@terretropicale.com">contact us</a>, otherwise we&rsquo;ll be back
-              online shortly!
-            </p>
-            <p>&mdash; Terre Tropicale Team</p>
-          </div>
-        </article>
-      </div>
+        <h1 className="mb-4 text-center">Nous reviendrons bientôt!</h1>
+        <div className="flex flex-col mb-6 space-y-2 text-left">
+          <p>
+            Désolé pour le désagrément, mais nous effectuons actuellement des travaux de maintenance. Si vous en avez
+            besoin, vous pouvez toujours <a href="mailto:contact@terretropicale.com">nous contacter</a>, sinon nous
+            serons de retour en ligne sous peu!
+          </p>
+          <span>&mdash; L&rsquo;équipe Terre Tropicale</span>
+        </div>
+        <img src="/assets/images/misc/maintenance.svg" className="w-full mh:w-3/4" />
+      </main>
     </div>
   </>
 );
 
-export default Maintenance;
+export default MaintenancePage;

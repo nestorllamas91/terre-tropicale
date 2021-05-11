@@ -1,0 +1,33 @@
+{
+  "cocktails": [
+    {
+      "filename": "amazonia.jpg",
+      "ingredients": ["Maracuja", "Mandarine", "Gingembre", "Menthe"],
+      "name": "Amazonia"
+    },
+    {
+      "filename": "blackberry.jpg",
+      "ingredients": ["Mûre Andine", "Ananas", "Jus de citron"],
+      "name": "Blackberry"
+    },
+    {
+      "filename": "corossol-colada.jpg",
+      "ingredients": ["Corossol", "Ananas", "Lait de coco", "Menthe"],
+      "name": "Corossol Colada"
+    },
+    {
+      "filename": "lulada.jpg",
+      "ingredients": ["Lulo", "Mangue", "Jus de citron"],
+      "name": "Lulada"
+    },
+    {
+      "filename": "pili-tropical.jpg",
+      "ingredients": ["Papaye ou goyave", "Maracuja", "Piment d'espelette", "Menthe"],
+      "name": "Pili Tropical"
+    }
+  ],
+  "header-body-1": "Cool fruit cocktails",
+  "header-body-2": "Préparation sans alcool, 33 cl",
+  "header-heading": "NOS COCKTAILS",
+  "page-title": "Nos cocktails | Terre Tropicale"
+}
