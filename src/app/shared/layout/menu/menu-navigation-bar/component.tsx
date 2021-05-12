@@ -19,7 +19,7 @@ type MenuNavigationBarProps = {
 const MenuNavigationBar = ({ pages, viewportWidth, openMenuSlidable }: MenuNavigationBarProps): JSX.Element => {
   const { t } = useTranslation('menu');
   const activePathname = useRouter().asPath;
-
+  //
   return (
     <div className="z-10 fixed top-0 flex justify-center items-center w-full p-2.5 bg-lime-100 shadow-md mh:p-4 tv:px-8 tv:py-4 th:px-8 th:py-4">
       <div className="flex flex-row justify-start flex-none">
