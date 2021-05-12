@@ -1,0 +1,27 @@
+@media (max-width: 640px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+@media (min-width: 1280px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+
+/*# sourceMappingURL=styles.module.css.map */

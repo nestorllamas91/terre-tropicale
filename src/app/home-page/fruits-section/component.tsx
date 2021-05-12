@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT_1, BREAKPOINT_2 } from '@/data/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2 } from '@/app/shared/constants.json';
 
 type ViewportDimensions = {
   viewportWidth: number;

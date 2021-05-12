@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
-import Icon from '@/app/shared/icon/component';
-import { ARROW } from '@/data/icons.json';
+import { ArrowIcon } from '@/app/shared/icons';
 
 type Cocktail = {
   filename: string;
@@ -25,7 +24,7 @@ const CocktailsSection = (): JSX.Element => {
               <ul className="space-y-1">
                 {ingredients.map(ingredient => (
                   <li key={ingredient} className="flex flex-row items-center">
-                    <Icon path={ARROW.path} viewBox={ARROW.viewBox} className="w-3 mr-2" />
+                    <ArrowIcon className="w-3 mr-2" />
                     <span>{ingredient}</span>
                   </li>
                 ))}

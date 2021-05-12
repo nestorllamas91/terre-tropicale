@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
-import { BREAKPOINT_1, BREAKPOINT_2 } from '@/data/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2 } from '@/app/shared/constants.json';
 
 type Smoothie = {
   filename: string;

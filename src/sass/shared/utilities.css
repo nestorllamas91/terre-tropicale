@@ -1,0 +1,14 @@
+@tailwind utilities;
+@layer utilities {
+  @variants responsive {
+    .w-160 {
+      width: 40rem;
+    }
+
+    .w-248 {
+      width: 64rem;
+    }
+  }
+}
+
+/*# sourceMappingURL=utilities.css.map */

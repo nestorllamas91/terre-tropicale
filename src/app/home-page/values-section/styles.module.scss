@@ -1,0 +1,34 @@
+// mobile portrait
+@media (max-width: 640px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+
+// mobile landscape
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+
+// tablet portrait
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+
+// tablet landscape + laptop + desktop
+@media (min-width: 1024px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
+
+// tablet landscape + laptop + desktop
+@media (min-width: 1280px) {
+  .values-image {
+    border-radius: 50%;
+  }
+}
