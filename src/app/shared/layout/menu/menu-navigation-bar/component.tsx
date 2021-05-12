@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import { BREAKPOINT_2 } from '@/shared/constants';
 import MenuIcon from '@/shared/icons/menu';
@@ -19,12 +18,12 @@ type MenuNavigationBarProps = {
 const MenuNavigationBar = ({ pages, viewportWidth, openMenuSlidable }: MenuNavigationBarProps): JSX.Element => {
   const { t } = useTranslation('menu');
   const activePathname = useRouter().asPath;
-  //
+
   return (
     <div className="z-10 fixed top-0 flex justify-center items-center w-full p-2.5 bg-lime-100 shadow-md mh:p-4 tv:px-8 tv:py-4 th:px-8 th:py-4">
       <div className="flex flex-row justify-start flex-none">
         <Link href={t('home-pathname-original')} as={t('home-pathname')}>
-          <LazyLoadImage src="/assets/logo/logo.svg" effect="blur" className="h-10 cursor-pointer" />
+          <img src="/assets/logo/logo.svg" className="h-10 cursor-pointer" />
         </Link>
       </div>
       {viewportWidth >= BREAKPOINT_2 && (

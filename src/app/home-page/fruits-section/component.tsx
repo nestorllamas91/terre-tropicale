@@ -44,61 +44,73 @@ const FruitsSection = (): JSX.Element | null => {
       {layout === 'mv' ? (
         <div className="grid grid-cols-2">
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-guava-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-blackberry-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-passion-fruit-name')}
             </span>
           </div>
           <div className="relative flex row-span-2">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-mango-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-papaya-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-solanum-quitoense-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-soursop-name')}
             </span>
           </div>
           <div className="relative flex col-span-2">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-tamarillo-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-pineapple-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-mandarin-orange-name')}
             </span>
@@ -107,61 +119,73 @@ const FruitsSection = (): JSX.Element | null => {
       ) : (
         <div className="grid grid-cols-4">
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-guava-name')}
             </span>
           </div>
           <div className="relative flex row-span-2">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-mango-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-blackberry-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-passion-fruit-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-papaya-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-solanum-quitoense-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-soursop-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-pineapple-name')}
             </span>
           </div>
           <div className="relative flex">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`} effect="blur" />
+            <LazyLoadImage
+              src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`}
+              effect="blur"
+              width="100%"
+            />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-mandarin-orange-name')}
             </span>
           </div>
           <div className="relative flex col-span-2">
-            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} effect="blur" />
+            <LazyLoadImage src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} effect="blur" width="100%" />
             <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
               {t('fruits-tamarillo-name')}
             </span>
