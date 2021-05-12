@@ -1,0 +1,37 @@
+@tailwind components;
+@layer components {
+  .button {
+    @apply px-4 py-1.5 rounded text-white bg-lime-500 hover:bg-lime-600 focus:outline-none;
+  }
+
+  .page-menu-slidable {
+    @apply flex items-center mt-1 pl-3 pr-4 border-l-4;
+  }
+
+  .page-menu-navigation-bar {
+    @apply flex items-center px-1 pt-2 pb-1 border-b;
+  }
+
+  .active-page {
+    @apply border-lime-600;
+  }
+
+  .active-page > span,
+  .active-page {
+    @apply font-semibold;
+  }
+
+  .inactive-page {
+    @apply border-transparent hover:border-gray-600 text-lime-900 hover:text-gray-900;
+  }
+
+  .page-subtitle {
+    @apply text-base text-white mh:text-base tv:text-lg th:text-lg;
+  }
+
+  .paragraph-margin > p:not(:last-of-type) {
+    @apply mb-2 leading-6;
+  }
+}
+
+/*# sourceMappingURL=components.css.map */

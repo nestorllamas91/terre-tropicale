@@ -1,104 +1,133 @@
 import { Dialog, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
-import Icon from '@/app/shared/icon/component';
-import { CLOSE, COCKTAIL, CONTACT, HOME, INFO, SMOOTHIE } from '@/data/icons.json';
+import { CloseIcon, CocktailIcon, ContactIcon, HomeIcon, InfoIcon, SmoothieIcon } from '@/app/shared/icons';
+
+const classNames = (...classes: string[]) => {
+  return classes.filter(Boolean).join(' ');
+};
 
 type MenuSlidableProps = {
+  pages: {
+    page: string;
+    pathname: string;
+    originalPathname: string;
+  }[];
   isOpenMenuSlidable: boolean;
   closeMenuSlidable: () => void;
 };
 
-const MenuSlidable = ({ isOpenMenuSlidable, closeMenuSlidable }: MenuSlidableProps): JSX.Element => {
-  const { t } = useTranslation('menu');
-  const activePathname = useRouter().asPath;
+const MenuSlidable = ({ pages, isOpenMenuSlidable, closeMenuSlidable }: MenuSlidableProps): JSX.Element => (
+  <Transition.Root show={isOpenMenuSlidable} as={Fragment}>
+    <Dialog as="div" static open={isOpenMenuSlidable} onClose={closeMenuSlidable}>
+      <Transition.Child
+        as={Fragment}
+        enter="ease-in-out duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="ease-in-out duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <Dialog.Overlay className="fixed inset-0 h-screen transition-opacity bg-gray-700 bg-opacity-75" />
+      </Transition.Child>
+      <Transition.Child
+        as={Fragment}
+        enter="transform transition ease-out duration-300"
+        enterFrom="translate-x-full"
+        enterTo="translate-x-0"
+        leave="transform transition ease-out duration-300"
+        leaveFrom="translate-x-0"
+        leaveTo="translate-x-full"
+      >
+        <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2 tv:w-72">
+          <button
+            onClick={closeMenuSlidable}
+            className="ml-auto mr-2.5 mt-2.5 p-2 rounded hover:bg-lime-300 focus:outline-none mh:mr-4 mh:mt-4 tv:mr-8 tv:mt-4"
+          >
+            <CloseIcon className="w-6" />
+          </button>
+          <PagesMenuSlidable pages={pages} closeMenuSlidable={closeMenuSlidable} />
+        </div>
+      </Transition.Child>
+    </Dialog>
+  </Transition.Root>
+);
 
-  const pages = [
-    {
-      page: t('home-page'),
-      pathname: t('home-pathname'),
-      originalPathname: t('home-pathname-original'),
-      icon: HOME
-    },
-    {
-      page: t('our-smoothies-page'),
-      pathname: t('our-smoothies-pathname'),
-      originalPathname: t('our-smoothies-pathname-original'),
-      icon: SMOOTHIE
-    },
-    {
-      page: t('our-cocktails-page'),
-      pathname: t('our-cocktails-pathname'),
-      originalPathname: t('our-cocktails-pathname-original'),
-      icon: COCKTAIL
-    },
-    {
-      page: t('about-page'),
-      pathname: t('about-pathname'),
-      originalPathname: t('about-pathname-original'),
-      icon: INFO
-    },
-    {
-      page: t('contact-page'),
-      pathname: t('contact-pathname'),
-      originalPathname: t('contact-pathname-original'),
-      icon: CONTACT
-    }
-  ];
-
-  return (
-    <Transition.Root show={isOpenMenuSlidable} as={Fragment}>
-      <Dialog as="div" static open={isOpenMenuSlidable} onClose={closeMenuSlidable}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-in-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in-out duration-300"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Dialog.Overlay className="fixed inset-0 h-screen transition-opacity bg-gray-700 bg-opacity-75" />
-        </Transition.Child>
-        <Transition.Child
-          as={Fragment}
-          enter="transform transition ease-out duration-300"
-          enterFrom="translate-x-full"
-          enterTo="translate-x-0"
-          leave="transform transition ease-out duration-300"
-          leaveFrom="translate-x-0"
-          leaveTo="translate-x-full"
-        >
-          <div className="fixed inset-y-0 right-0 z-20 flex flex-col h-screen space-y-4 bg-white w-72 mh:w-1/2 tv:w-72">
-            <button
-              onClick={closeMenuSlidable}
-              className="ml-auto mr-2.5 mt-2.5 p-2 rounded hover:bg-lime-300 focus:outline-none mh:mr-4 mh:mt-4 tv:mr-8 tv:mt-4"
-            >
-              <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-6" />
-            </button>
-            {pages.map(({ page, pathname, originalPathname, icon }) => (
-              <PageMenuSlidable
-                key={pathname}
-                page={page}
-                pathname={pathname}
-                originalPathname={originalPathname}
-                activePathname={activePathname}
-                icon={icon}
-                closeMenuSlidable={closeMenuSlidable}
-              />
-            ))}
-          </div>
-        </Transition.Child>
-      </Dialog>
-    </Transition.Root>
-  );
+type PagesMenuSlidableProps = {
+  pages: {
+    page: string;
+    pathname: string;
+    originalPathname: string;
+  }[];
+  closeMenuSlidable: () => void;
 };
 
-const classNames = (...classes: string[]) => {
-  return classes.filter(Boolean).join(' ');
+const PagesMenuSlidable = ({ pages, closeMenuSlidable }: PagesMenuSlidableProps) => {
+  const activePathname = useRouter().asPath;
+
+  return (
+    <>
+      <PageMenuSlidable
+        page={pages[0].page}
+        pathname={pages[0].pathname}
+        originalPathname={pages[0].originalPathname}
+        activePathname={activePathname}
+        closeMenuSlidable={closeMenuSlidable}
+      >
+        <HomeIcon
+          className={classNames('w-6 mr-3', activePathname === pages[0].pathname ? 'fill-current text-lime-600' : '')}
+        />
+      </PageMenuSlidable>
+      <PageMenuSlidable
+        page={pages[1].page}
+        pathname={pages[1].pathname}
+        originalPathname={pages[1].originalPathname}
+        activePathname={activePathname}
+        closeMenuSlidable={closeMenuSlidable}
+      >
+        <SmoothieIcon
+          className={classNames('w-6 mr-3', activePathname === pages[1].pathname ? 'fill-current text-lime-600' : '')}
+        />
+      </PageMenuSlidable>
+      <PageMenuSlidable
+        page={pages[2].page}
+        pathname={pages[2].pathname}
+        originalPathname={pages[2].originalPathname}
+        activePathname={activePathname}
+        closeMenuSlidable={closeMenuSlidable}
+      >
+        <CocktailIcon
+          className={classNames('w-6 mr-3', activePathname === pages[2].pathname ? 'fill-current text-lime-600' : '')}
+        />
+      </PageMenuSlidable>
+      <PageMenuSlidable
+        page={pages[3].page}
+        pathname={pages[3].pathname}
+        originalPathname={pages[3].originalPathname}
+        activePathname={activePathname}
+        closeMenuSlidable={closeMenuSlidable}
+      >
+        <InfoIcon
+          className={classNames('w-6 mr-3', activePathname === pages[3].pathname ? 'fill-current text-lime-600' : '')}
+        />
+      </PageMenuSlidable>
+      <PageMenuSlidable
+        page={pages[4].page}
+        pathname={pages[4].pathname}
+        originalPathname={pages[4].originalPathname}
+        activePathname={activePathname}
+        closeMenuSlidable={closeMenuSlidable}
+      >
+        <ContactIcon
+          className={classNames('w-6 mr-3', activePathname === pages[4].pathname ? 'fill-current text-lime-600' : '')}
+        />
+      </PageMenuSlidable>
+    </>
+  );
 };
 
 type PageMenuSlidableProps = {
@@ -106,11 +135,8 @@ type PageMenuSlidableProps = {
   pathname: string;
   originalPathname: string;
   activePathname: string;
-  icon: {
-    path: string;
-    viewBox: string;
-  };
   closeMenuSlidable: () => void;
+  children: ReactNode;
 };
 
 const PageMenuSlidable = ({
@@ -118,8 +144,8 @@ const PageMenuSlidable = ({
   pathname,
   originalPathname,
   activePathname,
-  icon,
-  closeMenuSlidable
+  closeMenuSlidable,
+  children
 }: PageMenuSlidableProps) => {
   const handleClick = (pathname: string) => {
     if (pathname === activePathname) {
@@ -133,11 +159,7 @@ const PageMenuSlidable = ({
         onClick={() => handleClick(pathname)}
         className={classNames('page-menu-slidable', activePathname === pathname ? 'active-page' : 'inactive-page')}
       >
-        <Icon
-          path={icon.path}
-          viewBox={icon.viewBox}
-          className={classNames('w-6 mr-3', activePathname === pathname ? 'fill-current text-lime-600' : '')}
-        />
+        {children}
         <span className="font-heading text-sm uppercase">{page}</span>
       </a>
     </Link>

@@ -2,8 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import { FormEvent, Fragment, useRef, useState } from 'react';
 
-import Icon from '@/app/shared/icon/component';
-import { CLOSE, FAILURE, SUCCESS, WARNING } from '@/data/icons.json';
+import { CloseIcon, FailureIcon, SuccessIcon, WarningIcon } from '@/app/shared/icons';
 
 type Sender = {
   name: string;
@@ -170,7 +169,7 @@ const ConfirmationModal = ({
   const handleConfirm = async () => {
     closeConfirmationModal();
     try {
-      const url = '/api/contact';
+      const url = '/api/contact-page';
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -222,11 +221,11 @@ const ConfirmationModal = ({
                 onClick={closeConfirmationModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
               >
-                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+                <CloseIcon className="w-4" />
               </button>
               <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-orange-100">
-                  <Icon path={WARNING.path} viewBox={WARNING.viewBox} className="w-7 fill-current text-orange-400" />
+                  <WarningIcon className="w-7 fill-current text-orange-400" />
                 </div>
                 <div className="flex flex-col mt-2 text-center">
                   <Dialog.Title as="span" className="font-semibold">
@@ -285,11 +284,11 @@ const SuccessModal = ({ isOpenSuccessModal, closeSuccessModal }: SuccessModalPro
                 onClick={closeSuccessModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
               >
-                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+                <CloseIcon className="w-4" />
               </button>
               <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                  <Icon path={SUCCESS.path} viewBox={SUCCESS.viewBox} className="w-7 fill-current text-green-400" />
+                  <SuccessIcon className="w-7 fill-current text-green-400" />
                 </div>
                 <div className="flex flex-col mt-2 text-center">
                   <Dialog.Title as="span" className="font-semibold">
@@ -348,11 +347,11 @@ const FailureModal = ({ isOpenFailureModal, closeFailureModal }: FailureModalPro
                 onClick={closeFailureModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
               >
-                <Icon path={CLOSE.path} viewBox={CLOSE.viewBox} className="w-4" />
+                <CloseIcon className="w-4" />
               </button>
               <div className="px-6 pt-2 pb-5 bg-white">
                 <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
-                  <Icon path={FAILURE.path} viewBox={FAILURE.viewBox} className="w-7 fill-current text-red-400" />
+                  <FailureIcon className="w-7 fill-current text-red-400" />
                 </div>
                 <div className="flex flex-col mt-2 text-center">
                   <Dialog.Title as="span" className="font-semibold">

@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@/app/*": ["app/*"],
-      "@/data/*": ["data/*"]
+      "@/sass/*": ["sass/*"]
     },
     "strict": true,
     "target": "es5",

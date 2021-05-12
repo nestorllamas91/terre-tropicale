@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
-import Icon from '@/app/shared/icon/component';
-import { FACEBOOK, INSTAGRAM, TWITTER } from '@/data/icons.json';
+import { FacebookIcon, InstagramIcon, TwitterIcon } from '@/app/shared/icons';
 
 const SocialMediaAndCopyrightSection = (): JSX.Element => {
   const { t } = useTranslation('footer');
@@ -16,7 +15,7 @@ const SocialMediaAndCopyrightSection = (): JSX.Element => {
           target="_blank"
           className="mr-5 text-current hover:text-lime-600"
         >
-          <Icon path={TWITTER.path} viewBox={TWITTER.viewBox} className="h-6" />
+          <TwitterIcon className="h-6" />
         </a>
         <a
           href="https://www.facebook.com/terretropicale"
@@ -24,7 +23,7 @@ const SocialMediaAndCopyrightSection = (): JSX.Element => {
           target="_blank"
           className="mr-5 text-current hover:text-lime-600"
         >
-          <Icon path={FACEBOOK.path} viewBox={FACEBOOK.viewBox} className="h-6" />
+          <FacebookIcon className="h-6" />
         </a>
         <a
           href="https://www.instagram.com/terretropicale"
@@ -32,7 +31,7 @@ const SocialMediaAndCopyrightSection = (): JSX.Element => {
           target="_blank"
           className="text-current hover:text-lime-600"
         >
-          <Icon path={INSTAGRAM.path} viewBox={INSTAGRAM.viewBox} className="h-6" />
+          <InstagramIcon className="h-6" />
         </a>
       </div>
       <span>{t('copyright', { 'current-year': new Date().getFullYear() })}</span>

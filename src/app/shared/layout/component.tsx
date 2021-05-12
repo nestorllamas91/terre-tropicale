@@ -4,6 +4,10 @@ import React from 'react';
 import Footer from '@/app/shared/layout/footer/component';
 import Menu from '@/app/shared/layout/menu/component';
 
+type LayoutProps = {
+  children: ReactNode;
+};
+
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <div className="flex flex-col h-screen">
     <Menu />
@@ -13,9 +17,5 @@ const Layout = ({ children }: LayoutProps): JSX.Element => (
     <Footer />
   </div>
 );
-
-type LayoutProps = {
-  children: ReactNode;
-};
 
 export default Layout;
