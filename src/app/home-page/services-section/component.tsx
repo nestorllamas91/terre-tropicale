@@ -12,6 +12,7 @@ const ServicesSection = (): JSX.Element => {
           <LazyLoadImage
             src="/assets/images/misc/services-1.jpg"
             effect="blur"
+            width="100%"
             className="object-cover w-full mh:h-56 th:h-auto"
           />
           <div className="absolute flex flex-col items-start w-full h-full p-4 text-white bg-black bg-opacity-40 tv:p-10 mh:p-10 th:p-20">
@@ -24,6 +25,7 @@ const ServicesSection = (): JSX.Element => {
           <LazyLoadImage
             src="/assets/images/misc/services-2.jpg"
             effect="blur"
+            width="100%"
             className="object-cover w-full mh:h-56 th:h-auto"
           />
           <div className="absolute flex flex-col items-start w-full h-full p-4 text-white bg-black bg-opacity-40 tv:p-10 mh:p-10 th:p-20">
