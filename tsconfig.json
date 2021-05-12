@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@/app/*": ["app/*"],
-      "@/sass/*": ["sass/*"]
-    },
+    "baseUrl": "./src/app/",
+    "paths": { "@/*": ["*"] },
     "strict": true,
     "target": "es5",
     "module": "esnext",

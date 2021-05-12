@@ -14,4 +14,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       };
 };
 
-export { default } from '@/app/error-404-page/component';
+export { default } from '@/error-404-page/component';

@@ -1,8 +1,9 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import { Fragment, useEffect, useRef, useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { BREAKPOINT_1, BREAKPOINT_2 } from '@/app/shared/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2 } from '@/shared/constants';
 
 type Smoothie = {
   filename: string;
@@ -26,7 +27,7 @@ const SmoothiesSection = (): JSX.Element => {
             onClick={() => setSmoothie(smoothie)}
             className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
           >
-            <img src={`/assets/images/smoothies/${filename}`} />
+            <LazyLoadImage src={`/assets/images/smoothies/${filename}`} effect="blur" />
             <div className="flex flex-col justify-between flex-1 p-4 bg-warmGray-50">
               <h3 className="text-lime-600">{name}</h3>
               <p className="mt-3">{smoothieDescription}</p>
@@ -111,14 +112,22 @@ const DialogFruit = ({ smoothie: { filename, fruitDescription, name }, closeFrui
                     </Dialog.Title>
                     <p className="mt-3 text-sm text-left tv:mt-5">{fruitDescription}</p>
                   </div>
-                  <img src={`/assets/images/fruits/${filename}`} className="mh:w-1/2 mh:h-auto" />
+                  <LazyLoadImage
+                    src={`/assets/images/fruits/${filename}`}
+                    effect="blur"
+                    className="mh:w-1/2 mh:h-auto"
+                  />
                 </div>
               ) : (
                 <div className="flex flex-col">
                   <Dialog.Title as="h3" className="mb-4 font-bold text-center">
                     {name}: {t('fruit-heading-description')}
                   </Dialog.Title>
-                  <img src={`/assets/images/fruits/${filename}`} className="mh:w-1/2 mh:h-auto" />
+                  <LazyLoadImage
+                    src={`/assets/images/fruits/${filename}`}
+                    effect="blur"
+                    className="mh:w-1/2 mh:h-auto"
+                  />
                   <p className="mt-3 text-sm text-left tv:mt-5">{fruitDescription}</p>
                 </div>
               )}

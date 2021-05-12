@@ -1,9 +1,9 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT_2 } from '@/app/shared/constants.json';
-import MenuNavigationBar from '@/app/shared/layout/menu/menu-navigation-bar/component';
-import MenuSlidable from '@/app/shared/layout/menu/menu-slidable/component';
+import { BREAKPOINT_2 } from '@/shared/constants';
+import MenuNavigationBar from '@/shared/layout/menu/menu-navigation-bar/component';
+import MenuSlidable from '@/shared/layout/menu/menu-slidable/component';
 
 const Menu = (): JSX.Element => {
   const { t } = useTranslation('menu');

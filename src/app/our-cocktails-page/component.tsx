@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 
-import CocktailsSection from '@/app/our-cocktails-page/cocktails-section/component';
-import HeaderSection from '@/app/our-cocktails-page/header-section/component';
-import Layout from '@/app/shared/layout/component';
+import CocktailsSection from '@/our-cocktails-page/cocktails-section/component';
+import HeaderSection from '@/our-cocktails-page/header-section/component';
+import Layout from '@/shared/layout/component';
 
 const OurCocktailsPage = (): JSX.Element => {
   const { t } = useTranslation('our-cocktails-page');

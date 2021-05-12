@@ -2,7 +2,10 @@ import { Dialog, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import { FormEvent, Fragment, useRef, useState } from 'react';
 
-import { CloseIcon, FailureIcon, SuccessIcon, WarningIcon } from '@/app/shared/icons';
+import CloseIcon from '@/shared/icons/close';
+import FailureIcon from '@/shared/icons/failure';
+import SuccessIcon from '@/shared/icons/success';
+import WarningIcon from '@/shared/icons/warning';
 
 type Sender = {
   name: string;
