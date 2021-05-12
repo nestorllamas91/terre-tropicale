@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import Layout from '@/app/shared/layout/component';
+import Layout from '@/shared/layout/component';
 
 const Error500Page = (): JSX.Element => {
   const { t } = useTranslation('error-500-page');
@@ -17,7 +18,7 @@ const Error500Page = (): JSX.Element => {
             <h1>{t('error-heading')}</h1>
             <p>{t('error-body')}</p>
           </div>
-          <img src="/assets/images/misc/error-500.svg" className="w-full mh:w-3/4" />
+          <LazyLoadImage src="/assets/images/misc/error-500.svg" effect="blur" className="w-full mh:w-3/4" />
         </div>
       </Layout>
     </>

@@ -14,4 +14,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       };
 };
 
-export { default } from '@/app/our-smoothies-page/component';
+export { default } from '@/our-smoothies-page/component';

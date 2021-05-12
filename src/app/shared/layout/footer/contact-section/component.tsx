@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
-import ContactDetailsSection from '@/app/contact-page/contact-details-section/component';
+import ContactDetailsSection from '@/contact-page/contact-details-section/component';
 
 const ContactSection = (): JSX.Element => {
   const { t } = useTranslation('footer');

@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import React from 'react';
 
-import Footer from '@/app/shared/layout/footer/component';
-import Menu from '@/app/shared/layout/menu/component';
+import Footer from '@/shared/layout/footer/component';
+import Menu from '@/shared/layout/menu/component';
 
 type LayoutProps = {
   children: ReactNode;

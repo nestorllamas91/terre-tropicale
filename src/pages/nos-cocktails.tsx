@@ -14,4 +14,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       };
 };
 
-export { default } from '@/app/our-cocktails-page/component';
+export { default } from '@/our-cocktails-page/component';

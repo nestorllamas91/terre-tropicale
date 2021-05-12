@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT_1, BREAKPOINT_2, GOOGLE_MAPS_PLACE_ID } from '@/app/shared/constants.json';
+import { BREAKPOINT_1, BREAKPOINT_2, GOOGLE_MAPS_PLACE_ID } from '@/shared/constants';
 
 type ViewportDimensions = {
   viewportWidth: number;

@@ -14,4 +14,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       };
 };
 
-export { default } from '@/app/contact-page/component';
+export { default } from '@/contact-page/component';

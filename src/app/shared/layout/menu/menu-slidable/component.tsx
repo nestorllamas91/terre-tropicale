@@ -4,7 +4,12 @@ import { useRouter } from 'next/router';
 import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
-import { CloseIcon, CocktailIcon, ContactIcon, HomeIcon, InfoIcon, SmoothieIcon } from '@/app/shared/icons';
+import CloseIcon from '@/shared/icons/close';
+import CocktailIcon from '@/shared/icons/cocktail';
+import ContactIcon from '@/shared/icons/contact';
+import HomeIcon from '@/shared/icons/home';
+import InfoIcon from '@/shared/icons/info';
+import SmoothieIcon from '@/shared/icons/smoothie';
 
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');

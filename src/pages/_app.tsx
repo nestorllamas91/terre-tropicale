@@ -1,10 +1,10 @@
-import '@/app/shared/styles.css';
+import '@/shared/styles.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 
-import Maintenance from '@/app/maintenance/component';
+import Maintenance from '@/maintenance-page/component';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>

@@ -1,6 +1,9 @@
 import { useTranslation } from 'next-i18next';
 
-import { ClockIcon, EmailIcon, PhoneIcon, PlaceholderIcon } from '@/app/shared/icons';
+import ClockIcon from '@/shared/icons/clock';
+import EmailIcon from '@/shared/icons/email';
+import PhoneIcon from '@/shared/icons/phone';
+import PlaceholderIcon from '@/shared/icons/placeholder';
 
 const ContactDetailsSection = (): JSX.Element => {
   const { t } = useTranslation('contact-page');

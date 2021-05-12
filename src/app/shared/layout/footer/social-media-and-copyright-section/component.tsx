@@ -1,13 +1,16 @@
 import { useTranslation } from 'next-i18next';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import { FacebookIcon, InstagramIcon, TwitterIcon } from '@/app/shared/icons';
+import FacebookIcon from '@/shared/icons/facebook';
+import InstagramIcon from '@/shared/icons/instagram';
+import TwitterIcon from '@/shared/icons/twitter';
 
 const SocialMediaAndCopyrightSection = (): JSX.Element => {
   const { t } = useTranslation('footer');
 
   return (
     <div className="flex flex-col items-center px-4 py-3 bg-lime-100">
-      <img src="/assets/logo/symbol.svg" className="h-12 mb-2" />
+      <LazyLoadImage src="/assets/logo/symbol.svg" effect="blur" className="h-12 mb-2" />
       <div className="flex flex-row items-center mb-2">
         <a
           href="https://twitter.com/TerreTropicale"
