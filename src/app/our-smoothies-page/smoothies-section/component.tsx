@@ -36,7 +36,7 @@ const SmoothiesSection = (): JSX.Element => {
                 <span>{t('fruit-overlay-label')}</span>
               </div>
             </div>
-            <div className="flex flex-col justify-between flex-1 p-4 bg-warmGray-50">
+            <div className="flex flex-col justify-between p-4 bg-warmGray-50">
               <h3 className="text-lime-600">{name}</h3>
               <p className="mt-3">{smoothieDescription}</p>
             </div>

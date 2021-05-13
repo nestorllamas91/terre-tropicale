@@ -4,8 +4,8 @@ import { useTranslation } from 'next-i18next';
 
 import { BREAKPOINT_2 } from '@/shared/constants';
 import MenuIcon from '@/shared/icons/menu';
-import ShoppingCartIcon from '@/shared/icons/shopping-cart';
-import LanguageSelector from '@/shared/layout/menu/menu-navigation-bar/language-selector/component';
+// import ShoppingCartIcon from '@/shared/icons/shopping-cart';
+// import LanguageSelector from '@/shared/layout/menu/menu-navigation-bar/language-selector/component';
 
 type MenuNavigationBarProps = {
   pages: {
@@ -42,8 +42,8 @@ const MenuNavigationBar = ({ pages, viewportWidth, openMenuSlidable }: MenuNavig
         </div>
       )}
       <div className="flex flex-row justify-end items-center flex-auto space-x-3 th:flex-none w-48 th:w-auto xl:w-48">
-        <LanguageSelector />
-        <ShoppingCartIcon className="h-6" />
+        {/* <LanguageSelector />
+        <ShoppingCartIcon className="h-6" /> */}
         {viewportWidth < BREAKPOINT_2 && (
           <button onClick={openMenuSlidable} className="p-2 rounded hover:bg-lime-300 focus:outline-none">
             <MenuIcon className="h-6" />
