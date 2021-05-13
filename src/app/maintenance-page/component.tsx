@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const MaintenancePage = (): JSX.Element => (
   <>
@@ -8,7 +7,7 @@ const MaintenancePage = (): JSX.Element => (
     </Head>
     <div className="flex flex-col min-h-screen bg-lime-50">
       <main className="flex flex-col flex-1 items-center justify-center p-4 mh:w-5/6 mh:mx-auto mh:p-8 tv:w-2/3 tv:mx-auto th:w-160 th:mx-auto">
-        <LazyLoadImage src="/assets/logo/logo.svg" effect="blur" className="w-2/3 mb-6" />
+        <img src="/assets/logo/logo.svg" className="w-2/3 mb-6" />
         <h1 className="mb-4 text-center">Nous reviendrons bientôt!</h1>
         <div className="flex flex-col mb-6 space-y-2 text-left">
           <p>
@@ -18,7 +17,7 @@ const MaintenancePage = (): JSX.Element => (
           </p>
           <span>&mdash; L&rsquo;équipe Terre Tropicale</span>
         </div>
-        <LazyLoadImage src="/assets/images/misc/maintenance.svg" effect="blur" className="w-full mh:w-3/4" />
+        <img src="/assets/images/misc/maintenance.svg" className="w-full mh:w-3/4" />
       </main>
     </div>
   </>

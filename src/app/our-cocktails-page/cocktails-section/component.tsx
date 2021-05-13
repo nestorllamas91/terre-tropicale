@@ -1,5 +1,4 @@
 import { useTranslation } from 'next-i18next';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ArrowIcon from '@/shared/icons/arrow';
 
@@ -19,12 +18,7 @@ const CocktailsSection = (): JSX.Element => {
         const { filename, ingredients, name } = cocktail;
         return (
           <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow-lg">
-            <LazyLoadImage
-              src={`/assets/images/cocktails/${filename}`}
-              effect="blur"
-              width="50%"
-              className="object-cover w-1/2"
-            />
+            <img src={`/assets/images/cocktails/${filename}`} className="object-cover w-1/2" />
             <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
               <h3 className="mb-2 text-lime-600">{name}</h3>
               <ul className="space-y-1">

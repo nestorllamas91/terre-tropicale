@@ -25,6 +25,10 @@
     @apply border-transparent hover:border-gray-600 text-lime-900 hover:text-gray-900;
   }
 
+  .language-menu-navigation-bar {
+    @apply flex items-center text-sm cursor-pointer;
+  }
+
   .page-subtitle {
     @apply text-base text-white mh:text-base tv:text-lg th:text-lg;
   }
