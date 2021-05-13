@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+import styles from '@/our-smoothies-page/smoothies-section/styles.module.scss';
 import { BREAKPOINT_1, BREAKPOINT_2 } from '@/shared/constants';
 
 type Smoothie = {
@@ -27,7 +27,15 @@ const SmoothiesSection = (): JSX.Element => {
             onClick={() => setSmoothie(smoothie)}
             className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
           >
-            <LazyLoadImage src={`/assets/images/smoothies/${filename}`} effect="blur" />
+            <div className={styles.hovereffect}>
+              <img src={`/assets/images/smoothies/${filename}`} />
+              <div className={styles.overlay}>
+                <h2>
+                  {name}: {t('fruit-heading-description')}
+                </h2>
+                <span>{t('fruit-overlay-label')}</span>
+              </div>
+            </div>
             <div className="flex flex-col justify-between flex-1 p-4 bg-warmGray-50">
               <h3 className="text-lime-600">{name}</h3>
               <p className="mt-3">{smoothieDescription}</p>
@@ -112,22 +120,14 @@ const DialogFruit = ({ smoothie: { filename, fruitDescription, name }, closeFrui
                     </Dialog.Title>
                     <p className="mt-3 text-sm text-left tv:mt-5">{fruitDescription}</p>
                   </div>
-                  <LazyLoadImage
-                    src={`/assets/images/fruits/${filename}`}
-                    effect="blur"
-                    className="mh:w-1/2 mh:h-auto"
-                  />
+                  <img src={`/assets/images/fruits/${filename}`} className="mh:w-1/2 mh:h-auto" />
                 </div>
               ) : (
                 <div className="flex flex-col">
                   <Dialog.Title as="h3" className="mb-4 font-bold text-center">
                     {name}: {t('fruit-heading-description')}
                   </Dialog.Title>
-                  <LazyLoadImage
-                    src={`/assets/images/fruits/${filename}`}
-                    effect="blur"
-                    className="mh:w-1/2 mh:h-auto"
-                  />
+                  <img src={`/assets/images/fruits/${filename}`} className="mh:w-1/2 mh:h-auto" />
                   <p className="mt-3 text-sm text-left tv:mt-5">{fruitDescription}</p>
                 </div>
               )}

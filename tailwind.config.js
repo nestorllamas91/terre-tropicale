@@ -22,6 +22,11 @@ module.exports = {
       body: ['Lato Regular', 'sans-serif']
     }
   },
+  variants: {
+    extend: {
+      fill: ['hover']
+    }
+  },
   plugins: [require('@tailwindcss/forms')],
   purge: ['./src/app/**/component.tsx']
 };
