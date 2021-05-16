@@ -11,7 +11,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <div className="flex flex-col h-screen">
     <Menu />
-    <main className="flex flex-col flex-1 pt-20 mh:pt-24 tv:pt-24 th:pt-24 xl:pt-24 th:w-248 th:m-auto">
+    <main className="flex flex-col flex-1 pt-20 mh:pt-20 tv:pt-24 th:pt-24 xl:pt-24 th:w-248 th:m-auto">
       {children}
     </main>
     <Footer />
