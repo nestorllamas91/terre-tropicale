@@ -54,7 +54,7 @@ const LanguageSelector = (): JSX.Element | null => {
     <Listbox value={selectedLanguage} onChange={language => setSelectedLanguage(language)}>
       {({ open }) => (
         <div className="relative w-32">
-          <Listbox.Button className="flex justify-between items-center w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-left bg-white focus:outline-none">
+          <Listbox.Button className="flex justify-between items-center w-full px-3 py-1 border border-gray-300 rounded-md shadow text-left bg-white focus:outline-none">
             <span>{selectedLanguage.name}</span>
             <ArrowIcon className="w-3 transform rotate-90" />
           </Listbox.Button>
@@ -67,7 +67,7 @@ const LanguageSelector = (): JSX.Element | null => {
           >
             <Listbox.Options
               static
-              className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none"
+              className="absolute z-10 mt-1 w-full bg-white shadow max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none"
             >
               {languages.map(language => (
                 <Listbox.Option

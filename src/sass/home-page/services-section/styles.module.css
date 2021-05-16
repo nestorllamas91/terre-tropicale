@@ -1,1 +1,110 @@
+.section {
+  margin-bottom: 30px;
+}
+.section > h2 {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.section > div {
+  display: flex;
+}
+.section > div > div {
+  position: relative;
+}
+.section > div > div > img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.section > div > div > div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.section > div > div > div > h3 {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.section > div > div > div > p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.section > div > div > div > button {
+  margin-top: auto;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #84cc16;
+}
+.section > div > div > div > button:hover {
+  background-color: #65a30d;
+}
+.section > div > div > div > button:focus {
+  outline: none;
+}
+.section > div > div:not(:first-child) {
+  margin-left: 4px;
+}
+
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
+  .section > div > div > img {
+    height: 220px;
+  }
+  .section > div > div > div {
+    padding: 40px;
+  }
+  .section > div > div:not(:first-child) {
+    margin-left: 8px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
+  .section > h2 {
+    font-size: 18px;
+  }
+  .section > div > div > div {
+    padding: 40px;
+  }
+  .section > div > div > div > h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .section > div > div > div > p {
+    font-size: 16px;
+  }
+  .section > div > div:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .section > h2 {
+    font-size: 18px;
+  }
+  .section > div > div > div {
+    padding: 80px;
+  }
+  .section > div > div > div > h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .section > div > div > div > p {
+    font-size: 16px;
+  }
+  .section > div > div:not(:first-child) {
+    margin-left: 12px;
+  }
+}
+
 /*# sourceMappingURL=styles.module.css.map */

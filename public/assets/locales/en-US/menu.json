@@ -1,0 +1,17 @@
+{
+  "about-page": "About",
+  "about-pathname": "/about",
+  "about-pathname-original": "/a-propos",
+  "contact-page": "Contact",
+  "contact-pathname": "/contact",
+  "contact-pathname-original": "/contact",
+  "home-page": "Home",
+  "home-pathname": "/",
+  "home-pathname-original": "/",
+  "our-cocktails-page": "Our Cocktails",
+  "our-cocktails-pathname": "/our-cocktails",
+  "our-cocktails-pathname-original": "/nos-cocktails",
+  "our-smoothies-page": "Our Smoothies",
+  "our-smoothies-pathname": "/our-smoothies",
+  "our-smoothies-pathname-original": "/nos-smoothies"
+}

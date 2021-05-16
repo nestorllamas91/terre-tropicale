@@ -25,8 +25,8 @@
       "smoothieDescription": "Tonique, énergisant naturel."
     },
     {
-      "filename": "solanum-quitoense.jpg",
-      "fruitDescription": "Sa saveur acidulée et rafraîchissant, nous transporte dans les cordillères des Andes en Amérique Latine où ce fruit est cultivé. Le lulo se consomme principalement en jus.",
+      "filename": "lulo.jpg",
+      "fruitDescription": "Sa saveur acidulée et rafraîchissante, nous transporte dans les cordillères des Andes en Amérique Latine où ce fruit est cultivé. Le lulo se consomme principalement en jus.",
       "name": "Lulo",
       "smoothieDescription": "Originalement rafraîchissant."
     },
@@ -43,13 +43,13 @@
       "smoothieDescription": "Goût doux et apaisant."
     },
     {
-      "filename": "passion-fruit.jpg",
+      "filename": "maracuja.jpg",
       "fruitDescription": "Aromatique et très juteux, ce fruit est originaire du bassin amazonien. Il possède une saveur sucrée et légèrement acidulée qui offre des nouvelles sensations à votre palais.",
       "name": "Maracuja",
-      "smoothieDescription": "Authentique and pleine de pep's."
+      "smoothieDescription": "Authentique et pleine de peps."
     },
     {
-      "filename": "blackberry.jpg",
+      "filename": "andean-blackberry.jpg",
       "fruitDescription": "Goût très parfumé, la mûre a une saveur à la fois douce et acidulée. Selon les variétés, ce fruit gourmand par excellence, est de couleur violet plus ou moins foncé.",
       "name": "Mûre Andine",
       "smoothieDescription": "Intense et délicate."

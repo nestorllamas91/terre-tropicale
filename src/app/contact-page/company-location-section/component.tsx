@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT_1, BREAKPOINT_2, GOOGLE_MAPS_PLACE_ID } from '@/shared/constants';
+import { BREAKPOINT1, BREAKPOINT2, GOOGLE_MAPS_PLACE_ID } from '@/shared/constants';
 
 type ViewportDimensions = {
   viewportWidth: number;
@@ -29,9 +29,9 @@ const CompanyLocationSection = (): JSX.Element | null => {
     setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
   };
 
-  if (viewportWidth < BREAKPOINT_1) {
+  if (viewportWidth < BREAKPOINT1) {
     layout = 'mv';
-  } else if (viewportWidth < BREAKPOINT_2) {
+  } else if (viewportWidth < BREAKPOINT2) {
     layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
   } else {
     layout = 'th';
@@ -63,7 +63,7 @@ const IFrameCompanyLocation = ({ width, height }: IFrameCompanyLocationProps) =>
       height={height}
       loading="lazy"
       allowFullScreen
-      className="shadow-md mx-4"
+      className="shadow mx-4"
     ></iframe>
   );
 };

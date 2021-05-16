@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT_2 } from '@/shared/constants';
+import { BREAKPOINT2 } from '@/shared/constants';
 import MenuNavigationBar from '@/shared/layout/menu/menu-navigation-bar/component';
 import MenuSlidable from '@/shared/layout/menu/menu-slidable/component';
 
@@ -55,7 +55,7 @@ const Menu = (): JSX.Element => {
         viewportWidth={viewportWidth}
         openMenuSlidable={() => setIsOpenMenuSlidable(true)}
       />
-      {viewportWidth < BREAKPOINT_2 && (
+      {viewportWidth < BREAKPOINT2 && (
         <MenuSlidable
           pages={pages}
           isOpenMenuSlidable={isOpenMenuSlidable}
