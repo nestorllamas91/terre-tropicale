@@ -32,7 +32,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         // Properties relative to the element itself.
         width: 100%;
         height: auto;
-        border-radius: 20px;
       }
 
       > div {
@@ -44,7 +43,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         left: 0;
         // Properties relative to the element itself.
         padding: 20px;
-        border-radius: 20px;
         background-color: rgba(0, 0, 0, 0.4);
         // Properties relative to its content elements.
         display: flex;

@@ -17,7 +17,6 @@
   object-fit: cover;
   width: 100%;
   height: auto;
-  border-radius: 20px;
 }
 .section > div > div > div {
   position: absolute;
@@ -26,7 +25,6 @@
   bottom: 0;
   left: 0;
   padding: 20px;
-  border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;

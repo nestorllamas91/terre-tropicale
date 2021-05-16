@@ -3,7 +3,6 @@ import { useTranslation } from 'next-i18next';
 
 import HeaderSection from '@/about-page/header-section/component';
 import QuiSommesNousSection from '@/about-page/qui-sommes-nous-section/component';
-import ValuesSection from '@/home-page/values-section/component';
 import Layout from '@/shared/layout/component';
 
 const AboutPage = (): JSX.Element => {
@@ -17,7 +16,6 @@ const AboutPage = (): JSX.Element => {
       <Layout>
         <HeaderSection />
         <QuiSommesNousSection />
-        <ValuesSection />
       </Layout>
     </>
   );

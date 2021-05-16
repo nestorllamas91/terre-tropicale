@@ -26,21 +26,8 @@
   color: rgba(255, 255, 255, 0.9);
 }
 .section > div > p {
-  margin-bottom: 8px;
   font-size: 16px;
   color: rgba(255, 255, 255, 0.9);
-}
-.section > div > button {
-  padding: 4px 10px;
-  border-radius: 4px;
-  color: rgba(255, 255, 255, 0.9);
-  background-color: #84cc16;
-}
-.section > div > button:hover {
-  background-color: #65a30d;
-}
-.section > div > button:focus {
-  outline: none;
 }
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
@@ -60,7 +47,6 @@
     font-size: 22px;
   }
   .section > div > p {
-    margin-bottom: 12px;
     font-size: 18px;
   }
 }
@@ -73,7 +59,6 @@
     font-size: 22px;
   }
   .section > div > p {
-    margin-bottom: 12px;
     font-size: 18px;
   }
 }
