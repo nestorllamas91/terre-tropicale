@@ -3,7 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import styles from '@/our-smoothies-page/smoothies-section/styles.module.scss';
-import { BREAKPOINT_1, BREAKPOINT_2 } from '@/shared/constants';
+import { BREAKPOINT1, BREAKPOINT2 } from '@/shared/constants';
 
 type Smoothie = {
   filename: string;
@@ -25,7 +25,7 @@ const SmoothiesSection = (): JSX.Element => {
           <figure
             key={index}
             onClick={() => setSmoothie(smoothie)}
-            className="flex flex-col overflow-hidden rounded-lg shadow-lg cursor-pointer"
+            className="flex flex-col overflow-hidden rounded-lg shadow cursor-pointer"
           >
             <div className={styles.hovereffect}>
               <img src={`/assets/images/smoothies/${filename}`} />
@@ -36,9 +36,9 @@ const SmoothiesSection = (): JSX.Element => {
                 <span>{t('fruit-overlay-label')}</span>
               </div>
             </div>
-            <div className="flex flex-col justify-between p-4 bg-warmGray-50">
-              <h3 className="text-lime-600">{name}</h3>
-              <p className="mt-3">{smoothieDescription}</p>
+            <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
+              <h3 className="mb-2 text-lime-600">{name}</h3>
+              <p>{smoothieDescription}</p>
             </div>
           </figure>
         );
@@ -77,9 +77,9 @@ const DialogFruit = ({ smoothie: { filename, fruitDescription, name }, closeFrui
     setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
   };
 
-  if (viewportWidth < BREAKPOINT_1) {
+  if (viewportWidth < BREAKPOINT1) {
     layout = 'mv';
-  } else if (viewportWidth < BREAKPOINT_2) {
+  } else if (viewportWidth < BREAKPOINT2) {
     layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
   } else {
     layout = 'th';
@@ -111,7 +111,7 @@ const DialogFruit = ({ smoothie: { filename, fruitDescription, name }, closeFrui
             leaveFrom="opacity-100 translate-y-0 tv:scale-100"
             leaveTo="opacity-0 translate-y-4 tv:translate-y-0 tv:scale-95"
           >
-            <div className="px-4 py-4 overflow-hidden align-bottom transition-all transform bg-white rounded-lg shadow-xl tv:w-full tv:max-w-sm tv:p-6 tv:my-8 tv:align-middle mh:max-w-md mh:max-h-60 mh:p-6 th:w-full th:max-w-sm th:p-6 th:my-8 th:align-middle">
+            <div className="px-4 py-4 overflow-hidden align-bottom transition-all transform bg-white rounded-lg shadow tv:w-full tv:max-w-sm tv:p-6 tv:my-8 tv:align-middle mh:max-w-md mh:max-h-60 mh:p-6 th:w-full th:max-w-sm th:p-6 th:my-8 th:align-middle">
               {layout === 'mh' ? (
                 <div className="flex flex-row">
                   <div className="mr-4">

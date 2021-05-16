@@ -17,13 +17,13 @@ const CocktailsSection = (): JSX.Element => {
       {cocktails.map((cocktail, index) => {
         const { filename, ingredients, name } = cocktail;
         return (
-          <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow-lg">
+          <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow">
             <img src={`/assets/images/cocktails/${filename}`} className="object-cover w-1/2" />
             <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
               <h3 className="mb-2 text-lime-600">{name}</h3>
               <ul className="space-y-1">
                 {ingredients.map(ingredient => (
-                  <li key={ingredient} className="flex flex-row items-center">
+                  <li key={ingredient} className="flex flex-row items-baseline">
                     <ArrowIcon className="w-3 mr-2" />
                     <span>{ingredient}</span>
                   </li>

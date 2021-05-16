@@ -1,3 +1,21 @@
+@media (max-width: 640px) {
+  .hovereffect h2 {
+    font-size: 12px;
+  }
+
+  .hovereffect span {
+    font-size: 10px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
+  .hovereffect h2 {
+    font-size: 12px;
+  }
+
+  .hovereffect span {
+    font-size: 10px;
+  }
+}
 .hovereffect {
   float: left;
   overflow: hidden;
@@ -17,7 +35,6 @@
   overflow: hidden;
   top: 0;
   left: 0;
-  padding: 50px 20px;
 }
 
 .hovereffect img {

@@ -1,0 +1,69 @@
+{
+  "fruit-heading-description": "la fruta",
+  "header-body-1": "Los sabores del paraíso",
+  "header-body-2": "Frutas cuidadosamente seleccionadas",
+  "header-heading": "NUESTROS BATIDOS",
+  "page-title": "Nuestros batidos | Terre Tropicale",
+  "smoothies": [
+    {
+      "filename": "pineapple.jpg",
+      "fruitDescription": "Su jugosa pulpa de aroma exótico y su sabor refrescante, afrutado y dulce hacen que sea fácil de combinar con otras frutas.",
+      "name": "Piña",
+      "smoothieDescription": "\"Nana\" Fragancia de las fragancias."
+    },
+    {
+      "filename": "soursop.jpg",
+      "fruitDescription": "Su pulpa es cremosa, de sabor suave, muy perfumada y dulce.",
+      "name": "Corossol",
+      "smoothieDescription": "Suave y lleno de bondad."
+    },
+    {
+      "filename": "guava.jpg",
+      "fruitDescription": "Esta fruta es muy apreciada por su carne rosada y su sabor dulce. Evoca el dulce olor de los trópicos.",
+      "name": "Guayava",
+      "smoothieDescription": "Tónico, energizante natural."
+    },
+    {
+      "filename": "solanum-quitoense.jpg",
+      "fruitDescription": "Su sabor ácido y refrescante nos transporta a las cordilleras de los Andes en América Latina, donde se cultiva esta fruta. El lulo se consume principalmente en zumo.",
+      "name": "Lulo",
+      "smoothieDescription": "Originalmente refrescante."
+    },
+    {
+      "filename": "mandarin-orange.jpg",
+      "fruitDescription": "Originaria de las cordilleras andinas de Sudamérica, esta fragante fruta es ligeramente dulce y al mismo tiempo ácida.",
+      "name": "Mandarina",
+      "smoothieDescription": "Suave y chispeante."
+    },
+    {
+      "filename": "mango.jpg",
+      "fruitDescription": "Su pulpa tierna, jugosa y muy perfumada nos ofrece un sabor dulce con un delicado gusto acídulo.",
+      "name": "Mango",
+      "smoothieDescription": "Sabor dulce y calmante."
+    },
+    {
+      "filename": "passion-fruit.jpg",
+      "fruitDescription": "Aromática y muy jugosa, esta fruta procede de la cuenca del Amazonas. Tiene un sabor dulce y ligeramente ácido que ofrece nuevas sensaciones al paladar.",
+      "name": "Maracuyá",
+      "smoothieDescription": "Auténtica y lleno de vida"
+    },
+    {
+      "filename": "blackberry.jpg",
+      "fruitDescription": "De sabor muy fragante, la mora tiene un gusto a la vez dulce y ácido. Dependiendo de la variedad, esta deliciosa fruta por excelencia es de color morado más o menos oscuro.",
+      "name": "Zarazamora andina",
+      "smoothieDescription": "Intensa y delicada."
+    },
+    {
+      "filename": "papaya.jpg",
+      "fruitDescription": "Su carne es jugosa, dulce y de sabor delicado, aunque es muy golosa.",
+      "name": "Papaya",
+      "smoothieDescription": "Zen y equilibrada."
+    },
+    {
+      "filename": "tamarillo.jpg",
+      "fruitDescription": "Una fruta fragante, ligeramente dulce y al mismo tiempo ácida. Se produce durante todo el año, principalmente en Ecuador y Colombia, en zonas de altitud de 1000 a 2000 metros.",
+      "name": "Tamarillo",
+      "smoothieDescription": "Aromática y ácida."
+    }
+  ]
+}

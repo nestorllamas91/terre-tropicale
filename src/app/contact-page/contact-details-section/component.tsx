@@ -10,33 +10,33 @@ const ContactDetailsSection = (): JSX.Element => {
 
   return (
     <section className="px-4 space-y-4">
-      <div className="flex flex-row items-center">
-        <div className="flex flex-row items-center mr-3">
+      <div className="flex flex-col items-start">
+        <div className="flex flex-row items-center">
           <ClockIcon className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">{t('contact-details-schedule-label')}</span>
         </div>
-        <span>{t('contact-details-schedule-description')}</span>
+        <span className="ml-7">{t('contact-details-schedule-description')}</span>
       </div>
-      <div className="flex flex-row items-start">
-        <div className="flex flex-row items-center mr-3">
+      <div className="flex flex-col items-start">
+        <div className="flex flex-row items-center">
           <PlaceholderIcon className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">{t('contact-details-postal-address-label')}</span>
         </div>
-        <address>{t('contact-details-postal-address-description')}</address>
+        <address className="ml-7">{t('contact-details-postal-address-description')}</address>
       </div>
-      <div className="flex flex-row items-center">
-        <div className="flex flex-row items-center mr-3">
+      <div className="flex flex-col items-start">
+        <div className="flex flex-row items-center">
           <PhoneIcon className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">{t('contact-details-phone-label')}</span>
         </div>
-        <address>{t('contact-details-phone-description')}</address>
+        <address className="ml-7">{t('contact-details-phone-description')}</address>
       </div>
-      <div className="flex flex-row items-center">
-        <div className="flex flex-row items-center mr-3">
+      <div className="flex flex-col items-start">
+        <div className="flex flex-row items-center">
           <EmailIcon className="w-5 mr-2" />
           <span className="font-bold whitespace-nowrap">{t('contact-details-email-label')}</span>
         </div>
-        <address>
+        <address className="ml-7">
           <a href="mailto:contact@terretropicale.com" rel="noreferrer" target="_blank">
             {t('contact-details-email-description')}
           </a>

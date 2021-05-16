@@ -1,26 +1,130 @@
-@media (max-width: 640px) {
-  .values-image {
-    border-radius: 50%;
-  }
+.section {
+  margin-bottom: 30px;
+  padding: 0 16px;
 }
+.section > h2 {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.section > div {
+  display: flex;
+  flex-direction: column;
+}
+.section > div > div {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+}
+.section > div > div > img {
+  margin-right: 16px;
+  flex: none;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  border: #dc2626 solid 2px;
+  border-radius: 50%;
+}
+.section > div > div > div > h3 {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: rgba(101, 163, 13, 0.9);
+}
+.section > div > div > div > p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.section > div > div:not(:first-child) {
+  margin-top: 16px;
+}
+
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
-  .values-image {
-    border-radius: 50%;
+  .section > div {
+    flex-direction: row;
+  }
+  .section > div > div {
+    flex-direction: column;
+  }
+  .section > div > div > img {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  .section > div > div > div > h3 {
+    text-align: center;
+  }
+  .section > div > div > div > p {
+    text-align: center;
+  }
+  .section > div > div:not(:first-child) {
+    margin-top: 0;
+    margin-left: 16px;
   }
 }
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
-  .values-image {
-    border-radius: 50%;
+  .section {
+    padding: 0 40px;
+  }
+  .section > h2 {
+    font-size: 18px;
+  }
+  .section > div {
+    flex-direction: row;
+  }
+  .section > div > div {
+    flex-direction: column;
+  }
+  .section > div > div > img {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 130px;
+    height: 130px;
+  }
+  .section > div > div > div > h3 {
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .section > div > div > div > p {
+    text-align: center;
+    font-size: 16px;
+  }
+  .section > div > div:not(:first-child) {
+    margin-top: 0;
+    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
-  .values-image {
-    border-radius: 50%;
+  .section {
+    padding: 0 40px;
   }
-}
-@media (min-width: 1280px) {
-  .values-image {
-    border-radius: 50%;
+  .section > h2 {
+    font-size: 18px;
+  }
+  .section > div {
+    flex-direction: row;
+  }
+  .section > div > div {
+    flex-direction: column;
+  }
+  .section > div > div > img {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 130px;
+    height: 130px;
+  }
+  .section > div > div > div > h3 {
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 16px;
+  }
+  .section > div > div > div > p {
+    text-align: center;
+    font-size: 16px;
+  }
+  .section > div > div:not(:first-child) {
+    margin-top: 0;
+    margin-left: 16px;
   }
 }
 

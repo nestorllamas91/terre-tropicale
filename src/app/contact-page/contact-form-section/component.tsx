@@ -219,7 +219,7 @@ const ConfirmationModal = ({
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+            <div className="flex flex-col rounded-lg shadow overflow-hidden bg-white transform transition-all">
               <button
                 onClick={closeConfirmationModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
@@ -241,7 +241,7 @@ const ConfirmationModal = ({
                 <button
                   ref={refButtonConfirm}
                   onClick={handleConfirm}
-                  className="px-4 py-1.5 border border-transparent rounded-md shadow-sm text-white bg-lime-500 hover:bg-lime-600 focus:outline-none"
+                  className="px-4 py-1.5 border border-transparent rounded-md shadow text-white bg-lime-500 hover:bg-lime-600 focus:outline-none"
                 >
                   {t('contact-form-confirmation-modal-button')}
                 </button>
@@ -282,7 +282,7 @@ const SuccessModal = ({ isOpenSuccessModal, closeSuccessModal }: SuccessModalPro
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+            <div className="flex flex-col rounded-lg shadow overflow-hidden bg-white transform transition-all">
               <button
                 onClick={closeSuccessModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
@@ -304,7 +304,7 @@ const SuccessModal = ({ isOpenSuccessModal, closeSuccessModal }: SuccessModalPro
                 <button
                   ref={refButtonOk}
                   onClick={closeSuccessModal}
-                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none"
+                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow text-black bg-white hover:bg-gray-50 focus:outline-none"
                 >
                   {t('contact-form-success-modal-button')}
                 </button>
@@ -345,7 +345,7 @@ const FailureModal = ({ isOpenFailureModal, closeFailureModal }: FailureModalPro
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="flex flex-col rounded-lg shadow-xl overflow-hidden bg-white transform transition-all">
+            <div className="flex flex-col rounded-lg shadow overflow-hidden bg-white transform transition-all">
               <button
                 onClick={closeFailureModal}
                 className="self-end ml-auto mr-2 mt-2 p-2 rounded hover:bg-lime-300 focus:outline-none"
@@ -367,7 +367,7 @@ const FailureModal = ({ isOpenFailureModal, closeFailureModal }: FailureModalPro
                 <button
                   ref={refButtonOk}
                   onClick={closeFailureModal}
-                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow-sm text-black bg-white hover:bg-gray-50 focus:outline-none"
+                  className="px-4 py-1.5 border border-gray-300 rounded-md shadow text-black bg-white hover:bg-gray-50 focus:outline-none"
                 >
                   {t('contact-form-failure-modal-button')}
                 </button>
