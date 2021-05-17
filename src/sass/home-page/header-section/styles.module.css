@@ -32,13 +32,16 @@
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
   .section > img {
-    height: 220px;
+    height: 200px;
   }
   .section > div {
     padding: 40px;
   }
 }
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
+  .section > img {
+    height: 220px;
+  }
   .section > div {
     padding: 40px;
   }
@@ -51,6 +54,9 @@
   }
 }
 @media (min-width: 1024px) {
+  .section > img {
+    height: 300px;
+  }
   .section > div {
     padding: 80px;
   }
