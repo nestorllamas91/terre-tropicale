@@ -56,7 +56,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   .section {
     > img {
       // Properties relative to the element itself.
-      height: 220px;
+      height: 200px;
     }
 
     > div {
@@ -69,6 +69,11 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 // Layout 3: CSS media query for the design of Tablet Portrait and PC Portrait.
 @media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: portrait) {
   .section {
+    > img {
+      // Properties relative to the element itself.
+      height: 220px;
+    }
+
     > div {
       // Properties relative to the element itself.
       padding: 40px;
@@ -91,6 +96,11 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 // Layout 4: CSS media query for the first design of Tablet Landscape and PC Landscape.
 @media (min-width: $BREAKPOINT2) {
   .section {
+    > img {
+      // Properties relative to the element itself.
+      height: 300px;
+    }
+
     > div {
       // Properties relative to the element itself.
       padding: 80px;

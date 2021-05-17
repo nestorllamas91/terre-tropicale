@@ -59,7 +59,7 @@
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
   .section > div > div > img {
-    height: 220px;
+    height: 200px;
   }
   .section > div > div > div {
     padding: 40px;
@@ -71,6 +71,9 @@
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
   .section > h2 {
     font-size: 18px;
+  }
+  .section > div > div > img {
+    height: 220px;
   }
   .section > div > div > div {
     padding: 40px;
@@ -89,6 +92,9 @@
 @media (min-width: 1024px) {
   .section > h2 {
     font-size: 18px;
+  }
+  .section > div > div > img {
+    height: 300px;
   }
   .section > div > div > div {
     padding: 80px;

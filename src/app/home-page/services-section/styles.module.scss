@@ -96,7 +96,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
       > div {
         > img {
           // Properties relative to the element itself.
-          height: 220px;
+          height: 200px;
         }
 
         > div {
@@ -123,6 +123,11 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
     > div {
       > div {
+        > img {
+          // Properties relative to the element itself.
+          height: 220px;
+        }
+
         > div {
           // Properties relative to the element itself.
           padding: 40px;
@@ -159,6 +164,11 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
     > div {
       > div {
+        > img {
+          // Properties relative to the element itself.
+          height: 300px;
+        }
+
         > div {
           padding: 80px;
 
