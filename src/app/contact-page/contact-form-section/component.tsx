@@ -63,9 +63,9 @@ const ContactFormSection = (): JSX.Element => {
   };
 
   return (
-    <section className="mb-8 px-4 mh:w-1/2 mh:mx-auto tv:w-1/2 tv:mx-auto th:w-1/2 th:mx-auto">
+    <section className="px-4 mh:w-1/2 mh:mx-auto tv:w-1/2 tv:mx-auto th:w-1/2 th:mx-auto">
       <form onSubmit={e => handleSubmit(e)} className="flex flex-col">
-        <div className="space-y-3 mb-5">
+        <div className="gap-y-3 mb-5">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-lime-600">
               {t('contact-form-name-label')} <span className="text-red-500">*</span>
@@ -96,7 +96,7 @@ const ContactFormSection = (): JSX.Element => {
           </div>
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-lime-600">
-              {t('contact-form-email-label')}
+              {t('contact-form-phone-label')}
             </label>
             <input
               id="phone"
@@ -237,7 +237,7 @@ const ConfirmationModal = ({
                   <span className="mt-1 text-sm text-gray-500">{t('contact-form-confirmation-modal-body')}</span>
                 </div>
               </div>
-              <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
+              <div className="flex justify-center items-center px-4 py-3 bg-gray-100">
                 <button
                   ref={refButtonConfirm}
                   onClick={handleConfirm}
@@ -300,7 +300,7 @@ const SuccessModal = ({ isOpenSuccessModal, closeSuccessModal }: SuccessModalPro
                   <span className="mt-1 text-sm text-gray-500">{t('contact-form-success-modal-body')}</span>
                 </div>
               </div>
-              <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
+              <div className="flex justify-center items-center px-4 py-3 bg-gray-100">
                 <button
                   ref={refButtonOk}
                   onClick={closeSuccessModal}
@@ -363,7 +363,7 @@ const FailureModal = ({ isOpenFailureModal, closeFailureModal }: FailureModalPro
                   <span className="mt-1 text-sm text-gray-500">{t('contact-form-failure-modal-body')}</span>
                 </div>
               </div>
-              <div className="flex justify-center items-center px-4 py-3 space-x-4 bg-gray-100">
+              <div className="flex justify-center items-center px-4 py-3 bg-gray-100">
                 <button
                   ref={refButtonOk}
                   onClick={closeFailureModal}

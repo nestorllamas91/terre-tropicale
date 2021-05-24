@@ -1,6 +1,13 @@
 {
-  "contact-body": "Sign up for a free tasting",
-  "contact-button": "Get your quote now",
-  "contact-heading": "YOU ARE INTERESTED",
-  "copyright": "© {{current-year}} Terre Tropicale"
+  "contactSection": {
+    "body": "Sign up for a free tasting",
+    "button": "Get your quote now",
+    "heading": "YOU ARE INTERESTED"
+  },
+  "miscSection": {
+    "copyright": "© 2021 Terre Tropicale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter"
+  }
 }

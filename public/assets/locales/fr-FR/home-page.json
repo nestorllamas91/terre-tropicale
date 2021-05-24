@@ -1,36 +1,60 @@
 {
-  "benefits-1-body": "Des fruits récoltés à maturité optimale",
-  "benefits-2-body": "Des goûts authentiques avec de grandes qualités nutritionnelles",
-  "benefits-3-body": "Préparation simple et rapide",
-  "benefits-4-body": "Un grain de temps: pas de lavage ni d'épluchage des fruits",
-  "benefits-heading": "LES AVANTAGES PRODUIT",
-  "fruits-blackberry-filename": "andean-blackberry.jpg",
-  "fruits-blackberry-name": "Mûre Andine",
-  "fruits-guava-filename": "guava.jpg",
-  "fruits-guava-name": "Goyave",
-  "fruits-heading": "ORIGINALEMENT RAFRAÎCHISSANTE",
-  "fruits-mandarin-orange-filename": "mandarin-orange.jpg",
-  "fruits-mandarin-orange-name": "Mandarine",
-  "fruits-mango-filename": "mango.jpg",
-  "fruits-mango-name": "Mangue",
-  "fruits-papaya-filename": "papaya.jpg",
-  "fruits-papaya-name": "Papaye",
-  "fruits-passion-fruit-filename": "maracuja.jpg",
-  "fruits-passion-fruit-name": "Maracuja",
-  "fruits-pineapple-filename": "pineapple.jpg",
-  "fruits-pineapple-name": "Ananas",
-  "fruits-solanum-quitoense-filename": "lulo.jpg",
-  "fruits-solanum-quitoense-name": "Lulo",
-  "fruits-soursop-filename": "soursop.jpg",
-  "fruits-soursop-name": "Corossol",
-  "fruits-tamarillo-filename": "tamarillo.jpg",
-  "fruits-tamarillo-name": "Tamarillo",
-  "header-section": {
+  "benefitsSection": {
+    "body1": "Des fruits récoltés à maturité optimale",
+    "body2": "Des goûts authentiques avec de grandes qualités nutritionnelles",
+    "body3": "Préparation simple et rapide",
+    "body4": "Un grain de temps: pas de lavage ni d'épluchage des fruits",
+    "heading": "LES AVANTAGES PRODUIT"
+  },
+  "fruitsSection": {
+    "andeanRaspberry": {
+      "filename": "andean-raspberry.jpg",
+      "name": "Mûre andine"
+    },
+    "guava": {
+      "filename": "guava.jpg",
+      "name": "Goyave"
+    },
+    "heading": "ORIGINALEMENT RAFRAÎCHISSANTE",
+    "lulo": {
+      "filename": "lulo.jpg",
+      "name": "Lulo"
+    },
+    "mandarinOrange": {
+      "filename": "mandarin-orange.jpg",
+      "name": "Mandarine"
+    },
+    "mango": {
+      "filename": "mango.jpg",
+      "name": "Mangue"
+    },
+    "maracuja": {
+      "filename": "maracuja.jpg",
+      "name": "Maracuja"
+    },
+    "papaya": {
+      "filename": "papaya.jpg",
+      "name": "Papaye"
+    },
+    "pineapple": {
+      "filename": "pineapple.jpg",
+      "name": "Ananas"
+    },
+    "soursop": {
+      "filename": "soursop.jpg",
+      "name": "Corossol"
+    },
+    "tamarillo": {
+      "filename": "tamarillo.jpg",
+      "name": "Tamarillo"
+    }
+  },
+  "headerSection": {
     "body": "Découvrez des gouts authentiques venus des mythiques cordillères des Andes",
     "heading": "UN FRUIT, UNE HISTOIRE..."
   },
-  "page-title": "Terre Tropicale",
-  "services-section": {
+  "pageTitle": "Terre Tropicale",
+  "servicesSection": {
     "body1": "Innovez et fidélisez votre clientèle",
     "body2": "Surprenez vos convives",
     "button1": "Détails",
@@ -39,7 +63,7 @@
     "heading1": "POUR LES PROS",
     "heading2": "POUR VOS ÉVÉNEMENTS"
   },
-  "values-section": {
+  "valuesSection": {
     "body1": "Notre pulpe est issue des fruits rigoureusement sélectionnés, récoltés à maturité optimale, traités sur place.",
     "body2": "Nous proposons une multitude de goûts originaux qui attendent d'être découverts.",
     "body3": "Nous promouvons les cultures et l'emploi local. Nos pulpes permettent à 2500 familles de producteurs colombiens.",

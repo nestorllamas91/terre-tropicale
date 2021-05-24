@@ -1,40 +1,42 @@
 import { useTranslation } from 'next-i18next';
 
+import styles from '@/our-cocktails-page/cocktails-section/styles.module.scss';
 import ArrowIcon from '@/shared/icons/arrow';
 
-type Cocktail = {
-  filename: string;
-  ingredients: string[];
-  name: string;
-};
-
+// Functional component of the section.
 const CocktailsSection = (): JSX.Element => {
+  // Get the texts corresponding to the section.
   const { t } = useTranslation('our-cocktails-page');
-  const cocktails: Cocktail[] = t('cocktails');
+  const cocktails: Cocktail[] = t('cocktailsSection');
 
+  // Render the section.
   return (
-    <section className="grid grid-cols-1 gap-4 mb-8 px-4 mh:grid-cols-2 tv:grid-cols-2 th:grid-cols-2 th:px-0">
-      {cocktails.map((cocktail, index) => {
-        const { filename, ingredients, name } = cocktail;
-        return (
-          <figure key={index} className="flex flex-row overflow-hidden rounded-lg shadow">
-            <img src={`/assets/images/cocktails/${filename}`} className="object-cover w-1/2" />
-            <div className="flex flex-col flex-1 p-4 bg-warmGray-50">
-              <h3 className="mb-2 text-lime-600">{name}</h3>
-              <ul className="space-y-1">
-                {ingredients.map(ingredient => (
-                  <li key={ingredient} className="flex flex-row items-baseline">
-                    <ArrowIcon className="w-3 mr-2" />
-                    <span>{ingredient}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </figure>
-        );
-      })}
+    <section className={styles.section}>
+      {cocktails.map(({ name, ingredients, filename }) => (
+        <div key={filename}>
+          <img src={`/assets/images/cocktails/${filename}`} />
+          <div>
+            <h2>{name}</h2>
+            <ul>
+              {ingredients.map(ingredient => (
+                <li key={ingredient}>
+                  <ArrowIcon className={styles['arrow-icon']} />
+                  <span>{ingredient}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
     </section>
   );
+};
+
+// Type for the cocktail.
+type Cocktail = {
+  name: string;
+  ingredients: string[];
+  filename: string;
 };
 
 export default CocktailsSection;

@@ -1,8 +1,12 @@
 {
-  "header-body-1": "Fruit juices, tropical smoothies and cocktails",
-  "header-body-2": "Natural and responsible",
-  "header-heading": "ABOUT",
-  "page-title": "About | Terre Tropicale",
-  "qui-sommes-nous-body": "<p>Terre Tropicale was born in 2011 from the desire to share the culture and flavors of tropical products from Latin America. We specialize in the distribution of fruit pulp, a product with authentic and original flavors, made out of real fruits.</p><p>We bring to the catering professionals an offer of proximity and diversity in terms of tastes and quality. We offer them a wide range of unique tropical flavors to discover, available all year round.</p><p>Let yourself be tempted, taste and enjoy!</p>",
-  "qui-sommes-nous-heading": "WHO WE ARE?"
+  "headerSection": {
+    "body1": "Fruit juices, tropical smoothies and cocktails",
+    "body2": "Natural and responsible",
+    "heading": "ABOUT"
+  },
+  "pageTitle": "About | Terre Tropicale",
+  "whoWeAreSection": {
+    "body": "<p>Terre Tropicale was born in 2011 from the desire to share the culture and flavors of tropical products from Latin America. We specialize in the distribution of fruit pulp, a product with authentic and original flavors, made out of real fruits.</p><p>We bring to the catering professionals an offer of proximity and diversity in terms of tastes and quality. We offer them a wide range of unique tropical flavors to discover, available all year round.</p><p>Let yourself be tempted, taste and enjoy!</p>",
+    "heading": "WHO WE ARE?"
+  }
 }

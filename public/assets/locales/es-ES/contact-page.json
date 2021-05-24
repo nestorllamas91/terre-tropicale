@@ -1,12 +1,22 @@
 {
-  "contact-details-email-description": "contact@terretropicale.com",
-  "contact-details-email-label": "Correo electrónico",
-  "contact-details-phone-description": "06 24 87 53 78",
-  "contact-details-phone-label": "Teléfono",
-  "contact-details-postal-address-description": "ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard",
-  "contact-details-postal-address-label": "Dirección postal",
-  "contact-details-schedule-description": "Lunes-Viernes, 09:00-18:00",
-  "contact-details-schedule-label": "Horario",
+  "contactDetailsSection": {
+    "address": {
+      "description": "ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard",
+      "label": "Dirección postal"
+    },
+    "email": {
+      "description": "contact@terretropicale.com",
+      "label": "Correo electrónico"
+    },
+    "openingHours": {
+      "description": "Lunes-Viernes, 09:00-18:00",
+      "label": "Horario"
+    },
+    "phone": {
+      "description": "06 24 87 53 78",
+      "label": "Teléfono"
+    }
+  },
   "contact-form-confirmation-modal-body": "Va a mandar este mensaje.",
   "contact-form-confirmation-modal-button": "Confirmar",
   "contact-form-confirmation-modal-heading": "¿Está usted seguro?",
@@ -20,13 +30,17 @@
   "contact-form-entity-label": "Usted es",
   "contact-form-entity-option-1": "Particular",
   "contact-form-entity-option-2": "Profesional",
-  "contact-form-entity-option-3": "Compañía",
+  "contact-form-entity-option-3": "Empresa",
   "contact-form-message-label": "Mensaje",
   "contact-form-name-label": "Nombre",
   "contact-form-phone-label": "Teléfono",
-  "header-body-1": "Sigamos en contacto",
-  "header-body-2": "Inscríbase para una degustación gratuita",
-  "header-heading": "CONTACTO",
-  "intro-body": "¿Está interesado en nuestros productos y/o servicios y desea que nos pongamos en contacto con usted? No dude en escribirnos. Nos pondremos en contacto con usted lo antes posible.",
-  "page-title": "Contacto | Terre Tropicale"
+  "headerSection": {
+    "body1": "Sigamos en contacto",
+    "body2": "Inscríbase para una degustación gratuita",
+    "heading": "CONTACTO"
+  },
+  "introductionSection": {
+    "body": "¿Está interesado en nuestros productos y/o servicios y desea que nos pongamos en contacto con usted? No dude en escribirnos. Nos pondremos en contacto con usted lo antes posible."
+  },
+  "pageTitle": "Contacto | Terre Tropicale"
 }

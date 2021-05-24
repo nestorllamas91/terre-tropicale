@@ -5,25 +5,27 @@ import CompanyLocationSection from '@/contact-page/company-location-section/comp
 import ContactDetailsSection from '@/contact-page/contact-details-section/component';
 import ContactFormSection from '@/contact-page/contact-form-section/component';
 import HeaderSection from '@/contact-page/header-section/component';
-import IntroSection from '@/contact-page/intro-section/component';
+import IntroductionSection from '@/contact-page/introduction-section/component';
 import Layout from '@/shared/layout/component';
 
+// Functional component of the page.
 const ContactPage = (): JSX.Element => {
+  // Get the text corresponding to the page title.
   const { t } = useTranslation('contact-page');
+  const pageTitle = t('pageTitle');
 
+  // Render the page.
   return (
     <>
       <Head>
-        <title>{t('page-title')}</title>
+        <title>{pageTitle}</title>
       </Head>
       <Layout>
         <HeaderSection />
-        <IntroSection />
+        <IntroductionSection />
         <ContactFormSection />
         <CompanyLocationSection />
-        <div className="flex justify-center mb-8">
-          <ContactDetailsSection />
-        </div>
+        <ContactDetailsSection />
       </Layout>
     </>
   );

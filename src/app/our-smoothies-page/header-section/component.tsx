@@ -1,15 +1,21 @@
 import { useTranslation } from 'next-i18next';
 
-const HeaderSection = (): JSX.Element => {
-  const { t } = useTranslation('our-smoothies-page');
+import styles from '@/our-smoothies-page/header-section/styles.module.scss';
 
+// Functional component of the section.
+const HeaderSection = (): JSX.Element => {
+  // Get the texts corresponding to the section.
+  const { t } = useTranslation('our-smoothies-page');
+  const { body1, body2, heading } = t('headerSection');
+
+  // Render the section.
   return (
-    <header className="relative flex mb-8">
-      <img src="/assets/images/headers/our-smoothies.jpg" className="object-cover w-full h-auto mh:h-64 th:h-auto" />
-      <div className="absolute inset-0 flex flex-col items-start justify-center p-4 text-white bg-black bg-opacity-40 tv:p-10 mh:p-10 th:p-20">
-        <h1 className="mb-1">{t('header-heading')}</h1>
-        <p className="page-subtitle">{t('header-body-1')}</p>
-        <p className="page-subtitle">{t('header-body-2')}</p>
+    <header className={styles.section}>
+      <img src="/assets/images/headers/our-smoothies.jpg" />
+      <div>
+        <h1>{heading}</h1>
+        <p>{body1}</p>
+        <p>{body2}</p>
       </div>
     </header>
   );

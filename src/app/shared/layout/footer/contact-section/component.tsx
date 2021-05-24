@@ -2,22 +2,26 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 import ContactDetailsSection from '@/contact-page/contact-details-section/component';
+import styles from '@/shared/layout/footer/contact-section/styles.module.scss';
 
-const ContactSection = (): JSX.Element => {
+// Functional component of the section.
+const ContactSection = (): JSX.Element | null => {
+  // Get the texts corresponding to the section.
   const { t } = useTranslation('footer');
+  const { body, button, heading } = t('contactSection');
+
+  // Get a reference of the router API.
   const router = useRouter();
 
+  // Render the section.
+  if (['/contact', '/404', '/500'].includes(router.pathname)) return null;
   return (
-    <div className="flex flex-col items-center px-4 mb-8">
-      <h2 className="mb-4 text-center">{t('contact-heading')}</h2>
-      <p className="mb-3">{t('contact-body')}</p>
-      <button onClick={() => router.push('/contact')} className="button">
-        {t('contact-button')}
-      </button>
-      <div className="mt-6">
-        <ContactDetailsSection />
-      </div>
-    </div>
+    <section className={styles.section}>
+      <h2>{heading}</h2>
+      <p>{body}</p>
+      <button onClick={() => router.push('/contact')}>{button}</button>
+      <ContactDetailsSection />
+    </section>
   );
 };
 

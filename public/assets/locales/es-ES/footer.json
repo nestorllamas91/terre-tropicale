@@ -1,6 +1,13 @@
 {
-  "contact-body": "Apúntese a una degustación gratuita",
-  "contact-button": "Solicite su cuenta ahora.",
-  "contact-heading": "LE INTERESA",
-  "copyright": "© {{current-year}} Terre Tropicale"
+  "contactSection": {
+    "body": "Apúntese a una degustación gratuita",
+    "button": "Solicite su cotización ahora",
+    "heading": "LE INTERESA"
+  },
+  "miscSection": {
+    "copyright": "© 2021 Terre Tropicale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter"
+  }
 }

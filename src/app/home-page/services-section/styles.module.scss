@@ -6,14 +6,12 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
 // Layout 1: CSS media query for the design of Mobile Portrait.
 .section {
-  // Properties relative to its container element.
-  margin-bottom: 30px;
-
   > h2 {
     // Properties relative to its container element.
     margin-bottom: 16px;
-    text-align: center;
     // Properties relative to the element itself.
+    padding: 0 16px;
+    text-align: center;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.9);
   }
@@ -21,6 +19,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   > div {
     // Properties relative to its content elements.
     display: flex;
+    column-gap: 4px;
 
     > div {
       // Properties relative to its content elements.
@@ -42,13 +41,12 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         bottom: 0;
         left: 0;
         // Properties relative to the element itself.
-        padding: 20px;
+        padding: 16px;
         background-color: rgba(0, 0, 0, 0.4);
         // Properties relative to its content elements.
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
 
         > h3 {
           // Properties relative to its container element.
@@ -71,19 +69,14 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
           padding: 4px 10px;
           border-radius: 4px;
           color: rgba(255, 255, 255, 0.9);
-          background-color: rgb(132, 204, 22, 1);
+          background-color: rgba(132, 204, 22, 1);
           &:hover {
-            background-color: rgb(101, 163, 13, 1);
+            background-color: rgba(101, 163, 13, 1);
           }
           &:focus {
             outline: none;
           }
         }
-      }
-
-      &:not(:first-child) {
-        // Properties relative to its container element.
-        margin-left: 4px;
       }
     }
   }
@@ -93,6 +86,10 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 @media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: landscape) {
   .section {
     > div {
+      // Properties relative to its content elements.
+      display: flex;
+      column-gap: 8px;
+
       > div {
         > img {
           // Properties relative to the element itself.
@@ -102,11 +99,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         > div {
           // Properties relative to the element itself.
           padding: 40px;
-        }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-left: 8px;
         }
       }
     }
@@ -118,10 +110,15 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   .section {
     > h2 {
       // Properties relative to the element itself.
+      padding: 0 40px;
       font-size: 18px;
     }
 
     > div {
+      // Properties relative to its content elements.
+      display: flex;
+      column-gap: 8px;
+
       > div {
         > img {
           // Properties relative to the element itself.
@@ -144,11 +141,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
             font-size: 16px;
           }
         }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-left: 12px;
-        }
       }
     }
   }
@@ -159,10 +151,15 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   .section {
     > h2 {
       // Properties relative to the element itself.
+      padding: 0 80px;
       font-size: 18px;
     }
 
     > div {
+      // Properties relative to its content elements.
+      display: flex;
+      column-gap: 12px;
+
       > div {
         > img {
           // Properties relative to the element itself.
@@ -170,6 +167,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         }
 
         > div {
+          // Properties relative to the element itself.
           padding: 80px;
 
           > h3 {
@@ -183,11 +181,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
             // Properties relative to the element itself.
             font-size: 16px;
           }
-        }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-left: 12px;
         }
       }
     }

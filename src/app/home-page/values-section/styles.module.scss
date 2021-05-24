@@ -6,16 +6,14 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
 // Layout 1: CSS media query for the design of Mobile Portrait.
 .section {
-  // Properties relative to its container element.
-  margin-bottom: 30px;
   // Properties relative to the element itself.
   padding: 0 16px;
 
   > h2 {
     // Properties relative to its container element.
     margin-bottom: 16px;
-    text-align: center;
     // Properties relative to the element itself.
+    text-align: center;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.9);
   }
@@ -24,6 +22,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
     // Properties relative to its content elements.
     display: flex;
     flex-direction: column;
+    row-gap: 16px;
 
     > div {
       // Properties relative to its content elements.
@@ -39,7 +38,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
         width: 100px;
         height: 100px;
         padding: 4px;
-        border: rgba(220, 38, 38, 1) solid 2px;
+        border: rgba(239, 68, 68, 1) solid 2px;
         border-radius: 50%;
       }
 
@@ -58,11 +57,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
           color: rgba(0, 0, 0, 0.9);
         }
       }
-
-      &:not(:first-child) {
-        // Properties relative to its container element.
-        margin-top: 16px;
-      }
     }
   }
 }
@@ -73,6 +67,8 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
     > div {
       // Properties relative to its content elements.
       flex-direction: row;
+      row-gap: 0px;
+      column-gap: 16px;
 
       > div {
         // Properties relative to its content elements.
@@ -86,20 +82,14 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
         > div {
           > h3 {
-            // Properties relative to its container element.
+            // Properties relative to the element itself.
             text-align: center;
           }
 
           > p {
-            // Properties relative to its container element.
+            // Properties relative to the element itself.
             text-align: center;
           }
-        }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-top: 0;
-          margin-left: 16px;
         }
       }
     }
@@ -120,6 +110,8 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
     > div {
       // Properties relative to its content elements.
       flex-direction: row;
+      row-gap: 0px;
+      column-gap: 16px;
 
       > div {
         // Properties relative to its content elements.
@@ -138,23 +130,16 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
           > h3 {
             // Properties relative to its container element.
             margin-bottom: 8px;
-            text-align: center;
             // Properties relative to the element itself.
+            text-align: center;
             font-size: 16px;
           }
 
           > p {
-            // Properties relative to its container element.
-            text-align: center;
             // Properties relative to the element itself.
+            text-align: center;
             font-size: 16px;
           }
-        }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-top: 0;
-          margin-left: 16px;
         }
       }
     }
@@ -175,6 +160,8 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
     > div {
       // Properties relative to its content elements.
       flex-direction: row;
+      row-gap: 0px;
+      column-gap: 16px;
 
       > div {
         // Properties relative to its content elements.
@@ -193,23 +180,16 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
           > h3 {
             // Properties relative to its container element.
             margin-bottom: 8px;
-            text-align: center;
             // Properties relative to the element itself.
+            text-align: center;
             font-size: 16px;
           }
 
           > p {
-            // Properties relative to its container element.
-            text-align: center;
             // Properties relative to the element itself.
+            text-align: center;
             font-size: 16px;
           }
-        }
-
-        &:not(:first-child) {
-          // Properties relative to its container element.
-          margin-top: 0;
-          margin-left: 16px;
         }
       }
     }

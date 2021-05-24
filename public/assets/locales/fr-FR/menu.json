@@ -1,17 +1,49 @@
 {
-  "about-page": "À propos",
-  "about-pathname": "/a-propos",
-  "about-pathname-original": "/a-propos",
-  "contact-page": "Contact",
-  "contact-pathname": "/contact",
-  "contact-pathname-original": "/contact",
-  "home-page": "Accueil",
-  "home-pathname": "/",
-  "home-pathname-original": "/",
-  "our-cocktails-page": "Nos cocktails",
-  "our-cocktails-pathname": "/nos-cocktails",
-  "our-cocktails-pathname-original": "/nos-cocktails",
-  "our-smoothies-page": "Nos smoothies",
-  "our-smoothies-pathname": "/nos-smoothies",
-  "our-smoothies-pathname-original": "/nos-smoothies"
+  "pageLinksSection": {
+    "aboutLink": {
+      "localesPathnames": {
+        "en-US": "/about",
+        "es-ES": "/sobre-nosotros",
+        "fr-FR": "/a-propos"
+      },
+      "name": "À propos",
+      "originalPathname": "/a-propos"
+    },
+    "contactLink": {
+      "localesPathnames": {
+        "en-US": "/contact",
+        "es-ES": "/contacto",
+        "fr-FR": "/contact"
+      },
+      "name": "Contact",
+      "originalPathname": "/contact"
+    },
+    "homeLink": {
+      "localesPathnames": {
+        "en-US": "/",
+        "es-ES": "/",
+        "fr-FR": "/"
+      },
+      "name": "Accueil",
+      "originalPathname": "/"
+    },
+    "ourCocktailsLink": {
+      "localesPathnames": {
+        "en-US": "/our-cocktails",
+        "es-ES": "/nuestros-cocteles",
+        "fr-FR": "/nos-cocktails"
+      },
+      "name": "Nos cocktails",
+      "originalPathname": "/nos-cocktails"
+    },
+    "ourSmoothiesLink": {
+      "localesPathnames": {
+        "en-US": "/our-smoothies",
+        "es-ES": "/nuestros-batidos",
+        "fr-FR": "/nos-smoothies"
+      },
+      "name": "Nos smoothies",
+      "originalPathname": "/nos-smoothies"
+    }
+  }
 }

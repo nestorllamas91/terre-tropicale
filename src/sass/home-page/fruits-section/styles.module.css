@@ -1,1 +1,56 @@
+.section > h2 {
+  margin-bottom: 16px;
+  padding: 0 16px;
+  text-align: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.section > div {
+  display: grid;
+}
+.section > div.columns2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.section > div.columns4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.section > div > div {
+  position: relative;
+}
+.section > div > div.rowSpan2 {
+  grid-row: span 2 / span 2;
+}
+.section > div > div.columnSpan2 {
+  grid-column: span 2 / span 2;
+}
+.section > div > div > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2px 8px;
+  border-top-right-radius: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
+  .section > h2 {
+    padding: 0 40px;
+    font-size: 18px;
+  }
+  .section > div > div > span {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .section > h2 {
+    padding: 0 40px;
+    font-size: 18px;
+  }
+  .section > div > div > span {
+    font-size: 16px;
+  }
+}
+
 /*# sourceMappingURL=styles.module.css.map */

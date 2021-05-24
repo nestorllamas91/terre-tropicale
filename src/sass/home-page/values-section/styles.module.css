@@ -1,5 +1,4 @@
 .section {
-  margin-bottom: 30px;
   padding: 0 16px;
 }
 .section > h2 {
@@ -11,6 +10,7 @@
 .section > div {
   display: flex;
   flex-direction: column;
+  row-gap: 16px;
 }
 .section > div > div {
   display: flex;
@@ -23,7 +23,7 @@
   width: 100px;
   height: 100px;
   padding: 4px;
-  border: #dc2626 solid 2px;
+  border: #ef4444 solid 2px;
   border-radius: 50%;
 }
 .section > div > div > div > h3 {
@@ -35,13 +35,12 @@
   font-size: 14px;
   color: rgba(0, 0, 0, 0.9);
 }
-.section > div > div:not(:first-child) {
-  margin-top: 16px;
-}
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
   .section > div {
     flex-direction: row;
+    row-gap: 0px;
+    column-gap: 16px;
   }
   .section > div > div {
     flex-direction: column;
@@ -55,10 +54,6 @@
   }
   .section > div > div > div > p {
     text-align: center;
-  }
-  .section > div > div:not(:first-child) {
-    margin-top: 0;
-    margin-left: 16px;
   }
 }
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
@@ -70,6 +65,8 @@
   }
   .section > div {
     flex-direction: row;
+    row-gap: 0px;
+    column-gap: 16px;
   }
   .section > div > div {
     flex-direction: column;
@@ -88,10 +85,6 @@
   .section > div > div > div > p {
     text-align: center;
     font-size: 16px;
-  }
-  .section > div > div:not(:first-child) {
-    margin-top: 0;
-    margin-left: 16px;
   }
 }
 @media (min-width: 1024px) {
@@ -103,6 +96,8 @@
   }
   .section > div {
     flex-direction: row;
+    row-gap: 0px;
+    column-gap: 16px;
   }
   .section > div > div {
     flex-direction: column;
@@ -121,10 +116,6 @@
   .section > div > div > div > p {
     text-align: center;
     font-size: 16px;
-  }
-  .section > div > div:not(:first-child) {
-    margin-top: 0;
-    margin-left: 16px;
   }
 }
 

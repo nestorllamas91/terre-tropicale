@@ -1,12 +1,22 @@
 {
-  "contact-details-email-description": "contact@terretropicale.com",
-  "contact-details-email-label": "E-mail",
-  "contact-details-phone-description": "06 24 87 53 78",
-  "contact-details-phone-label": "Phone number",
-  "contact-details-postal-address-description": "ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard",
-  "contact-details-postal-address-label": "Address",
-  "contact-details-schedule-description": "Monday to Friday, 09:00am-6:00pm",
-  "contact-details-schedule-label": "Opening Hours",
+  "contactDetailsSection": {
+    "address": {
+      "description": "ZAC 4 Saisons, 1 Rue Georges Brassens, 31140 Fonbeauzard",
+      "label": "Address"
+    },
+    "email": {
+      "description": "contact@terretropicale.com",
+      "label": "E-mail"
+    },
+    "openingHours": {
+      "description": "Monday to Friday, 09:00am-6:00pm",
+      "label": "Opening Hours"
+    },
+    "phone": {
+      "description": "06 24 87 53 78",
+      "label": "Phone number"
+    }
+  },
   "contact-form-confirmation-modal-body": "You are going to send this message.",
   "contact-form-confirmation-modal-button": "Confirm",
   "contact-form-confirmation-modal-heading": "Are you sure?",
@@ -24,9 +34,13 @@
   "contact-form-message-label": "Message",
   "contact-form-name-label": "Name",
   "contact-form-phone-label": "Phone number",
-  "header-body-1": "Let's stay in touch",
-  "header-body-2": "Register for a free tasting",
-  "header-heading": "CONTACT",
-  "intro-body": "You are interested in our products and/or services and you wish to be contacted? Do not hesitate to write to us. We will reach out to you as soon as possible.",
-  "page-title": "Contact Us | Terre Tropicale"
+  "headerSection": {
+    "body1": "Let's stay in touch",
+    "body2": "Register for a free tasting",
+    "heading": "CONTACT"
+  },
+  "introductionSection": {
+    "body": "You are interested in our products and/or services and you wish to be contacted? Do not hesitate to write to us. We will reach out to you as soon as possible."
+  },
+  "pageTitle": "Contact | Terre Tropicale"
 }

@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
+import styles from '@/contact-page/contact-details-section/styles.module.scss';
 import ClockIcon from '@/shared/icons/clock';
 import EmailIcon from '@/shared/icons/email';
 import PhoneIcon from '@/shared/icons/phone';
@@ -7,38 +8,39 @@ import PlaceholderIcon from '@/shared/icons/placeholder';
 
 const ContactDetailsSection = (): JSX.Element => {
   const { t } = useTranslation('contact-page');
+  const { address, email, openingHours, phone } = t('contactDetailsSection');
 
   return (
-    <section className="px-4 space-y-4">
-      <div className="flex flex-col items-start">
-        <div className="flex flex-row items-center">
-          <ClockIcon className="w-5 mr-2" />
-          <span className="font-bold whitespace-nowrap">{t('contact-details-schedule-label')}</span>
+    <section className={styles.section}>
+      <div>
+        <div>
+          <ClockIcon className={styles['contact-icon']} />
+          <span>{openingHours.label}</span>
         </div>
-        <span className="ml-7">{t('contact-details-schedule-description')}</span>
+        <span>{openingHours.description}</span>
       </div>
-      <div className="flex flex-col items-start">
-        <div className="flex flex-row items-center">
-          <PlaceholderIcon className="w-5 mr-2" />
-          <span className="font-bold whitespace-nowrap">{t('contact-details-postal-address-label')}</span>
+      <div>
+        <div>
+          <PlaceholderIcon className={styles['contact-icon']} />
+          <span>{address.label}</span>
         </div>
-        <address className="ml-7">{t('contact-details-postal-address-description')}</address>
+        <address>{address.description}</address>
       </div>
-      <div className="flex flex-col items-start">
-        <div className="flex flex-row items-center">
-          <PhoneIcon className="w-5 mr-2" />
-          <span className="font-bold whitespace-nowrap">{t('contact-details-phone-label')}</span>
+      <div>
+        <div>
+          <PhoneIcon className={styles['contact-icon']} />
+          <span>{phone.label}</span>
         </div>
-        <address className="ml-7">{t('contact-details-phone-description')}</address>
+        <address>{phone.description}</address>
       </div>
-      <div className="flex flex-col items-start">
-        <div className="flex flex-row items-center">
-          <EmailIcon className="w-5 mr-2" />
-          <span className="font-bold whitespace-nowrap">{t('contact-details-email-label')}</span>
+      <div>
+        <div>
+          <EmailIcon className={styles['contact-icon']} />
+          <span>{email.label}</span>
         </div>
-        <address className="ml-7">
+        <address>
           <a href="mailto:contact@terretropicale.com" rel="noreferrer" target="_blank">
-            {t('contact-details-email-description')}
+            {email.description}
           </a>
         </address>
       </div>
