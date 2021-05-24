@@ -1,5 +1,5 @@
 {
-  "cocktails": [
+  "cocktailsSection": [
     {
       "filename": "amazonia.jpg",
       "ingredients": ["Maracuyá", "Mandarina", "Gengibre", "Menta"],
@@ -17,17 +17,19 @@
     },
     {
       "filename": "lulada.jpg",
-      "ingredients": ["Lulo", "Mangue", "Jus de citron"],
+      "ingredients": ["Lulo", "Mango", "Zumo de limón"],
       "name": "Lulada"
     },
     {
       "filename": "pili-tropical.jpg",
-      "ingredients": ["Papaya o guava", "Maracuyá", "Pimiento de Ezpeleta", "Menta"],
+      "ingredients": ["Papaya o Guava", "Maracuyá", "Pimiento de Espelette", "Menta"],
       "name": "Pili Tropical"
     }
   ],
-  "header-body-1": "Frescos cócteles de fruta",
-  "header-body-2": "Preparación sin alcohol, 33 cl",
-  "header-heading": "NUESTROS CÓCTELES",
-  "page-title": "Nuestros Cócteles| Terre Tropicale"
+  "headerSection": {
+    "body1": "Frescos cócteles de fruta",
+    "body2": "Preparación sin alcohol, 33 cl",
+    "heading": "NUESTROS CÓCTELES"
+  },
+  "pageTitle": "Nuestros cócteles | Terre Tropicale"
 }

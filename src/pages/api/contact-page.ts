@@ -1,1 +1,1 @@
-export { default } from '@/contact-page/serverless-functions';
+export { default } from '@/contact-page/contact-form-section/serverless-function';

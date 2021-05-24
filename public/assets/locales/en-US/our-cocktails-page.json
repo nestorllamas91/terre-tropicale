@@ -1,5 +1,5 @@
 {
-  "cocktails": [
+  "cocktailsSection": [
     {
       "filename": "amazonia.jpg",
       "ingredients": ["Maracuja", "Mandarin orange", "Ginger", "Mint"],
@@ -7,7 +7,7 @@
     },
     {
       "filename": "blackberry.jpg",
-      "ingredients": ["Andean blackberry", "Pineapple", "Lemon juice"],
+      "ingredients": ["Andean raspberry", "Pineapple", "Lemon juice"],
       "name": "Blackberry"
     },
     {
@@ -26,8 +26,10 @@
       "name": "Pili Tropical"
     }
   ],
-  "header-body-1": "Cool fruit cocktails",
-  "header-body-2": "Non-alcoholic drinks, 33 cl",
-  "header-heading": "OUR COCKTAILS",
-  "page-title": "Our Cocktails | Terre Tropicale"
+  "headerSection": {
+    "body1": "Cool fruit cocktails",
+    "body2": "Non-alcoholic drinks, 33 cl",
+    "heading": "OUR COCKTAILS"
+  },
+  "pageTitle": "Our Cocktails | Terre Tropicale"
 }

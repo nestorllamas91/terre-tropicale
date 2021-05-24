@@ -13,7 +13,7 @@ const Error404Page = (): JSX.Element => {
       </Head>
       <Layout>
         <div className="flex flex-col items-center px-4 pb-4 mh:w-5/6 mh:mx-auto mh:px-8 mh:pb-8 tv:w-2/3 tv:mx-auto th:w-160 th:mx-auto">
-          <div className="mb-10 px-4 pt-8 pb-4 space-y-4 text-center">
+          <div className="mb-10 px-4 pt-8 pb-4 gap-y-4 text-center">
             <h1>{t('error-heading')}</h1>
             <p>{t('error-body')}</p>
           </div>

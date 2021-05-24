@@ -65,14 +65,6 @@
   .language-menu-navigation-bar {
     @apply flex items-center text-sm cursor-pointer;
   }
-
-  .page-subtitle {
-    @apply text-base text-white mh:text-base tv:text-lg th:text-lg;
-  }
-
-  .paragraph-margin > p:not(:last-of-type) {
-    @apply mb-2 leading-6;
-  }
 }
 @layer utilities {
   @variants responsive {

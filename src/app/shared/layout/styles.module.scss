@@ -1,0 +1,56 @@
+@use '../constants.scss';
+
+$BREAKPOINT1: constants.$BREAKPOINT1;
+$BREAKPOINT2: constants.$BREAKPOINT2;
+$BREAKPOINT3: constants.$BREAKPOINT3;
+
+// Layout 1: CSS media query for the design of Mobile Portrait.
+.layout {
+  // Properties relative to the element itself.
+  height: 100vh;
+  // Properties relative to its content elements.
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  > main {
+    // Properties relative to the element itself.
+    flex: auto;
+    padding-top: 80px;
+    // Properties relative to its content elements.
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+
+// Layout 2: CSS media query for the design of Mobile Landscape.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: landscape) {
+}
+
+// Layout 3: CSS media query for the design of Tablet Portrait.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: portrait) {
+  .layout {
+    > main {
+      // Properties relative to the element itself.
+      padding-top: 96px;
+    }
+  }
+}
+
+// Layout 4: CSS media query for the first design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT2) {
+  .layout {
+    > main {
+      // Properties relative to its container element.
+      margin: auto;
+      // Properties relative to the element itself.
+      width: 1024px;
+      padding-top: 96px;
+    }
+  }
+}
+
+// Layout 5: CSS media query for the second design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT3) {
+}

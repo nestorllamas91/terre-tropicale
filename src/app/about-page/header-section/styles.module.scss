@@ -1,44 +1,123 @@
-// mobile portrait
-@media (max-width: 640px) {
-  .header-image {
+@use '../../shared/constants.scss';
+
+$BREAKPOINT1: constants.$BREAKPOINT1;
+$BREAKPOINT2: constants.$BREAKPOINT2;
+$BREAKPOINT3: constants.$BREAKPOINT3;
+
+// Layout 1: CSS media query for the design of Mobile Portrait.
+.section {
+  // Properties relative to its content elements.
+  position: relative;
+
+  > img {
+    // Properties relative to its container element.
     object-fit: cover;
+    // Properties relative to the element itself.
     width: 100%;
     height: auto;
   }
-}
 
-// mobile landscape
-@media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
-  .header-image {
-    object-fit: cover;
-    width: 100%;
-    height: 256px;
+  > div {
+    // Properties relative to its container element.
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // Properties relative to the element itself.
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    // Properties relative to its content elements.
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    > h1 {
+      // Properties relative to its container element.
+      margin-bottom: 4px;
+      // Properties relative to the element itself.
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    > p {
+      // Properties relative to the element itself.
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 }
 
-// tablet portrait
-@media (min-width: 640px) and (max-width: 1024px) and (orientation: portrait) {
-  .header-image {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
+// Layout 2: CSS media query for the design of Mobile Landscape.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: landscape) {
+  .section {
+    > img {
+      // Properties relative to the element itself.
+      height: 200px;
+    }
+
+    > div {
+      // Properties relative to the element itself.
+      padding: 40px;
+    }
   }
 }
 
-// tablet landscape + laptop + desktop
-@media (min-width: 1024px) {
-  .header-image {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
+// Layout 3: CSS media query for the design of Tablet Portrait.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: portrait) {
+  .section {
+    > img {
+      // Properties relative to the element itself.
+      height: 220px;
+    }
+
+    > div {
+      // Properties relative to the element itself.
+      padding: 40px;
+
+      > h1 {
+        // Properties relative to its container element.
+        margin-bottom: 8px;
+        // Properties relative to the element itself.
+        font-size: 22px;
+      }
+
+      > p {
+        // Properties relative to the element itself.
+        font-size: 18px;
+      }
+    }
   }
 }
 
-// tablet landscape + laptop + desktop
-@media (min-width: 1280px) {
-  .header-image {
-    object-fit: cover;
-    width: 30%;
-    height: auto;
+// Layout 4: CSS media query for the first design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT2) {
+  .section {
+    > img {
+      // Properties relative to the element itself.
+      height: 300px;
+    }
+
+    > div {
+      // Properties relative to the element itself.
+      padding: 80px;
+
+      > h1 {
+        // Properties relative to its container element.
+        margin-bottom: 8px;
+        // Properties relative to the element itself.
+        font-size: 22px;
+      }
+
+      > p {
+        // Properties relative to the element itself.
+        font-size: 18px;
+      }
+    }
   }
+}
+
+// Layout 5: CSS media query for the second design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT3) {
 }

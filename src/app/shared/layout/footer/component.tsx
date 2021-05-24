@@ -1,17 +1,13 @@
-import { useRouter } from 'next/router';
-
 import ContactSection from '@/shared/layout/footer/contact-section/component';
-import SocialMediaAndCopyrightSection from '@/shared/layout/footer/social-media-and-copyright-section/component';
+import MiscSection from '@/shared/layout/footer/misc-section/component';
+import styles from '@/shared/layout/footer/styles.module.scss';
 
-const Footer = (): JSX.Element => {
-  const activePathname = useRouter().asPath;
-
-  return (
-    <footer>
-      {activePathname !== '/contact' && activePathname !== '/404' && activePathname !== '/500' && <ContactSection />}
-      <SocialMediaAndCopyrightSection />
-    </footer>
-  );
-};
+// Functional component of the section.
+const Footer = (): JSX.Element => (
+  <footer className={styles.section}>
+    <ContactSection />
+    <MiscSection />
+  </footer>
+);
 
 export default Footer;

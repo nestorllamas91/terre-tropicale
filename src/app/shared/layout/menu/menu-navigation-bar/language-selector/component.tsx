@@ -1,61 +1,52 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import ArrowIcon from '@/shared/icons/arrow';
 
-const classNames = (...classes: string[]) => {
-  return classes.filter(Boolean).join(' ');
-};
-
-const languages = [
-  {
-    name: 'Français',
-    code: 'fr-FR',
-    filename: 'france.svg'
-  },
-  {
-    name: 'English',
-    code: 'en-US',
-    filename: 'united-states.svg'
-  },
-  {
-    name: 'Español',
-    code: 'es-ES',
-    filename: 'spain.svg'
-  }
-];
-
-type SelectedLanguage = {
-  name: string;
-  code: string;
-  filename: string;
-};
-
 const LanguageSelector = (): JSX.Element | null => {
-  const { i18n } = useTranslation('menu');
+  const { t } = useTranslation('menu');
+  const { aboutLink, contactLink, homeLink, ourCocktailsLink, ourSmoothiesLink } = t('pageLinksSection');
+
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(router.pathname);
+    console.log(router.asPath);
+    console.log(window.location.pathname);
+  }, [router]);
+
   let initialSelectedLanguage = null;
   for (const language of languages) {
-    if (language.code === i18n.language) {
+    if (router.locale === language.code) {
       initialSelectedLanguage = language;
       break;
     }
   }
   const [selectedLanguage, setSelectedLanguage] = useState<SelectedLanguage | null>(initialSelectedLanguage);
-  const router = useRouter();
 
-  const changeLanguage = () => {
-    selectedLanguage ? i18n.changeLanguage(selectedLanguage.code, () => router.reload()) : null;
+  const changeLanguage = (language: SelectedLanguage) => {
+    setSelectedLanguage(language);
+    [homeLink, ourSmoothiesLink, ourCocktailsLink, aboutLink, contactLink].map(
+      ({ localesPathnames, originalPathname }) => {
+        if (router.pathname === originalPathname) {
+          router.push(originalPathname, localesPathnames[language.code], { locale: language.code });
+        }
+      }
+    );
   };
 
   if (!selectedLanguage) return null;
   return (
-    <Listbox value={selectedLanguage} onChange={language => setSelectedLanguage(language)}>
+    <Listbox value={selectedLanguage} onChange={language => changeLanguage(language)}>
       {({ open }) => (
         <div className="relative w-32">
           <Listbox.Button className="flex justify-between items-center w-full px-3 py-1 border border-gray-300 rounded-md shadow text-left bg-white focus:outline-none">
-            <span>{selectedLanguage.name}</span>
+            <span className={classNames('language-menu-navigation-bar')}>
+              <img src={`/assets/images/flags/${selectedLanguage.filename}`} className="w-5 mr-2" />
+              {selectedLanguage.name}
+            </span>
             <ArrowIcon className="w-3 transform rotate-90" />
           </Listbox.Button>
           <Transition
@@ -79,7 +70,6 @@ const LanguageSelector = (): JSX.Element | null => {
                 >
                   {({ selected }) => (
                     <span
-                      onClick={changeLanguage}
                       className={classNames('language-menu-navigation-bar', selected ? 'font-semibold' : 'font-normal')}
                     >
                       <img src={`/assets/images/flags/${language.filename}`} className="w-5 mr-2" />
@@ -94,6 +84,34 @@ const LanguageSelector = (): JSX.Element | null => {
       )}
     </Listbox>
   );
+};
+
+const languages = [
+  {
+    name: 'Français',
+    code: 'fr-FR',
+    filename: 'france.svg'
+  },
+  {
+    name: 'English',
+    code: 'en-US',
+    filename: 'united-states.svg'
+  },
+  {
+    name: 'Español',
+    code: 'es-ES',
+    filename: 'spain.svg'
+  }
+];
+
+const classNames = (...classes: string[]) => {
+  return classes.filter(Boolean).join(' ');
+};
+
+type SelectedLanguage = {
+  name: string;
+  code: string;
+  filename: string;
 };
 
 export default LanguageSelector;

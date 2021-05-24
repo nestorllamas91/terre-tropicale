@@ -1,0 +1,107 @@
+@use '../../shared/constants.scss';
+
+$BREAKPOINT1: constants.$BREAKPOINT1;
+$BREAKPOINT2: constants.$BREAKPOINT2;
+$BREAKPOINT3: constants.$BREAKPOINT3;
+
+// Layout 1: CSS media query for the design of Mobile Portrait.
+.section {
+  > h2 {
+    // Properties relative to its container element.
+    margin-bottom: 16px;
+    // Properties relative to the element itself.
+    padding: 0 16px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  > div {
+    // Properties relative to its content elements.
+    display: grid;
+
+    &.columns2 {
+      // Properties relative to its content elements.
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &.columns4 {
+      // Properties relative to its content elements.
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    > div {
+      // Properties relative to its content elements.
+      position: relative;
+
+      &.rowSpan2 {
+        grid-row: span 2 / span 2;
+      }
+
+      &.columnSpan2 {
+        grid-column: span 2 / span 2;
+      }
+
+      > span {
+        // Properties relative to its container element.
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // Properties relative to the element itself.
+        padding: 2px 8px;
+        border-top-right-radius: 6px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}
+
+// Layout 2: CSS media query for the design of Mobile Landscape.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: landscape) {
+}
+
+// Layout 3: CSS media query for the design of Tablet Portrait.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: portrait) {
+  .section {
+    > h2 {
+      // Properties relative to the element itself.
+      padding: 0 40px;
+      font-size: 18px;
+    }
+
+    > div {
+      > div {
+        > span {
+          // Properties relative to the element itself.
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+// Layout 4: CSS media query for the first design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT2) {
+  .section {
+    > h2 {
+      // Properties relative to the element itself.
+      padding: 0 40px;
+      font-size: 18px;
+    }
+
+    > div {
+      > div {
+        > span {
+          // Properties relative to the element itself.
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+// Layout 5: CSS media query for the second design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT3) {
+}

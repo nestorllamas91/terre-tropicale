@@ -1,174 +1,107 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 
-import { BREAKPOINT1, BREAKPOINT2 } from '@/shared/constants';
+import styles from '@/home-page/fruits-section/styles.module.scss';
+import { BREAKPOINT1, BREAKPOINT2, BREAKPOINT3 } from '@/shared/constants';
 
-type ViewportDimensions = {
-  viewportWidth: number;
-  viewportHeight: number;
-};
-
+// Functional component of the section.
 const FruitsSection = (): JSX.Element | null => {
+  // Get the texts corresponding to the section.
   const { t } = useTranslation('home-page');
-  const [{ viewportWidth, viewportHeight }, setviewportDimensions] = useState<ViewportDimensions>({
+  const {
+    andeanRaspberry,
+    guava,
+    heading,
+    lulo,
+    mandarinOrange,
+    mango,
+    maracuja,
+    papaya,
+    pineapple,
+    soursop,
+    tamarillo
+  } = t('fruitsSection');
+
+  // Create a state variable for setting the current viewport dimensions and being able to apply the appropriate layout.
+  const [{ viewportWidth, viewportHeight }, setViewportDimensions] = useState<ViewportDimensions>({
     viewportWidth: 0,
     viewportHeight: 0
   });
-  let layout = '';
-  const fruitsImagesPath = '/assets/images/fruits/collage';
-
+  // Keep checking the resizing of the viewport and getting the current viewport dimensions.
   useEffect(() => {
+    const updateViewportDimensions = () => {
+      setViewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
+    };
     updateViewportDimensions();
     window.addEventListener('resize', updateViewportDimensions);
     return () => window.removeEventListener('resize', updateViewportDimensions);
   }, []);
 
-  const updateViewportDimensions = () => {
-    setviewportDimensions({ viewportWidth: window.innerWidth, viewportHeight: window.innerHeight });
-  };
+  // Get the type of layout of the visitor from the viewport values.
+  const layout = getLayoutType(viewportWidth, viewportHeight);
+  // Sort the fruits to display them properly depending on the layout.
+  const sortedFruits =
+    layout === 1
+      ? [guava, andeanRaspberry, maracuja, mango, papaya, lulo, soursop, tamarillo, pineapple, mandarinOrange]
+      : [guava, mango, andeanRaspberry, maracuja, papaya, lulo, soursop, pineapple, mandarinOrange, tamarillo];
 
-  if (viewportWidth < BREAKPOINT1) {
-    layout = 'mv';
-  } else if (viewportWidth < BREAKPOINT2) {
-    layout = viewportWidth / viewportHeight > 1 ? 'mh' : 'tv';
-  } else {
-    layout = 'th';
-  }
-
-  if (!(viewportWidth && viewportHeight)) return null;
-
+  // Render the section.
+  if (!viewportWidth || !viewportHeight) return null;
   return (
-    <section className="mb-8">
-      <h2 className="mb-4 text-center">{t('fruits-heading')}</h2>
-      {layout === 'mv' ? (
-        <div className="grid grid-cols-2">
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-guava-name')}
-            </span>
+    <section className={styles.section}>
+      <h2>{heading}</h2>
+      <div className={layout === 1 ? styles.columns2 : styles.columns4}>
+        {sortedFruits.map(({ name, filename }) => (
+          <div
+            key={filename}
+            className={classNames(
+              filename === 'mango.jpg' ? styles.rowSpan2 : '',
+              filename === 'tamarillo.jpg' ? styles.columnSpan2 : ''
+            )}
+          >
+            <img src={`/assets/images/smoothies/fruits/collage/${filename}`} />
+            <span>{name}</span>
           </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-blackberry-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-passion-fruit-name')}
-            </span>
-          </div>
-          <div className="relative flex row-span-2">
-            <img src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-mango-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-papaya-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-solanum-quitoense-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-soursop-name')}
-            </span>
-          </div>
-          <div className="relative flex col-span-2">
-            <img src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-tamarillo-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-pineapple-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-mandarin-orange-name')}
-            </span>
-          </div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-4">
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-guava-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-guava-name')}
-            </span>
-          </div>
-          <div className="relative flex row-span-2">
-            <img src={`${fruitsImagesPath}/${t('fruits-mango-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-mango-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-blackberry-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-blackberry-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-passion-fruit-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-passion-fruit-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-papaya-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-papaya-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-solanum-quitoense-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-solanum-quitoense-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-soursop-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-soursop-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-pineapple-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-pineapple-name')}
-            </span>
-          </div>
-          <div className="relative flex">
-            <img src={`${fruitsImagesPath}/${t('fruits-mandarin-orange-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-mandarin-orange-name')}
-            </span>
-          </div>
-          <div className="relative flex col-span-2">
-            <img src={`${fruitsImagesPath}/${t('fruits-tamarillo-filename')}`} />
-            <span className="absolute left-0 bottom-0 flex items-center px-2 py-0.5 text-white bg-black bg-opacity-20">
-              {t('fruits-tamarillo-name')}
-            </span>
-          </div>
-        </div>
-      )}
+        ))}
+      </div>
     </section>
   );
+};
+
+// Function to get the type of layout of the visitor from the viewport values.
+const getLayoutType = (viewportWidth: number, viewportHeight: number) => {
+  let layout = 0;
+  if (viewportWidth < BREAKPOINT1) {
+    // Set the layout belonging to the design of Mobile Portrait.
+    layout = 1;
+  } else if (viewportWidth < BREAKPOINT2) {
+    // eslint-disable-next-line unicorn/prefer-ternary
+    if (viewportWidth / viewportHeight > 1) {
+      // Set the layout belonging to the design of Mobile Landscape.
+      layout = 2;
+    } else {
+      // Set the layout belonging to the design of Tablet Portrait.
+      layout = 3;
+    }
+  } else if (viewportWidth < BREAKPOINT3) {
+    // Set the layout belonging to the first design of Tablet Landscape and PC.
+    layout = 4;
+  } else {
+    // Set the layout belonging to the second design of Tablet Landscape and PC.
+    layout = 5;
+  }
+  return layout;
+};
+
+// Function to join many strings of CSS class names in a single string.
+const classNames = (...classes: string[]) => {
+  return classes.filter(Boolean).join(' ');
+};
+
+// Type for the viewport dimensions.
+type ViewportDimensions = {
+  viewportWidth: number;
+  viewportHeight: number;
 };
 
 export default FruitsSection;

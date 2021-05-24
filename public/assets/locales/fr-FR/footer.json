@@ -1,6 +1,13 @@
 {
-  "contact-body": "Inscrivez-vous pour une dégustation gratuite",
-  "contact-button": "Demandez votre devis maintenant",
-  "contact-heading": "VOUS ÊTES INTÉRESSÉ",
-  "copyright": "© {{current-year}} Terre Tropicale"
+  "contactSection": {
+    "body": "Inscrivez-vous pour une dégustation gratuite",
+    "button": "Demandez votre devis maintenant",
+    "heading": "VOUS ÊTES INTÉRESSÉ"
+  },
+  "miscSection": {
+    "copyright": "© 2021 Terre Tropicale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "twitter": "Twitter"
+  }
 }
