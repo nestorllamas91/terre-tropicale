@@ -6,7 +6,7 @@ import styles from '@/home-page/services-section/styles.module.scss';
 const ServicesSection = (): JSX.Element => {
   // Get the texts corresponding to the section.
   const { t } = useTranslation('home-page');
-  const { body1, body2, button1, button2, heading, heading1, heading2 } = t('servicesSection');
+  const { body1, body2, heading, heading1, heading2 } = t('servicesSection');
 
   // Render the section.
   return (
@@ -18,7 +18,6 @@ const ServicesSection = (): JSX.Element => {
           <div>
             <h3>{heading1}</h3>
             <p>{body1}</p>
-            <button>{button1}</button>
           </div>
         </div>
         <div>
@@ -26,7 +25,6 @@ const ServicesSection = (): JSX.Element => {
           <div>
             <h3>{heading2}</h3>
             <p>{body2}</p>
-            <button>{button2}</button>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { BREAKPOINT1, BREAKPOINT2, BREAKPOINT3 } from '@/shared/constants';
-import MenuNavigationBar from '@/shared/layout/menu/menu-navigation-bar/component';
-import MenuSlidable from '@/shared/layout/menu/menu-slidable/component';
+import LateralMenu from '@/shared/layout/menus/lateral-menu/component';
+import NavigationBar from '@/shared/layout/menus/navigation-bar/component';
 
 const Menu = (): JSX.Element => {
   // Create a state variable for setting the current viewport dimensions and being able to apply the appropriate layout.
@@ -23,13 +23,13 @@ const Menu = (): JSX.Element => {
   // Get the type of layout of the visitor from the viewport values.
   const layout = getLayoutType(viewportWidth, viewportHeight);
 
-  const [isOpenMenuSlidable, setIsOpenMenuSlidable] = useState(false);
+  const [isOpenLateralMenu, setIsOpenLateralMenu] = useState(false);
 
   return (
     <>
-      <MenuNavigationBar openMenuSlidable={() => setIsOpenMenuSlidable(true)} />
+      <NavigationBar openLateralMenu={() => setIsOpenLateralMenu(true)} />
       {(layout === 1 || layout === 2 || layout === 3) && (
-        <MenuSlidable isOpenMenuSlidable={isOpenMenuSlidable} closeMenuSlidable={() => setIsOpenMenuSlidable(false)} />
+        <LateralMenu isOpenLateralMenu={isOpenLateralMenu} closeLateralMenu={() => setIsOpenLateralMenu(false)} />
       )}
     </>
   );

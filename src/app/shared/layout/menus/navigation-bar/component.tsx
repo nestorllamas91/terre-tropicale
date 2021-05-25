@@ -5,9 +5,8 @@ import { useEffect, useState } from 'react';
 
 import { BREAKPOINT1, BREAKPOINT2, BREAKPOINT3 } from '@/shared/constants';
 import MenuIcon from '@/shared/icons/menu';
-// import ShoppingCartIcon from '@/shared/icons/shopping-cart';
 
-const MenuNavigationBar = ({ openMenuSlidable }: MenuNavigationBarProps): JSX.Element => {
+const NavigationBar = ({ openLateralMenu }: NavigationBarProps): JSX.Element => {
   const { t } = useTranslation('menu');
   const { aboutLink, contactLink, homeLink, ourCocktailsLink, ourSmoothiesLink } = t('pageLinksSection');
 
@@ -61,14 +60,13 @@ const MenuNavigationBar = ({ openMenuSlidable }: MenuNavigationBarProps): JSX.El
           )}
         </div>
       )}
-      <div className="flex flex-row justify-end items-center flex-auto gap-x-3 th:flex-none w-48 th:w-auto xl:w-48">
-        {/* <ShoppingCartIcon className="h-6" /> */}
-        {viewportWidth < BREAKPOINT2 && (
-          <button onClick={openMenuSlidable} className="p-2 rounded hover:bg-lime-300 focus:outline-none">
+      {viewportWidth < BREAKPOINT2 && (
+        <div className="flex flex-row justify-end items-center flex-auto gap-x-3 th:flex-none w-48 th:w-auto xl:w-48">
+          <button onClick={openLateralMenu} className="p-2 rounded hover:bg-lime-300 focus:outline-none">
             <MenuIcon className="h-6" />
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -103,8 +101,8 @@ const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
 };
 
-type MenuNavigationBarProps = {
-  openMenuSlidable: () => void;
+type NavigationBarProps = {
+  openLateralMenu: () => void;
 };
 
 // Type for the viewport dimensions.
@@ -113,4 +111,4 @@ type ViewportDimensions = {
   viewportHeight: number;
 };
 
-export default MenuNavigationBar;
+export default NavigationBar;

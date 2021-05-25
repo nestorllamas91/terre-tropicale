@@ -61,22 +61,6 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
           font-size: 14px;
           color: rgba(255, 255, 255, 0.9);
         }
-
-        > button {
-          // Properties relative to its container element.
-          margin-top: auto;
-          // Properties relative to the element itself.
-          padding: 4px 10px;
-          border-radius: 4px;
-          color: rgba(255, 255, 255, 0.9);
-          background-color: rgba(132, 204, 22, 1);
-          &:hover {
-            background-color: rgba(101, 163, 13, 1);
-          }
-          &:focus {
-            outline: none;
-          }
-        }
       }
     }
   }
