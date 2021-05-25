@@ -38,19 +38,6 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.9);
 }
-.section > div > div > div > button {
-  margin-top: auto;
-  padding: 4px 10px;
-  border-radius: 4px;
-  color: rgba(255, 255, 255, 0.9);
-  background-color: #84cc16;
-}
-.section > div > div > div > button:hover {
-  background-color: #65a30d;
-}
-.section > div > div > div > button:focus {
-  outline: none;
-}
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {
   .section > div {

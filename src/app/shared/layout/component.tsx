@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import React from 'react';
 
 import Footer from '@/shared/layout/footer/component';
-import Menu from '@/shared/layout/menu/component';
+import Menus from '@/shared/layout/menus/component';
 import styles from '@/shared/layout/styles.module.scss';
 
 type LayoutProps = {
@@ -12,7 +12,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps): JSX.Element => (
   <>
     <div className={styles.layout}>
-      <Menu />
+      <Menus />
       <main>{children}</main>
       <Footer />
     </div>

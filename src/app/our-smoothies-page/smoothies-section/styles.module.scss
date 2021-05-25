@@ -233,24 +233,24 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   &.modal-fade-in {
     > .content {
       // Properties relative to the element itself.
-      animation: fade-in-content 200ms ease-out;
+      animation: fade-in-content 100ms ease-out;
     }
 
     > .overlay {
       // Properties relative to the element itself.
-      animation: fade-in-overlay 200ms ease-out;
+      animation: fade-in-overlay 100ms ease-out;
     }
   }
 
   &.modal-fade-out {
     > .content {
       // Properties relative to the element itself.
-      animation: fade-out-content 200ms ease-in;
+      animation: fade-out-content 100ms ease-in;
     }
 
     > .overlay {
       // Properties relative to the element itself.
-      animation: fade-out-overlay 200ms ease-in;
+      animation: fade-out-overlay 100ms ease-in;
     }
   }
 }

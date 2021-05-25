@@ -1,21 +1,15 @@
 import { Listbox, Transition } from '@headlessui/react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import ArrowIcon from '@/shared/icons/arrow';
 
-const LanguageSelector = (): JSX.Element | null => {
+const LanguageSelector = ({ place }: LanguageSelectorProps): JSX.Element | null => {
   const { t } = useTranslation('menu');
   const { aboutLink, contactLink, homeLink, ourCocktailsLink, ourSmoothiesLink } = t('pageLinksSection');
 
   const router = useRouter();
-
-  useEffect(() => {
-    console.log(router.pathname);
-    console.log(router.asPath);
-    console.log(window.location.pathname);
-  }, [router]);
 
   let initialSelectedLanguage = null;
   for (const language of languages) {
@@ -41,12 +35,9 @@ const LanguageSelector = (): JSX.Element | null => {
   return (
     <Listbox value={selectedLanguage} onChange={language => changeLanguage(language)}>
       {({ open }) => (
-        <div className="relative w-32">
+        <div className="relative w-28">
           <Listbox.Button className="flex justify-between items-center w-full px-3 py-1 border border-gray-300 rounded-md shadow text-left bg-white focus:outline-none">
-            <span className={classNames('language-menu-navigation-bar')}>
-              <img src={`/assets/images/flags/${selectedLanguage.filename}`} className="w-5 mr-2" />
-              {selectedLanguage.name}
-            </span>
+            <span className={classNames('language-menu-navigation-bar')}>{selectedLanguage.name}</span>
             <ArrowIcon className="w-3 transform rotate-90" />
           </Listbox.Button>
           <Transition
@@ -58,21 +49,23 @@ const LanguageSelector = (): JSX.Element | null => {
           >
             <Listbox.Options
               static
-              className="absolute z-10 mt-1 w-full bg-white shadow max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none"
+              className={classNames(
+                'absolute z-10 mt-1 w-full bg-white shadow max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none',
+                place === 'lateral-menu' ? 'bottom-9' : ''
+              )}
             >
               {languages.map(language => (
                 <Listbox.Option
                   key={language.code}
                   value={language}
                   className={({ active }) =>
-                    classNames(active ? 'text-white bg-indigo-600' : 'text-gray-900', 'select-none relative px-4 py-2')
+                    classNames(active ? 'text-white bg-indigo-600' : 'text-gray-900', 'select-none px-4 py-2')
                   }
                 >
                   {({ selected }) => (
                     <span
                       className={classNames('language-menu-navigation-bar', selected ? 'font-semibold' : 'font-normal')}
                     >
-                      <img src={`/assets/images/flags/${language.filename}`} className="w-5 mr-2" />
                       {language.name}
                     </span>
                   )}
@@ -106,6 +99,10 @@ const languages = [
 
 const classNames = (...classes: string[]) => {
   return classes.filter(Boolean).join(' ');
+};
+
+type LanguageSelectorProps = {
+  place?: string;
 };
 
 type SelectedLanguage = {

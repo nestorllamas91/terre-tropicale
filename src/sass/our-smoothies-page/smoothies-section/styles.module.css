@@ -179,16 +179,16 @@
   background: rgba(0, 0, 0, 0.4);
 }
 .modal.modal-fade-in > .content {
-  animation: fade-in-content 200ms ease-out;
+  animation: fade-in-content 100ms ease-out;
 }
 .modal.modal-fade-in > .overlay {
-  animation: fade-in-overlay 200ms ease-out;
+  animation: fade-in-overlay 100ms ease-out;
 }
 .modal.modal-fade-out > .content {
-  animation: fade-out-content 200ms ease-in;
+  animation: fade-out-content 100ms ease-in;
 }
 .modal.modal-fade-out > .overlay {
-  animation: fade-out-overlay 200ms ease-in;
+  animation: fade-out-overlay 100ms ease-in;
 }
 
 @media (min-width: 640px) and (max-width: 1024px) and (orientation: landscape) {

@@ -3,8 +3,8 @@ import { useTranslation } from 'next-i18next';
 import FacebookIcon from '@/shared/icons/facebook';
 import InstagramIcon from '@/shared/icons/instagram';
 import TwitterIcon from '@/shared/icons/twitter';
+import LanguageSelector from '@/shared/language-selector/component';
 import styles from '@/shared/layout/footer/misc-section/styles.module.scss';
-import LanguageSelector from '@/shared/layout/menu/menu-navigation-bar/language-selector/component';
 
 // Functional component of the section.
 const MiscSection = (): JSX.Element => {
