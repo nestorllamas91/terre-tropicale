@@ -23,8 +23,11 @@
   font-weight: 600;
 }
 .section > div > span,
-.section > div address {
+.section > div > address {
   padding-left: 28px;
+}
+.section > div > address {
+  font-style: normal;
 }
 
 /*# sourceMappingURL=styles.module.css.map */

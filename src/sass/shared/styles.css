@@ -15,12 +15,12 @@
   }
 
   p,
-  span,
-  address,
-  label,
-  input,
-  a,
-  button {
+span,
+address,
+label,
+input,
+a,
+button {
     @apply text-sm mh:text-sm tv:text-base th:text-base;
   }
 
@@ -30,10 +30,6 @@
 
   a:hover {
     @apply text-lime-500;
-  }
-
-  address {
-    @apply not-italic;
   }
 }
 @layer components {
@@ -54,7 +50,7 @@
   }
 
   .active-page > span,
-  .active-page {
+.active-page {
     @apply font-semibold;
   }
 
@@ -70,10 +66,6 @@
   @variants responsive {
     .w-160 {
       width: 40rem;
-    }
-
-    .w-248 {
-      width: 64rem;
     }
   }
 }

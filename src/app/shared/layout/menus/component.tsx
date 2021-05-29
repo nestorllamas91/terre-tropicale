@@ -28,8 +28,8 @@ const Menu = (): JSX.Element => {
   return (
     <>
       <NavigationBar openLateralMenu={() => setIsOpenLateralMenu(true)} />
-      {(layout === 1 || layout === 2 || layout === 3) && (
-        <LateralMenu isOpenLateralMenu={isOpenLateralMenu} closeLateralMenu={() => setIsOpenLateralMenu(false)} />
+      {(layout === 1 || layout === 2 || layout === 3) && isOpenLateralMenu && (
+        <LateralMenu closeLateralMenu={() => setIsOpenLateralMenu(false)} />
       )}
     </>
   );

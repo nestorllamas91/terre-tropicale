@@ -29,7 +29,5 @@ jobs:
         run: npm run lint:code
       - name: Lint the TypeScript types of the application.
         run: npm run lint:types
-      # - name: Test the application.
-      #   run: npm test
       - name: Build the application.
         run: npm run build

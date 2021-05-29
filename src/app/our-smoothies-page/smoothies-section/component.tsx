@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import styles from '@/our-smoothies-page/smoothies-section/styles.module.scss';
 import { BREAKPOINT1, BREAKPOINT2, BREAKPOINT3 } from '@/shared/constants';
+import CloseIcon from '@/shared/icons/close';
 
 // Functional component of the section.
 const SmoothiesSection = (): JSX.Element => {
@@ -118,16 +119,30 @@ const FruitModal = ({ fruit: { description, filename, name }, closeFruitModal }:
       <div className={styles.content}>
         {layout === 2 ? (
           <div className={styles['mobile-landscape-layout']}>
+            <button
+              onClick={() => setModalFade('out')}
+              className="self-end p-2 rounded hover:bg-lime-300 focus:outline-none"
+            >
+              <CloseIcon className="w-6" />
+            </button>
             <div>
-              <h2>
-                {name}: {headingDescription}
-              </h2>
-              <p>{description}</p>
+              <div>
+                <h2>
+                  {name}: {headingDescription}
+                </h2>
+                <p>{description}</p>
+              </div>
+              <img src={`/assets/images/smoothies/fruits/${filename}`} />
             </div>
-            <img src={`/assets/images/smoothies/fruits/${filename}`} />
           </div>
         ) : (
           <div className={styles['general-layout']}>
+            <button
+              onClick={() => setModalFade('out')}
+              className="self-end p-2 rounded hover:bg-lime-300 focus:outline-none"
+            >
+              <CloseIcon className="w-6" />
+            </button>
             <h2>
               {name}: {headingDescription}
             </h2>

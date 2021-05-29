@@ -193,6 +193,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 
       > h2 {
         // Properties relative to its container element.
+        margin-top: 16px;
         margin-bottom: 16px;
         // Properties relative to the element itself.
         text-align: center;
@@ -267,29 +268,37 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
       > .mobile-landscape-layout {
         // Properties relative to its content elements.
         display: flex;
+        flex-direction: column;
 
         > div {
-          > h2 {
-            // Properties relative to its container element.
-            margin-bottom: 16px;
-            // Properties relative to the element itself.
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.9);
-          }
-
-          > p {
-            // Properties relative to the element itself.
-            font-size: 14px;
-            color: rgba(0, 0, 0, 0.9);
-          }
-        }
-
-        > img {
           // Properties relative to its container element.
-          margin-left: 16px;
-          // Properties relative to the element itself.
-          width: 50%;
-          height: auto;
+          margin-top: 16px;
+          // Properties relative to its content elements.
+          display: flex;
+
+          > div {
+            > h2 {
+              // Properties relative to its container element.
+              margin-bottom: 16px;
+              // Properties relative to the element itself.
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.9);
+            }
+
+            > p {
+              // Properties relative to the element itself.
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.9);
+            }
+          }
+
+          > img {
+            // Properties relative to its container element.
+            margin-left: 16px;
+            // Properties relative to the element itself.
+            width: 50%;
+            height: auto;
+          }
         }
       }
     }
