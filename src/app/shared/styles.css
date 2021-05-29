@@ -27,9 +27,6 @@
   a:hover {
     @apply text-lime-500;
   }
-  address {
-    @apply not-italic;
-  }
 }
 
 @layer components {
@@ -61,9 +58,6 @@
   @variants responsive {
     .w-160 {
       width: 40rem;
-    }
-    .w-248 {
-      width: 64rem;
     }
   }
 }

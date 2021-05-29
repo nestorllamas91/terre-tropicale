@@ -7,16 +7,16 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
 // Layout 1: CSS media query for the design of Mobile Portrait.
 .layout {
   // Properties relative to the element itself.
+  isolation: isolate;
   height: 100vh;
   // Properties relative to its content elements.
   display: flex;
   flex-direction: column;
-  row-gap: 32px;
 
   > main {
     // Properties relative to the element itself.
     flex: auto;
-    padding-top: 80px;
+    padding: 80px 0 32px;
     // Properties relative to its content elements.
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
   .layout {
     > main {
       // Properties relative to the element itself.
-      padding-top: 96px;
+      padding: 90px 0 32px;
     }
   }
 }
@@ -46,7 +46,7 @@ $BREAKPOINT3: constants.$BREAKPOINT3;
       margin: auto;
       // Properties relative to the element itself.
       width: 1024px;
-      padding-top: 96px;
+      padding: 90px 0 32px;
     }
   }
 }

@@ -93,7 +93,7 @@
   height: 2px;
   margin-bottom: 4px;
   background: #fff;
-  content: '';
+  content: "";
   transition: transform 0.35s;
   transform: translate3d(-100%, 0, 0);
 }
@@ -154,6 +154,7 @@
   flex-direction: column;
 }
 .modal > .content > .general-layout > h2 {
+  margin-top: 16px;
   margin-bottom: 16px;
   text-align: center;
   font-size: 14px;
@@ -198,17 +199,22 @@
 
   .modal > .content > .mobile-landscape-layout {
     display: flex;
+    flex-direction: column;
   }
-  .modal > .content > .mobile-landscape-layout > div > h2 {
+  .modal > .content > .mobile-landscape-layout > div {
+    margin-top: 16px;
+    display: flex;
+  }
+  .modal > .content > .mobile-landscape-layout > div > div > h2 {
     margin-bottom: 16px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.9);
   }
-  .modal > .content > .mobile-landscape-layout > div > p {
+  .modal > .content > .mobile-landscape-layout > div > div > p {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.9);
   }
-  .modal > .content > .mobile-landscape-layout > img {
+  .modal > .content > .mobile-landscape-layout > div > img {
     margin-left: 16px;
     width: 50%;
     height: auto;

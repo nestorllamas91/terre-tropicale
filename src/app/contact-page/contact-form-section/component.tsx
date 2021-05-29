@@ -198,7 +198,7 @@ const ConfirmationModal = ({
         open={isOpenConfirmationModal}
         onClose={closeConfirmationModal}
       >
-        <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
+        <div className="fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -261,7 +261,7 @@ const SuccessModal = ({ isOpenSuccessModal, closeSuccessModal }: SuccessModalPro
   return (
     <Transition.Root show={isOpenSuccessModal} as={Fragment}>
       <Dialog as="div" static initialFocus={refButtonOk} open={isOpenSuccessModal} onClose={closeSuccessModal}>
-        <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
+        <div className="fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -324,7 +324,7 @@ const FailureModal = ({ isOpenFailureModal, closeFailureModal }: FailureModalPro
   return (
     <Transition.Root show={isOpenFailureModal} as={Fragment}>
       <Dialog as="div" static initialFocus={refButtonOk} open={isOpenFailureModal} onClose={closeFailureModal}>
-        <div className="z-20 fixed inset-0 flex justify-center items-center px-10">
+        <div className="fixed inset-0 flex justify-center items-center px-10">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"

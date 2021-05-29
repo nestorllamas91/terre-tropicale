@@ -50,7 +50,7 @@ const LanguageSelector = ({ place }: LanguageSelectorProps): JSX.Element | null 
             <Listbox.Options
               static
               className={classNames(
-                'absolute z-10 mt-1 w-full bg-white shadow max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none',
+                'absolute mt-1 w-full bg-white shadow max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none',
                 place === 'lateral-menu' ? 'bottom-9' : ''
               )}
             >
