@@ -1,0 +1,42 @@
+// Styles for the body element of the pages.
+body {
+  background-color: rgba(255, 255, 255, 1);
+  overflow-x: hidden;
+}
+
+// Font for the headings.
+@font-face {
+  src: url(/assets/fonts/montserrat-semibold.ttf) format('truetype');
+  font-family: 'Montserrat SemiBold';
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat SemiBold', 'sans-serif';
+  font-weight: 600;
+}
+
+// Font for the body contents.
+@font-face {
+  src: url(/assets/fonts/lato-regular.ttf) format('truetype');
+  font-family: 'Lato Regular';
+  font-weight: 400;
+}
+
+a,
+address,
+button,
+input,
+label,
+p,
+span {
+  font-family: 'Lato Regular', 'sans-serif';
+  font-weight: 400;
+}
+
+// Remove the default outline that appears when tapping certain elements.
+* {
+  -webkit-tap-highlight-color: transparent;
+}

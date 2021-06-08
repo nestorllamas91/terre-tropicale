@@ -1,0 +1,31 @@
+@use '../../shared/constants.scss';
+
+$BREAKPOINT1: constants.$BREAKPOINT1;
+$BREAKPOINT2: constants.$BREAKPOINT2;
+$BREAKPOINT3: constants.$BREAKPOINT3;
+
+// Layout 1: CSS media query for the design of Mobile Portrait.
+.section {
+  padding: 0 16px;
+
+  > p {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+// Layout 2: CSS media query for the design of Mobile Landscape.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: landscape) {
+}
+
+// Layout 3: CSS media query for the design of Tablet Portrait.
+@media (min-width: $BREAKPOINT1) and (max-width: $BREAKPOINT2) and (orientation: portrait) {
+}
+
+// Layout 4: CSS media query for the first design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT2) {
+}
+
+// Layout 5: CSS media query for the second design of Tablet Landscape and PC.
+@media (min-width: $BREAKPOINT3) {
+}

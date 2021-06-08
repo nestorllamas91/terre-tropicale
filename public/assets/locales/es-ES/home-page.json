@@ -1,0 +1,79 @@
+{
+  "pageTitle": "Terre Tropicale",
+  "headerSection": {
+    "heading": "UNA FRUTA, UNA HISTORIA...",
+    "body": "Descubra los auténticos sabores de la mítica cordillera de los Andes",
+    "imageAlt": "Cóctel sobre un suelo de madera y con un paisaje de fondo."
+  },
+  "servicesSection": {
+    "heading": "NUESTROS SERVICIOS",
+    "heading1": "PARA LOS PRO",
+    "body1": "Innove y fidelize a los clientes",
+    "imageAlt1": "Un profesional sirviendo un batido.",
+    "heading2": "PARA SUS EVENTOS",
+    "body2": "Sorprenda a sus invitados",
+    "imageAlt2": "3 personas sosteniendo y mostrando un cóctel en una fiesta."
+  },
+  "valuesSection": {
+    "heading": "NUESTROS VALORES",
+    "imageAlt1": "2 frutos enteros y 2 frutos partidos por la mitad, todos ellos Lulos.",
+    "heading1": "UNA AUTÉNTICA PULPA DE FRUTA",
+    "body1": "Nuestra pulpa procede de frutas rigurosamente seleccionadas, recolectadas en su punto óptimo de maduración y procesadas in situ.",
+    "imageAlt2": "6 cócteles sobre una mesa y con una piscina de fondo.",
+    "heading2": "SABORES TROPICALES ÚNICOS",
+    "body2": "Ofrecemos una multitud de sabores originales que esperan ser descubiertos.",
+    "imageAlt3": "Una persona sosteniendo y mostrando con las manos un poco de tierra con una pequeña planta en ella.",
+    "heading3": "NUESTRO ENFOQUE ÉTICO Y SOCIAL",
+    "body3": "Promovemos los cultivos y el empleo locales. Nuestras pulpas permiten a 2500 familias de productores colombianos."
+  },
+  "benefitsSection": {
+    "body1": "Fruta cosechada en su punto óptimo de maduración",
+    "body2": "Sabores auténticos con grandes cualidades nutricionales.",
+    "body3": "Preparación rápida y sencilla",
+    "body4": "Una pizca de tiempo: no hay que lavar ni pelar la fruta",
+    "heading": "BENEFICIOS DEL PRODUCTO"
+  },
+  "fruitsSection": {
+    "andeanRaspberry": {
+      "filename": "andean-raspberry.jpg",
+      "name": "Zarzamora andina"
+    },
+    "guava": {
+      "filename": "guava.jpg",
+      "name": "Guayava"
+    },
+    "heading": "ORIGINALMENTE REFRESCANTE",
+    "lulo": {
+      "filename": "lulo.jpg",
+      "name": "Lulo"
+    },
+    "mandarinOrange": {
+      "filename": "mandarin-orange.jpg",
+      "name": "Mandarina"
+    },
+    "mango": {
+      "filename": "mango.jpg",
+      "name": "Mango"
+    },
+    "maracuja": {
+      "filename": "maracuja.jpg",
+      "name": "Maracuyá"
+    },
+    "papaya": {
+      "filename": "papaya.jpg",
+      "name": "Papaya"
+    },
+    "pineapple": {
+      "filename": "pineapple.jpg",
+      "name": "Piña"
+    },
+    "soursop": {
+      "filename": "soursop.jpg",
+      "name": "Guanábana"
+    },
+    "tamarillo": {
+      "filename": "tamarillo.jpg",
+      "name": "Tamarillo"
+    }
+  }
+}

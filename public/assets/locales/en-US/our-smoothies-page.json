@@ -1,0 +1,139 @@
+{
+  "headerSection": {
+    "body1": "The tastes of paradise",
+    "body2": "Rigorously selected fruits",
+    "heading": "OUR SMOOTHIES"
+  },
+  "pageTitle": "Our Smoothies | Terre Tropicale",
+  "smoothiesSection": {
+    "fruitModal": {
+      "headingDescription": "the fruit"
+    },
+    "smoothieAnimation": {
+      "body": "Click for details",
+      "headingDescription": "the fruit"
+    },
+    "smoothiesAndFruits": [
+      {
+        "smoothie": {
+          "description": "Intense and delicate.",
+          "filename": "andean-raspberry.jpg",
+          "name": "Andean raspberry"
+        },
+        "fruit": {
+          "description": "Very fragrant taste, the blackberry has a taste both sweet and sour. Depending on the variety, this delicious fruit par excellence, is more or less dark purple in color.",
+          "filename": "andean-raspberry.jpg",
+          "name": "Andean raspberry"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Tonic, natural energizer.",
+          "filename": "guava.jpg",
+          "name": "Guava"
+        },
+        "fruit": {
+          "description": "This fruit is very appreciated for its pink flesh and its sweet taste. It evokes the sweet scent of the tropics.",
+          "filename": "guava.jpg",
+          "name": "Guava"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Originally refreshing.",
+          "filename": "lulo.jpg",
+          "name": "Lulo"
+        },
+        "fruit": {
+          "description": "Its tangy and refreshing flavor, transports us to the Andes Cordilleras in Latin America where this fruit is grown. The lulo is consumed mainly in juice.",
+          "filename": "lulo.jpg",
+          "name": "Lulo"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Soft and sparkling.",
+          "filename": "mandarin-orange.jpg",
+          "name": "Mandarin orange"
+        },
+        "fruit": {
+          "description": "Native to the Andean Cordilleras in South America, this fragrant, slightly sweet and at the same time tangy fruit.",
+          "filename": "mandarin-orange.jpg",
+          "name": "Mandarin orange"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Sweet and soothing taste.",
+          "filename": "mango.jpg",
+          "name": "Mango"
+        },
+        "fruit": {
+          "description": "Its tender, juicy and very fragrant pulp offers us a sweet taste with a delicate acidulous taste.",
+          "filename": "mango.jpg",
+          "name": "Mango"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Authentic and full of life",
+          "filename": "maracuja.jpg",
+          "name": "Maracuja"
+        },
+        "fruit": {
+          "description": "Aromatic and very juicy, this fruit is native to the Amazon basin. It has a sweet and slightly acidic flavor that offers new sensations to your palate.",
+          "filename": "maracuja.jpg",
+          "name": "Maracuja"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Zen and balanced.",
+          "filename": "papaya.jpg",
+          "name": "Papaya"
+        },
+        "fruit": {
+          "description": "Its flesh is juicy, sweet and delicately flavored.",
+          "filename": "papaya.jpg",
+          "name": "Papaya"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "\"Nana\" Perfume of Perfumes.",
+          "filename": "pineapple.jpg",
+          "name": "Pineapple"
+        },
+        "fruit": {
+          "description": "Its juicy pulp of exotic aroma and its refreshing, fruity and sweet taste allow it to be easily combined with other fruits.",
+          "filename": "pineapple.jpg",
+          "name": "Pineapple"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Smooth and full of goodness.",
+          "filename": "soursop.jpg",
+          "name": "Soursop"
+        },
+        "fruit": {
+          "description": "Its pulp is creamy, of soft flavor, very perfumed and sweet.",
+          "filename": "soursop.jpg",
+          "name": "Soursop"
+        }
+      },
+      {
+        "smoothie": {
+          "description": "Aromatic and tangy.",
+          "filename": "tamarillo.jpg",
+          "name": "Tamarillo"
+        },
+        "fruit": {
+          "description": "This fragrant fruit, slightly sweet and at the same time sour. It is produced all year round mainly in Ecuador and Colombia in areas of altitude from 1000 to 2000 meters.",
+          "filename": "tamarillo.jpg",
+          "name": "Tamarillo"
+        }
+      }
+    ]
+  }
+}

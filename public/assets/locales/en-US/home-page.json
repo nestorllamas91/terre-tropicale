@@ -1,0 +1,79 @@
+{
+  "pageTitle": "Terre Tropicale",
+  "headerSection": {
+    "heading": "A FRUIT, A STORY...",
+    "body": "Discover authentic tastes from the mythical Andes Mountains",
+    "imageAlt": "Cocktail on a wooden floor and with a landscape in the background."
+  },
+  "servicesSection": {
+    "heading": "OUR SERVICES",
+    "heading1": "FOR PROFESSIONALS",
+    "body1": "Innovate and build customer loyalty",
+    "imageAlt1": "A professional serving a smoothie.",
+    "heading2": "FOR YOUR EVENTS",
+    "body2": "Surprise your guests",
+    "imageAlt2": "3 people holding and showing a cocktail at a party."
+  },
+  "valuesSection": {
+    "heading": "OUR VALUES",
+    "imageAlt1": "2 whole fruits and 2 fruits split in half, all of them being Lulos.",
+    "heading1": "AN AUTHENTIC FRUIT PULP",
+    "body1": "Our pulp comes from rigorously selected fruits, harvested at optimal maturity and processed on site.",
+    "imageAlt2": "6 cocktails on a table and with a pool in the background.",
+    "heading2": "UNIQUE TROPICAL FLAVORS",
+    "body2": "We offer a multitude of original flavors waiting to be discovered.",
+    "imageAlt3": "A person holding and showing with their hands some land with a small plant in it.",
+    "heading3": "OUR ETHICAL AND SOCIAL APPROACH",
+    "body3": "We promote local crops and employment. Our pulps allow 2500 families of Colombian producers."
+  },
+  "benefitsSection": {
+    "body1": "Fruit harvested at optimum maturity",
+    "body2": "Authentic tastes with great nutritional qualities",
+    "body3": "Quick and easy to prepare",
+    "body4": "A touch of time: no washing or peeling of fruits",
+    "heading": "THE BENEFITS OF THE PRODUCE"
+  },
+  "fruitsSection": {
+    "andeanRaspberry": {
+      "filename": "andean-raspberry.jpg",
+      "name": "Andean raspberry"
+    },
+    "guava": {
+      "filename": "guava.jpg",
+      "name": "Guava"
+    },
+    "heading": "ORIGINALLY REFRESHING",
+    "lulo": {
+      "filename": "lulo.jpg",
+      "name": "Lulo"
+    },
+    "mandarinOrange": {
+      "filename": "mandarin-orange.jpg",
+      "name": "Mandarin orange"
+    },
+    "mango": {
+      "filename": "mango.jpg",
+      "name": "Mango"
+    },
+    "maracuja": {
+      "filename": "maracuja.jpg",
+      "name": "Maracuja"
+    },
+    "papaya": {
+      "filename": "papaya.jpg",
+      "name": "Papaya"
+    },
+    "pineapple": {
+      "filename": "pineapple.jpg",
+      "name": "Pineapple"
+    },
+    "soursop": {
+      "filename": "soursop.jpg",
+      "name": "Soursop"
+    },
+    "tamarillo": {
+      "filename": "tamarillo.jpg",
+      "name": "Tamarillo"
+    }
+  }
+}

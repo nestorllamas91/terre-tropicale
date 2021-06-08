@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const forms = require('@tailwindcss/forms');
 
 const myColors = {};
 for (const property in colors) {
@@ -8,14 +9,23 @@ myColors.transparent = 'transparent';
 myColors.current = 'currentColor';
 
 module.exports = {
-  purge: ['./src/app/**/component.tsx'],
+  plugins: [forms],
+  purge: ['./src/**/component.tsx'],
   theme: {
+    colors: myColors,
+    fontFamily: {
+      heading: ['Montserrat SemiBold', 'sans-serif'],
+      body: ['Lato Regular', 'sans-serif']
+    },
+    screens: {
+      mq1: { raw: '(min-width: 640px) and (max-width: 1024px) and (orientation: landscape)' },
+      mq2: { raw: '(min-width: 640px) and (max-width: 1024px) and (orientation: portrait)' },
+      mq3: { raw: '(min-width: 1024px)' }
+    }
+  },
+  variants: {
     extend: {
-      fontFamily: {
-        heading: ['Montserrat SemiBold', 'sans-serif'],
-        body: ['Lato Regular', 'sans-serif']
-      },
-      colors: myColors
+      fill: ['hover']
     }
   }
 };

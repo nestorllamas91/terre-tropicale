@@ -1,0 +1,24 @@
+{
+  "pageLinksSection": {
+    "homeLink": {
+      "name": "Home",
+      "pathname": "/"
+    },
+    "ourSmoothiesLink": {
+      "name": "Our Smoothies",
+      "pathname": "/nos-smoothies"
+    },
+    "ourCocktailsLink": {
+      "name": "Our Cocktails",
+      "pathname": "/nos-cocktails"
+    },
+    "aboutLink": {
+      "name": "About",
+      "pathname": "/a-propos"
+    },
+    "contactLink": {
+      "name": "Contact",
+      "pathname": "/contact"
+    }
+  }
+}

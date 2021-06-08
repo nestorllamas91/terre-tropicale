@@ -1,0 +1,35 @@
+{
+  "cocktailsSection": [
+    {
+      "filename": "amazonia.jpg",
+      "ingredients": ["Maracuyá", "Mandarina", "Gengibre", "Menta"],
+      "name": "Amazonia"
+    },
+    {
+      "filename": "blackberry.jpg",
+      "ingredients": ["Zarzamora andina", "Piña", "Zumo de limón"],
+      "name": "Blackberry"
+    },
+    {
+      "filename": "corossol-colada.jpg",
+      "ingredients": ["Guanábana", "Piña", "Leche de coco", "Menta"],
+      "name": "Corossol Colada"
+    },
+    {
+      "filename": "lulada.jpg",
+      "ingredients": ["Lulo", "Mango", "Zumo de limón"],
+      "name": "Lulada"
+    },
+    {
+      "filename": "pili-tropical.jpg",
+      "ingredients": ["Papaya o Guava", "Maracuyá", "Pimiento de Espelette", "Menta"],
+      "name": "Pili Tropical"
+    }
+  ],
+  "headerSection": {
+    "body1": "Frescos cócteles de fruta",
+    "body2": "Preparación sin alcohol, 33 cl",
+    "heading": "NUESTROS CÓCTELES"
+  },
+  "pageTitle": "Nuestros cócteles | Terre Tropicale"
+}

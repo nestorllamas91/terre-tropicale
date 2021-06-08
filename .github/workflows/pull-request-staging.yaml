@@ -1,0 +1,33 @@
+name: Pull Request to Staging
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  pull-request-staging:
+    name: Pull Request to Staging
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out the branch of the repository where this workflow is being executed for the runner to use it.
+        uses: actions/checkout@v2
+      - name: Setup the Node.js environment.
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Cache de dependencies of the application.
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install the dependencies of the application.
+        run: npm ci
+      - name: Lint the source code of the application.
+        run: npm run lint:code
+      - name: Lint the TypeScript types of the application.
+        run: npm run lint:types
+      - name: Build the application.
+        run: npm run build

@@ -1,3 +1,4 @@
-/node_modules/
-/coverage/
 /.next/
+/coverage/
+/node_modules/
+/public/
