@@ -26,6 +26,8 @@ const sendMail = async (request: VercelRequest, response: VercelResponse): Promi
              <br />
              <p>${message.replace(/\r\n|\n|\r/g, '<br />')}</p>`
     };
+    console.log(process.env.EMAIL_USER);
+    console.log(process.env.EMAIL_PASS);
     await transporter.sendMail(mailOptions);
     response.status(200).end();
   } catch {
