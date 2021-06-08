@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowJs": false,
-    "baseUrl": "./src/app/",
+    "baseUrl": "./src/",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -18,6 +18,18 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es5"
+
+    // "declaration": false,
+    // "downlevelIteration": true,
+    // "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    // "importHelpers": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noImplicitReturns": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "removeComments": true,
+    // "sourceMap": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
