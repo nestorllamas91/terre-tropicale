@@ -6,7 +6,8 @@ import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 
 import Maintenance from '@/maintenance-page/component';
-//
+
+console.log(process.env.NEXT_PUBLIC_MAINTENANCE_MODE);
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <Head>
