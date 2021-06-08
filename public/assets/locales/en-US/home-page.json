@@ -1,4 +1,31 @@
 {
+  "pageTitle": "Terre Tropicale",
+  "headerSection": {
+    "heading": "A FRUIT, A STORY...",
+    "body": "Discover authentic tastes from the mythical Andes Mountains",
+    "imageAlt": "Cocktail on a wooden floor and with a landscape in the background."
+  },
+  "servicesSection": {
+    "heading": "OUR SERVICES",
+    "heading1": "FOR PROFESSIONALS",
+    "body1": "Innovate and build customer loyalty",
+    "imageAlt1": "A professional serving a smoothie.",
+    "heading2": "FOR YOUR EVENTS",
+    "body2": "Surprise your guests",
+    "imageAlt2": "3 people holding and showing a cocktail at a party."
+  },
+  "valuesSection": {
+    "heading": "OUR VALUES",
+    "imageAlt1": "2 whole fruits and 2 fruits split in half, all of them being Lulos.",
+    "heading1": "AN AUTHENTIC FRUIT PULP",
+    "body1": "Our pulp comes from rigorously selected fruits, harvested at optimal maturity and processed on site.",
+    "imageAlt2": "6 cocktails on a table and with a pool in the background.",
+    "heading2": "UNIQUE TROPICAL FLAVORS",
+    "body2": "We offer a multitude of original flavors waiting to be discovered.",
+    "imageAlt3": "A person holding and showing with their hands some land with a small plant in it.",
+    "heading3": "OUR ETHICAL AND SOCIAL APPROACH",
+    "body3": "We promote local crops and employment. Our pulps allow 2500 families of Colombian producers."
+  },
   "benefitsSection": {
     "body1": "Fruit harvested at optimum maturity",
     "body2": "Authentic tastes with great nutritional qualities",
@@ -48,28 +75,5 @@
       "filename": "tamarillo.jpg",
       "name": "Tamarillo"
     }
-  },
-  "headerSection": {
-    "body": "Discover authentic tastes from the mythical Andes Mountains",
-    "heading": "A FRUIT, A STORY..."
-  },
-  "pageTitle": "Terre Tropicale",
-  "servicesSection": {
-    "body1": "Innovate and build customer loyalty",
-    "body2": "Surprise your guests",
-    "button1": "Details",
-    "button2": "Details",
-    "heading": "OUR SERVICES",
-    "heading1": "FOR PROFESSIONALS",
-    "heading2": "FOR YOUR EVENTS"
-  },
-  "valuesSection": {
-    "body1": "Our pulp comes from rigorously selected fruits, harvested at optimal maturity and processed on site.",
-    "body2": "We offer a multitude of original flavors waiting to be discovered.",
-    "body3": "We promote local crops and employment. Our pulps allow 2500 families of Colombian producers.",
-    "heading": "OUR VALUES",
-    "heading1": "AN AUTHENTIC FRUIT PULP",
-    "heading2": "UNIQUE TROPICAL FLAVORS",
-    "heading3": "OUR ETHICAL AND SOCIAL APPROACH"
   }
 }
