@@ -65,7 +65,7 @@ const ContactFormSection = (): JSX.Element => {
   return (
     <section className="px-4 mq1:w-1/2 mq1:mx-auto mq2:w-1/2 mq2:mx-auto mq3:w-1/2 mq3:mx-auto">
       <form onSubmit={e => handleSubmit(e)} className="flex flex-col">
-        <div className="gap-y-3 mb-5">
+        <div className="flex flex-col gap-y-4 mb-5">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-lime-600">
               {t('contact-form-name-label')} <span className="text-red-500">*</span>
@@ -138,7 +138,7 @@ const ContactFormSection = (): JSX.Element => {
             />
           </div>
         </div>
-        <input type="submit" value="Envoyer" className="button self-end" />
+        <input type="submit" value={t('contact-form-send-button') as string} className="button self-end" />
       </form>
       {isOpenConfirmationModal && (
         <ConfirmationModal
